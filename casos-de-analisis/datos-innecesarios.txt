@@ -1,0 +1,20 @@
+auctions.csv:
+    columna, valores que aparecen, sugerencia de tipo
+    source_id, [1,2,3,5,6], int4
+    ref_type_id, [1,7], int4
+    platform, [1,2], int4
+    country, un valor posible, category
+    auction_type_id, todos null, borrar columna
+
+clicks.csv:
+    columna, valores que aparecen, sugerencia de tipo
+    advertise_id, [3,0,1,2,7,8,5], int4
+    action_id, todos null, borrar columna
+    source_id, [0,1,6,5,2,3,10,7,4,9,8], int4
+    country_code, un valor posible, category
+    wifi_conection, todos False, category
+    specs_brand, 4 valores posibles, category
+    bran, 13 valores posibles, int4
+    ref_type, 4 valores posibles, category
+
+***Chequear con los archivos de scripts/datos-innecesarios
