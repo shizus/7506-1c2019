@@ -18,3 +18,10 @@ clicks.csv:
     ref_type, 4 valores posibles, category
 
 ***Chequear con los archivos de scripts/datos-innecesarios
+
+installs.csv:
+    columna, valores que aparecen, sugerencia de tipo
+    click_hash, todos null, borrar columna
+    attributed, todos False, borrar columna
+    trans_id, todos null salvo 6 filas, borrar columna?
+    
