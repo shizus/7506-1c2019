@@ -1,0 +1,48 @@
+Install
+
+	-En que fechas/hora se insatlan mas aplicaciones
+	-Promedio de instalaciones diarias/ o por hora
+	-cuales son las aplicaciones mas instaladas
+	-segun ref_type, se instalan mas de android o mas de ios?
+	-click_hash SACARLO TODO NULL
+	-atributed te dice si la instalacion fue por jampp, lo raro es que 	tiene todos false entonces ninguna instalacion fue por ellos(raro)
+	-Porcentaje de instalaciones implicitas(no se si es tan impotante)
+	-en que pais se instalan mas apps
+	-Alguna relacion entre los 2 paises que hay y que tipo de apps y en que horarios installan
+	-Porsentaje de marcas de telefonos en estos dos paises
+	-Cuales son los modelos de celular predomianantes
+	-Modelo mas comun segun su marca
+	-la columna session_user_agent tiene algunos nulls, habria que ver si conviene sacar las filas que tengas nulls
+	-Se puede ver los session_user_agent mas usados para instalar apps
+	-No se si se puede hacer mucho con la columa user-agent, tiene muchos nulls, por ejemplo si el session-user-agent es adjust.com o HasOffers Mobile AppTracking v1.0, en la columna user-agents se tiene un null(Por ahi se puede sacar alguna conclusion de eso)
+	-la columna event_uuid no se que dice, tiene muchos nulls. No le encuentro sentido (Se puede llegar a pensar borrarla, no estoy seguro)
+	-la columna kind comparte los nulls con la columna event_uuid, tampoco se muy bien que es lo que quiere mostrar(Algunas filas nombra que tipo de android tiene)
+	-El resto de las columnas estan medio raras. Hay que verlas en pandas y ver que informacion se puede sacar de ellas. Supuestamente hay una columna que te muestra si estaba con wifi o no, el ip_adress, el lenguaje del dispositivo y el tipo de conexion tiene.
+	-Con las fechas se puede analizar si se instalan mas apps los fines de semana o no
+	-Se puede ver si en algun horario del dia hay mas caudal de instalaciones quizas porque en ese horario es utuliza mas el celular.
+
+	
+
+Target_competencia
+
+	-No entiendo una mierda que dice ese csv, no se ni si sirve para algo
+
+
+
+Auctios
+
+	-Tipos de subasta tiene todo null, se puede sacar
+	-En country dice el pais de donde se origina la subasta(hay solo un pais), es uno solo porque seguramente es Argentina ya que jampp es de Argentina()
+	-Con date se podria ver que tan seguido se hacen las subasta, la cantidad de subastas que se hacen por dia y por hora.
+	-En device_id dice de que dispositivo sale la suabsta(la verdad no se si se puede hacer mucho con esto)
+	-Plataform dice si es de apple o android. Se podria ver en caul de los dos sistemas operatios se realizan mayor cantidad de subastas y enque porsentaje
+	-la columna ref_type_id no la entnedi, segun el json es "internal id for the ref_typew", no se que seria el ref_typew.
+	-Con la columna Source_id se podria analizar el porsentaje de cuales son las fuentes que mas se hacen subastas
+	- Como en install estaria bueno ver si en algun horario del dia se realizan mas subastas que en otros y ver en que franja horaria ocurriria esto
+
+
+
+Clicks
+
+	- 
+ 	
