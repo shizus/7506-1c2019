@@ -1,8 +1,8 @@
 auctions.csv:
     columna, valores que aparecen, sugerencia de tipo
-    source_id, [1,2,3,5,6], int4
-    ref_type_id, [1,7], int4
-    platform, [1,2], int4
+    source_id, [0,1,2,5,6], category
+    ref_type_id, [1,7], category
+    platform, [1,2], category
     country, un valor posible, category
     auction_type_id, todos null, borrar columna
 
@@ -24,4 +24,3 @@ installs.csv:
     click_hash, todos null, borrar columna
     attributed, todos False, borrar columna
     trans_id, todos null salvo 6 filas, borrar columna?
-    
