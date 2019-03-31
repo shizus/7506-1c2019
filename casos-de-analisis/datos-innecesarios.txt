@@ -24,3 +24,6 @@ installs.csv:
     click_hash, todos null, borrar columna
     attributed, todos False, borrar columna
     trans_id, todos null salvo 6 filas, borrar columna?
+    
+events.csv:
+    
