@@ -44,4 +44,20 @@ Auctios
 
 Clicks
 
+	- Columna action_id tiene todos nulls se puede borrar
+	- Advertiser_id supongo que te dice de que empresa es la publicidad que estan mostrando(habria que chequearlo). Si es asi se podria ver de que empresa se muestran mas publicidades.
+	- source_id te dice el id la fuente de donde salio el click (nose si puede servir mucho)
+	- enla columna created se ve la fecha y hora de cuando se toca click. Se puede ver cuando es que se tocan mas clicks, en que dias y en que horas. Se puede ver si hay mas tendecia en ciertas horas del dia.
+	- country code tiene solo un pais. Supongo que es Argentina, se podria borrar despues de hacer esa observacion.
+	- con latitude y longitude se podria ver en que lugar del mapa ocurren la mayor cantidad de clicks. Esta bueno para ver donde se centran mas los clicks.
+	- wifi da todo false asi qeu se ve que nadie tenia wifi(habria que observarlo y despeus sacar la columna ya que no te da nada util)
+	- carrier_id tiene algunos nulls, se podria ver si esas fials que tienen nulls se podrian borrar. No se que es el carrier no enteindo bienq ue info te da esta columna
+	- transaction_id te da lo q ue dice pero ni dea para qeu sirve
+	- os_minor la menor vesion del sistema operativo
+	- agent_device al parecer tiene muchos nulls, se podrai sacar la columna, no se si es importante lo que dice.
+	- os_major la mayor version del sist op. tampoco se para que sirve
+	- Ver el tiempo en que la gente tarda en tocar click. caul es el tiempo medio que la geente tarda en tocar
+	- viendo donde se toca en la pantalla del celu en touch x y touch y se puede deducir en que parte del celular se encuentran mayormente los boones para clickear
+	- 
+
 	-
