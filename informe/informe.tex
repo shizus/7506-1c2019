@@ -94,20 +94,72 @@
 	\begin{itemize}
 		\item Parece ser que la mayor cantidad de subastas se distribuyen por la noche y la madrugada.
 		\item La cantidad de subastas es poca en horas de la mañana y el mediodía. En el gráfico se puede ver un gran valle en esa parte del día.
-		\item 
+	\end{itemize}
+	
+	\FloatBarrier
+		\begin{figure}[ht!]
+			\centering
+			\makebox[\textwidth]{\includegraphics[width=350pt, bb=0 0 640 480]{images/auctions/subastasporhora.png}}
+		   	\caption{Cantidad de subastas por hora del día}
+			\label{subastashora}
+		\end{figure}
+	\FloatBarrier
+	\subsubsection{Subastas por hora del día por sistema operativo}
+	\tab Al igual que se hizo antes, podemos dividir el gráfico para ambas plataformas. Vemos que pasa algo muy parecido que lo que pasaba para la cantidad de subastas por día. El gráfico de la plataforma '1', al tener una cantidad mucho mayor de subastas, es la que predomina en el gráfico de la sección "Subastas por hora del día", y por eso sus gráficos son tan parecidos. EL gráfico de la plataforma '2' es bastante mas chato, y con cantidades de subastas mucho mas chicas.
+
+	\FloatBarrier
+		\begin{figure}
+			\centering
+			\makebox[\textwidth]{\includegraphics[width=220pt]{images/auctions/subastasporhoraS0.png}}
+		   	\caption{Cantidad de subastas por hora del día por sistema operativo}
+			\label{subastashoraSO}
+		\end{figure}
+	\FloatBarrier	
+	
+	\subsubsection{Subastas por sistema operativo}
+	\tab Resulta interesante conocer cuál es el sistema operativo para el cual se generan más subastas. Es algo que ya se venía viendo en la forma y nivel (cantidad de subastas) de los gráficos anteriores. Sin embargo, los gráficos vistos hasta ahora no dan un conocimiento directo de la relacion de las cantidades de subastas de ambas plataformas. 
+	\tab En las figuras que se ven a continuación podemos confirmar que lo que indicabamos en los gráficos anteriores era cierto. La cantidad de subastas es mucho mayor para la plataforma '1'. Además, ahora tenemos una visión mas cuantitativa de esta relación (en la imagen \ref{subastasSOporcentajes} vemos una relación porcentual, mientras que la imagen \ref{subastasSOcantidades} nos da mas idea de las cantidades).
+	
+	\FloatBarrier
+		\begin{figure}
+			\centering
+			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastasporSO.png}}
+		   	\caption{Porcentaje de subastas para cada plataforma}
+			\label{subastasSOporcentajes}
+		\end{figure}
+	\FloatBarrier
+	
+	\FloatBarrier
+		\begin{figure}
+			\centering
+			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastasporSO.png}}
+		   	\caption{Porcentaje de subastas para cada plataforma}
+			\label{subastasSOcantidades}
+		\end{figure}
+	\FloatBarrier	
+	
+	\subsubsection{Subastas por source}
+	\tab Como indica la introducción a esta sección (vease Auctions/Análisis general), source nos indica el exchange que generó la subasta. Se puede obtener, a partir de los datos, cuáles son los exchanges principales, y cuántas subastas generan.
+	\tab A tener en cuenta:
+	\begin{itemize}
+		\item Los que se muestran son todos los exchanges que aparecen en el archivo.
+		\item Al igual que en las plataformas, los exchanges se toman por un id, y no por su nombre.
+		\item Hay una clara diferencia en las cantidades.
+		\begin{itemize}
+			\item El exchange '0' es predominante, superando ampliamente el millon de subastas generadas.
+			\item El siguiente (source '1') aunque es mucho menor que el '0', sigue superando a los demas exchange por una gran cantidad. Llegando a las 400000 subastas generadas
+			\item Los exchanges '2', '5' y '6' parecen no tener mucho peso en el gráfico. Aunque quizás podría tomarse la cantidad del '5' como significativa.
+		\end{itemize}  
 	\end{itemize}
 	
 	\FloatBarrier
 		\begin{figure}
 			\centering
-			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastasporhora.png}}
-		   	\caption{Subastas por día de Marzo}
-			\label{subastashora}
+			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastasporsource.png}}
+		   	\caption{Cantidad de subastas para cada source}
+			\label{subastassource}
 		\end{figure}
-	\FloatBarrier
-	\subsubsection{Subastas por día por sistema operativo}
-	\subsubsection{Subastas por sistema operativo}
-	\subsubsection{Subastas por source}
+	\FloatBarrier	
 	
 
 \subsection{Clicks}
