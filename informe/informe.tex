@@ -49,26 +49,62 @@
 	\subsubsection{Análisis general}
 	 \tab El archivo 'auctions.csv' contiene información acerca de subastas.
 	Hay dos columnas que no nos aportan información significante. 'auction\_type\_id' tiene todos sus valores 		nulos, por lo que no fue tomada en cuenta para el análisis. 'country' informa un solo valor posible, que se supone que debe ser Argentina.
-	\tab La columna platforms tiene dos valores posibles (1 y 2) que se supone son Android e iOS. Va a ser importante para el análisis que hagamos más adelante.
+	\tab La columna platforms tiene dos valores posibles (1 y 2) que se supone son Android e iOS. Va a ser importante para el análisis que hagamos más adelante. De ahora en más, platform y sistema operativo serán sinónimos en este informe.
 	\tab Por último, 'source' nos da información acerca del exchange de donde surge la subasta.
 	\tab Además vemos que ningún valor de este archivo, excluyendo la columna 'auction\_type\_id', es nulo, por lo que no es necesario tomar ninguna decisión respecto a eso.
 	
 	\subsubsection{Subastas por día de Marzo}
-	\tab En el gráfico siguiente se pueden observar varias cosas:
-	\begin{enumerate}
+	\tab Como primer acercamiento a este set de datos, es interesante ver cómo se distribuye la cantidad de subastas en los días que incluye el archivo (05/03/19 al 13/03/19). El gráfico \ref{subastasmarzo} representa dicha distribución. En él se pueden observar varias cosas:
+	\begin{itemize}
 		\item La cantidad de subastas parece, en general, aumentar con el paso de los dias.
 		\item El valor del último día es mas del doble del valor del primer día.
 		\item El mayor aumento se da del sexto al septimo día.
-		\item La cantidad de subastas se mueve entre unos valores extremos de un millón y 3 millones.
-		\item para comprobar merge
-	\end{enumerate}
-			\begin{figure}
-		    	\centering
-		    	\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastaspordia.png}}
-		    	\caption{Subastas por día de Marzo}
-			\end{figure}
+		\item La cantidad de subastas varía entre unos valores extremos, aproximados, de un millón y 3 millones.
+	\end{itemize}
+	\FloatBarrier
+		\begin{figure}
+			\centering
+			   	\makebox[\textwidth]{\includegraphics[width=300pt]{images/auctions/subastaspordia.png}}
+		   		\caption{Cantidad de subastas por día de Marzo}
+			   	\label{subastasmarzo}
+		\end{figure}
+	\FloatBarrier
+			
 	\subsubsection{Subastas por día de Marzo por sistema operativo}
+	\tab Otro punto interesante es dividir el problema. Obtener la distribución de subastas en los días con datos disponibles para cada plataforma (Android e iOS). En la imagen \ref{subastasmarzoSO} se pueden observar las cantidades. Observese que llamamos '1' y '2' a las plataformas, ya que no sabemos cuál es Android y cuál es iOS.
+	\tab Puntos interesantes a reconocer:
+	
+	\begin{itemize}
+		\item La cantidad de subastas para la plataforma '1' es, salvo en el cuarto y el quinto día, considerablemente mayor a la cantidad para la plataforma '2'.
+		\item La figura de la plataforma '2' es mucho mas "chata" que la de la plataforma '1', la cual representa mas picos y saltos.
+		\item La figura de la plataforma '1' es muy parecida a la del gráfico \ref{subastasmarzo}, mientras que la de la plataforma '2' no lo es. Esto es resultado, principalmente, de lo indicado en el primer ítem. Este análisis puede llegar a ser muy útil para reconocer partes de los datos que son representativas del total.
+	\end{itemize}
+	\FloatBarrier
+		\begin{figure}
+			\centering
+	   		\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastaspordiaSO.png}}
+		   	\caption{Cantidad de subastas por día de Marzo y por sistema operativo}
+		   	\label{subastasmarzoSO}
+		\end{figure}
+	\FloatBarrier
+			
 	\subsubsection{Subastas por hora del día}
+	\tab Ahora vamos a analizar cómo se distribuyen las subastas a lo largo del día. Para esto hacemos un gráfico de hora del día contra cantidad de subastas (Gráfico \ref{subastashora}).\newline
+	\tab Desde un análisis cualitativo se pueden observar algunos puntos:
+	\begin{itemize}
+		\item Parece ser que la mayor cantidad de subastas se distribuyen por la noche y la madrugada.
+		\item La cantidad de subastas es poca en horas de la mañana y el mediodía. En el gráfico se puede ver un gran valle en esa parte del día.
+		\item 
+	\end{itemize}
+	
+	\FloatBarrier
+		\begin{figure}
+			\centering
+			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastasporhora.png}}
+		   	\caption{Subastas por día de Marzo}
+			\label{subastashora}
+		\end{figure}
+	\FloatBarrier
 	\subsubsection{Subastas por día por sistema operativo}
 	\subsubsection{Subastas por sistema operativo}
 	\subsubsection{Subastas por source}
