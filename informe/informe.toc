@@ -11,5 +11,9 @@
 \contentsline {subsection}{\numberline {2.2}Clicks}{6}
 \contentsline {subsection}{\numberline {2.3}Eventos}{6}
 \contentsline {subsection}{\numberline {2.4}Instalaciones}{6}
-\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{6}
-\contentsline {section}{\numberline {4}Conclusion}{6}
+\contentsline {subsubsection}{\numberline {2.4.1}Introducci\IeC {\'o}n}{6}
+\contentsline {subsubsection}{\numberline {2.4.2}Instalaciones por d\IeC {\'\i }a y hora}{6}
+\contentsline {subsubsection}{\numberline {2.4.3}Instalaciones por aplicaci\IeC {\'o}n}{9}
+\contentsline {subsubsection}{\numberline {2.4.4}Instalaciones por fecha seg\IeC {\'u}n la aplicaci\IeC {\'o}n}{10}
+\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{12}
+\contentsline {section}{\numberline {4}Conclusion}{12}
