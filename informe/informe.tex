@@ -57,7 +57,7 @@
 	\tab La columna platforms tiene dos valores posibles (1 y 2) que se supone son Android e iOS. Va a ser importante para el análisis que hagamos más adelante. De ahora en más, platform y sistema operativo serán sinónimos en este informe.
 	\tab Por último, 'source' nos da información acerca del exchange de donde surge la subasta.
 	\tab Además vemos que ningún valor de este archivo, excluyendo la columna 'auction\_type\_id', es nulo, por lo que no es necesario tomar ninguna decisión respecto a eso.
-	
+
 	\subsubsection{Subastas por día de Marzo}
 	\tab Como primer acercamiento a este set de datos, es interesante ver cómo se distribuye la cantidad de subastas en los días que incluye el archivo (05/03/19 al 13/03/19). El gráfico \ref{subastasmarzo} representa dicha distribución. En él se pueden observar varias cosas:
 	\begin{itemize}
@@ -75,18 +75,18 @@
 			   	\label{subastasmarzo}
 		\end{figure}
 	\FloatBarrier
-			
+
 	\subsubsection{Subastas por día de Marzo por sistema operativo}
 	\tab Otro punto interesante es dividir el problema. Obtener la distribución de subastas en los días con datos disponibles para cada plataforma (Android e iOS). En la imagen \ref{subastasmarzoSO} se pueden observar las cantidades. Observese que llamamos '1' y '2' a las plataformas, ya que no sabemos cuál es Android y cuál es iOS.
 	\tab Puntos interesantes a reconocer:
-	
+
 	\begin{itemize}
 		\item La cantidad de subastas para la plataforma '1' es, salvo en el cuarto y el quinto día, considerablemente mayor a la cantidad para la plataforma '2'.
 		\item La figura de la plataforma '2' es mucho mas "chata" que la de la plataforma '1', la cual representa mas picos y saltos.
 		\item La figura de la plataforma '1' es muy parecida a la del gráfico \ref{subastasmarzo}, mientras que la de la plataforma '2' no lo es. Esto es resultado, principalmente, de lo indicado en el primer ítem. Este análisis puede llegar a ser muy útil para reconocer partes de los datos que son representativas del total.
 	\end{itemize}
-	
-	\FloatBarrier	
+
+	\FloatBarrier
 	\begin{figure}
 			\centering
 	   		\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastaspordiaSO.png}}
@@ -94,7 +94,7 @@
 		   	\label{subastasmarzoSO}
 		\end{figure}
 	\FloatBarrier
-			
+
 	\subsubsection{Subastas por hora del día}
 	\tab Ahora vamos a analizar cómo se distribuyen las subastas a lo largo del día. Para esto hacemos un gráfico de hora del día contra cantidad de subastas (Gráfico \ref{subastashora}).\newline
 	\tab Desde un análisis cualitativo se pueden observar algunos puntos:
@@ -102,7 +102,7 @@
 		\item Parece ser que la mayor cantidad de subastas se distribuyen por la noche y la madrugada.
 		\item La cantidad de subastas es poca en horas de la mañana y el mediodía. En el gráfico se puede ver un gran valle en esa parte del día.
 	\end{itemize}
-	
+
 	\FloatBarrier
 		\begin{figure}
 			\centering
@@ -121,12 +121,12 @@
 		   	\caption{Cantidad de subastas por hora del día por sistema operativo}
 			\label{subastashoraSO}
 		\end{figure}
-	\FloatBarrier	
-	
+	\FloatBarrier
+
 	\subsubsection{Subastas por sistema operativo}
-	\tab Resulta interesante conocer cuál es el sistema operativo para el cual se generan más subastas. Es algo que ya se venía viendo en la forma y nivel (cantidad de subastas) de los gráficos anteriores. Sin embargo, los gráficos vistos hasta ahora no dan un conocimiento directo de la relacion de las cantidades de subastas de ambas plataformas. 
+	\tab Resulta interesante conocer cuál es el sistema operativo para el cual se generan más subastas. Es algo que ya se venía viendo en la forma y nivel (cantidad de subastas) de los gráficos anteriores. Sin embargo, los gráficos vistos hasta ahora no dan un conocimiento directo de la relacion de las cantidades de subastas de ambas plataformas.
 	\tab En las figuras que se ven a continuación podemos confirmar que lo que indicabamos en los gráficos anteriores era cierto. La cantidad de subastas es mucho mayor para la plataforma '1'. Además, ahora tenemos una visión mas cuantitativa de esta relación (en la imagen \ref{subastasSOporcentajes} vemos una relación porcentual, mientras que la imagen \ref{subastasSOcantidades} nos da mas idea de las cantidades).
-	
+
 	\FloatBarrier
 		\begin{figure}
 			\centering
@@ -135,7 +135,7 @@
 			\label{subastasSOporcentajes}
 		\end{figure}
 	\FloatBarrier
-	
+
 	\FloatBarrier
 		\begin{figure}
 			\centering
@@ -143,8 +143,8 @@
 		   	\caption{Porcentaje de subastas para cada plataforma}
 			\label{subastasSOcantidades}
 		\end{figure}
-	\FloatBarrier	
-	
+	\FloatBarrier
+
 	\subsubsection{Subastas por source}
 	\tab Como indica la introducción a esta sección (vease \ref{analisis general}), source nos indica el exchange que generó la subasta. Se puede obtener, a partir de los datos, cuáles son los exchanges principales, y cuántas subastas generan.
 	\tab A tener en cuenta:
@@ -156,9 +156,9 @@
 			\item El exchange '0' es predominante, superando ampliamente el millon de subastas generadas.
 			\item El siguiente (source '1') aunque es mucho menor que el '0', sigue superando a los demas exchange por una gran cantidad. Llegando a las 400000 subastas generadas
 			\item Los exchanges '2', '5' y '6' parecen no tener mucho peso en el gráfico. Aunque quizás podría tomarse la cantidad del '5' como significativa.
-		\end{itemize}  
+		\end{itemize}
 	\end{itemize}
-	
+
 	\FloatBarrier
 		\begin{figure}
 			\centering
@@ -167,7 +167,7 @@
 			\label{subastassource}
 		\end{figure}
 	\FloatBarrier
-	
+
 	\subsubsection{Análisis de los dispositivos en las subastas}
 	\tab Otro punto a analizar son los dispositivos. Es un punto que trajo un problema al analizar los datos, y que puede cambiar la forma en la que se entienden los datos anteriormente mencionados.
 	Podemos, por ejemplo, ver el top diez de dispositivos de los cuales se generan mas subastas.
@@ -179,10 +179,10 @@
 			\label{top10devicessubastas}
 		\end{figure}
 	\FloatBarrier
-	
+
 	\tab Ahora el problema.\newline
 	\tab En total, en las 19571319 subastas, aparecen 206171 dispositivos. Algo interesante sería conocer cuántos tienen cada plataforma. Por lo que hacemos un gráfico.
-	
+
 	\FloatBarrier
 		\begin{figure}
 			\centering
@@ -191,27 +191,30 @@
 			\label{devicesporSO}
 		\end{figure}
 	\FloatBarrier
-	
+
 	\tab Al obtener los datos del gráfico, observamos que la suma de las cantidades de dispositivos para cada plataforma es 206453. ¡Esto es mayor a la cantidad total de dispositivos (206171)!\newline
 	\tab La causa de este problema se entiende al conocer cómo se obtuvieron las cantidades. Primero se contó la cantidad de dispositivos total. Luego se separaron los que tuvieran plataforma '1' de los que tuvieran plataforma '2' (tener en cuenta que como hay una fila por subasta, cada dispositivo puede aparecer en filas distintas). Al sumar ambas cantidades obtenemos un número mayor que el total, por lo que es evidente que hay dispositivos que tienen ambas plataformas, es decir, en algunas filas aparecen con un valor de la columna 'platform' y en otras filas con otro.
-	
-	\tab Haciendo una simple resta, se puede ver que la cantidad de dispositivos que aparecen con plataformas distintas es 282, y que en total participan en 47862 subastas. De hecho hay un dispositivo (5.292967062497395e+18) que aparece en el top 300 de cantidad de subastas.
-	
-	\tab Esto puede alterar los análisis que incluyen división en plataformas. Sin embargo, no es trivial que haya que borrar estos datos, porque se estarían borrando casi 50000 subastas. Además, dejar los datos como están no altera a los estudios que se hagan sin dividir el problea por sistemas operativos. Por lo tanto se decidió dejar los datos, y saber que el análisis que se hace cuando se divide el problema, puede no ser tan preciso.
-	
 
+	\tab Haciendo una simple resta, se puede ver que la cantidad de dispositivos que aparecen con plataformas distintas es 282, y que en total participan en 47862 subastas. De hecho hay un dispositivo (5.292967062497395e+18) que aparece en el top 300 de cantidad de subastas.
+
+	\tab Esto puede alterar los análisis que incluyen división en plataformas. Sin embargo, no es trivial que haya que borrar estos datos, porque se estarían borrando casi 50000 subastas. Además, dejar los datos como están no altera a los estudios que se hagan sin dividir el problea por sistemas operativos. Por lo tanto se decidió dejar los datos, y saber que el análisis que se hace cuando se divide el problema, puede no ser tan preciso.
+
+\clearpage
 \subsection{Clicks}
 
+
+\clearpage
 \subsection{Eventos}
 
+\clearpage
 \subsection{Instalaciones}
 	\subsubsection{Introducción}
-		Los datos sobre instalaciones fueron provistos por Jampp en el archivo \texttt{installs.csv}, el cual contenía información acerca de todas las instalaciones registradas entre los días 5 y 13  Marzo del corriente año, indicando el tipo de aplicaciones descargadas, su fecha de descarga, país de origen, modelo, marca e idioma del dispositivo, entre otras cosas. 
-	
+		Los datos sobre instalaciones fueron provistos por Jampp en el archivo \texttt{installs.csv}, el cual contenía información acerca de todas las instalaciones registradas entre los días 5 y 13  Marzo del corriente año, indicando el tipo de aplicaciones descargadas, su fecha de descarga, país de origen, modelo, marca e idioma del dispositivo, entre otras cosas.
+
 		Cabe destacar que se descartaron datos como las direcciones ip y los varios id únicos generados para cada instalación, puesto que no aportaban información relevante al análisis que se pretende hacer en este trabajo, como también los datos del \textit{session user agent}, ya que la misma empresa informó que no los consideran de importancia y pudieron haberse visto modificados por los propios agentes que les proveyeron los datos.
-	
+
 	\subsubsection{Instalaciones por día y hora}
-		Para comenzar, lo primero que haremos será ver cómo se distribuyen las instalaciones en el periodo dado. 
+		Para comenzar, lo primero que haremos será ver cómo se distribuyen las instalaciones en el periodo dado.
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -219,9 +222,9 @@
 			\caption{Instalaciones por día de Marzo}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Como se puede observar, se registran ascensos considerables entre los días 6 y 7 y 11 y 12, con respectivas caídas al día siguiente, pero manteniendo una tendencia general al alza.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -229,11 +232,11 @@
 			\caption{Instalaciones por hora del día}
 		\end{figure}
 		\FloatBarrier
-		
+
 		 El gráfico anterior nos indica que la gran mayoría de las instalaciones se registran en horas de la tarde y la noche, con un pico a las 5 de la tarde. Cabe destacar a su vez el notorio valle que se da en horas de la mañana, donde el número es hasta diez veces menor que en el punto máximo.
-		 
+
 		 Para un análisis más general, la siguiente figura engloba los dos puntos mencionados anteriormente.
-		 
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -241,12 +244,12 @@
 			\caption{Instalaciones por fecha y hora}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Se puede observar claramente el valle de las horas de la mañana, como así también el pico que se da en el día 12. Sin embargo, este gráfico resulta útil ya que permite notar que tanto en los días 6 y 13 a las 6 de la mañana, el día 11 a las 7 y el 10 a las 9 no se produjo ninguna instalación.
-		
+
 	\subsubsection{Instalaciones por aplicación} \label{aplicaciones}
 		Resultará de utilidad conocer de que aplicación provienen las instalaciones registradas y observar cual es la tendencia en ese aspecto para determinar en cuales es mejor colocar la publicidad.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -254,12 +257,12 @@
 			\caption{Instalaciones por aplicación}
 		\end{figure}
 		\FloatBarrier
-		
+
 		La figura anterior muestra un dominio claro de las aplicaciones 7 y 9 por sobre las demás, ya que la segunda casi duplica en cantidad a la tercera. Además, se puede ver otra diferencia importante{\textemdash}otra vez, de casi el doble{\textemdash}entre la quinta y la sexta, lo que deja en evidencia cuales son las que dominan en este campo, puesto que las primeras cinco aplicaciones concentran más del 80\% de las instalaciones.
-		
+
 	\subsubsection{Instalaciones por fecha según la aplicación}
 		A continuación veremos a qué aplicaciones pertenecen las instalaciones según el día y la hora del día, lo que puede servir para determinar en qué momento apostar por una u otra aplicación. Cabe destacar que, para ello se agruparon todas aquellas aplicaciones que generaron un número muy bajo (menos de 90) de instalaciones en la categoría \textit{other}.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -267,9 +270,9 @@
 			\caption{Incidencia de las aplicaciones según el día}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Como se puede observar, la aplicación 7 dominó la mayoría de los días aunque disminuyendo hacia el 12 y el 13, donde fue superada por la 9. La tercera aplicación con más instalaciones, la 10, se mantuvo bastante estable durante los últimos cinco días, mientras que los días 10 y 12 la número 2, de poca preponderancia en otros días, obtuvo su mejor resultado. Cabe aclarar además, que si bien en días como el 9 se ve bastante incidencia de la categoría \textit{other}, ésta engloba los resultados de 23 aplicaciones distintas.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -277,12 +280,12 @@
 			\caption{Incidencia de las aplicaciones según la hora del día}
 		\end{figure}
 		\FloatBarrier
-		
+
 		En cuanto a la hora cabe destacar que la segunda aplicación en instalaciones no tiene presencia alguna a las 8 a.m., que es a su vez el momento del día donde más incidencia tiene una aplicación de poca presencia como la 2. La tendencia sigue mostrando a la número 7 como dominadora absoluta en todos los horarios.
-		
+
 	\subsubsection{Instalaciones por país}
 		El país de origen es un aspecto a considerar a la hora de decidir qué advertisers priorizar para cada situación. En este caso Jampp nos provee información de instalaciones en dos países distintos.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -290,12 +293,12 @@
 			\caption{País de origen de las instalaciones}
 		\end{figure}
 		\FloatBarrier
-		
+
 		La proporción es bastante pareja, con leve mayoría para el país \texttt{6333597102633388268}.
-		
+
 	\subsubsection{Instalaciones por tipo}
 		Los dispositivos se clasifican en dos grandes grupos, aquellos que provienen de Apple y los que provienen de Google.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -303,13 +306,13 @@
 			\caption{Tipo de referencia de las instalaciones}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Como se observa, el claro dominador es \texttt{1891515180541284343}.
-		
+
 	\subsubsection{Aplicaciones por país y tipo}
-	
+
 		Analicemos ahora de donde provienen las instalaciones de las 5 aplicaciones con más installs.
-	
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -317,9 +320,9 @@
 			\caption{Distribución de países para las top 5 aplicaciones en instalaciones}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Sorprendentemente el gráfico es determinante, las aplicaciones provienen o de un país o del otro, ninguna está presente en ambos.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -327,12 +330,12 @@
 			\caption{Distribución de ref types para las top 5 aplicaciones en instalaciones}
 		\end{figure}
 		\FloatBarrier
-		
+
 		En el caso de los tipos sucede lo mismo, aunque esto es más esperable, ya que existen muchas aplicaciones que son exclusivas de Apple o de Google. Esta información es útil a la hora de determinar el advertiser a seleccionar en cada subasta, ya que la aplicación o servicio a mostrar en la publicidad debe estar disponible para ese tipo.
-	
+
 	\subsubsection{Idiomas y aplicaciones}
-		Otro aspecto importante a considerar será el idioma del dispositivo al que se le mostrará la publicidad, ya que el usuario debe entender el mensaje. 
-		
+		Otro aspecto importante a considerar será el idioma del dispositivo al que se le mostrará la publicidad, ya que el usuario debe entender el mensaje.
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -340,12 +343,12 @@
 			\caption{Idioma de entrada con mayor número de instalaciones}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Vemos que hay un idioma claramente predominante, luego dos en nivel parejo y una brecha considerable.
-		Por esta razón, y para mayor simplicidad de los gráficos, se agruparán los 26 idiomas menos predominantes en la categoría \textit{other}. 
-		
+		Por esta razón, y para mayor simplicidad de los gráficos, se agruparán los 26 idiomas menos predominantes en la categoría \textit{other}.
+
 		Analicemos ahora como se distribuyen los idiomas en las 5 applicaciones más instaladas.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -353,13 +356,13 @@
 			\caption{Idioma de entrada de los dispositivos para las 5 aplicaciones líderes en instalaciones}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Como se puede ver, las aplicaciones líderes (7 y 9 respectivamente) se utilizan con idiomas distintos, mientras que en 10 y 16 predominan otros dos lenguajes diferentes.
-		
+
 	\subsubsection{Instalaciones por marca}
-		
+
 		La información de marca y modelo de los dispositivos que instalaron ........
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -367,19 +370,19 @@
 			\caption{Marcas con más instalaciones}
 		\end{figure}
 		\FloatBarrier
-		
-		Como se aprecia, hay una marca que lidera absolutamente con una cantidad de installs dos veces y media mayor a su inmediata competidora. 
-		
+
+		Como se aprecia, hay una marca que lidera absolutamente con una cantidad de installs dos veces y media mayor a su inmediata competidora.
+
 		Lo interesante será conocer además el tipo de dispositivo que producen esas marcas, para así determinar el tipo de publicidades que soportarán y así elegir mejor al advertiser.
-		
+
 		Del gráfico vemos que todas las marcas de las que se tiene registro utilizan el tipo \texttt{1891515180541284343} a excpción de una, la \texttt{5.951324980112395e+18}, que utiliza el otro.
-		
+
 	\subsubsection{Instalaciones wifi y user agents}
-	
+
 		Otro aspecto a considerar es la conexión con la que cuentan los usuarios al momento de decidir si hacer caso o no a alguna publicidad. Los datos que nos proporciona Jampp nos indican si las instalaciones fueron hechas vía conexión wifi.
-		
+
 		Inicialmente se esperaría que sea mayor el número de instalaciones vía wifi, ya que los datos móviles suelen tener un límite de uso bastante bajo.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -387,11 +390,11 @@
 			\caption{Instalaciones por conexión wifi.}
 		\end{figure}
 		\FloatBarrier
-		
-		Sorprendentemente la figura muestra que para una gran mayoría de las instalaciones no se proporcionó data respecto de la conexión. Sin embargo, y en concordancia con lo mencionado previamente, en los casos en los que sí se tiene información resulta claro ver que la mayor parte de dichas instalaciones sí fueron realizadas vía conexión wifi. 
-		
+
+		Sorprendentemente la figura muestra que para una gran mayoría de las instalaciones no se proporcionó data respecto de la conexión. Sin embargo, y en concordancia con lo mencionado previamente, en los casos en los que sí se tiene información resulta claro ver que la mayor parte de dichas instalaciones sí fueron realizadas vía conexión wifi.
+
 		Trasladando estos datos a las aplicaciones vemos.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -399,14 +402,14 @@
 			\caption{Instalaciones por conexión wifi según la aplicación.}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Lo primero que observamos es que la cantidad de aplicaciones de las que se tienen datos de conexión es reducida en comparación al total, ya que , por ejemplo, la aplicación líder en instalaciones no especifica tipo de conexión en ninguna de sus installs. Sin embargo, de este gráfico puede tomarse el hecho de que, si bien la tendencia indica que la mayoría de las instalaciones de las que se tienen datos se realizaron vía wifi, hay aplicaciones como 21 ,donde la proporción es más pareja, o la 36, donde se invierte. Esto puede servir para determinar qué tipo de publicidad mostrar, puesto que en los casos donde no se cuenta con wifi hay que tener en cuenta el consumo, para no gastarle los datos al usuario.
-		
-		
-		Por otra parte, el hecho de que un install se haya realizado por wifi nos permite conocer otro dato importante, el \textit{user agent} relacionado a la acción. 
-		
+
+
+		Por otra parte, el hecho de que un install se haya realizado por wifi nos permite conocer otro dato importante, el \textit{user agent} relacionado a la acción.
+
 		Análogamente a lo hecho al comienzo de la sección \ref{aplicaciones}, se analizaron los user agents.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -414,21 +417,21 @@
 			\caption{User agents por instalaciones}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Resulta evidente que los dominadores absolutos de la categoría son Dalvik y MercadoPago, con agentes casi sin presencia, como Mozilla y takealot, que cuentan sólamente con una instalación.
-		
+
 		\subsubsection{Instalaciones atribuidas a Jampp}
 		Será de particular importancia saber cuantas de las instalaciones se le atribuyeron oficialmente a Jampp, es decir, cuantas de ellas fueron realmente obra de la empresa. Los datos proporcionados hacen dos tipos de distinciones.
-		
+
 		\FloatBarrier
 		\begin{itemize}
 		\item \textbf{Attributed}: Indica si la instalación le fue reconocida oficialmente a Jampp.
 		\item \textbf{Implicit}: Indica si la instalación se registró de manera implícita, es decir, le fue atribuida a una empresa de la competencia.
 		\end{itemize}
 		\FloatBarrier
-		
+
 		En este aspecto, los datos indican que absolutamente ninguna de las instalaciones le fue atribuida a Jampp, lo que indica un porcentaje de efectividad del 0\%. Sin embargo, para la categoría \textit{implicit}, los resultados fueron los siguientes.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -436,11 +439,11 @@
 			\caption{Porcentaje de instalaciones atribuidas a la competencia}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Los datos muestran un \textit{ratio} de algo más de 1 de cada 4 instalaciones atribuidas a empresas rivales.
-		
+
 		Si lo trasladamos nuevamente a las 5 aplicaciones más instaladas.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -448,17 +451,83 @@
 			\caption{Porcentaje de instalaciones atribuidas a la competencia para las top 5 apps en descargas}
 		\end{figure}
 		\FloatBarrier
-		
+
 		Como podemos ver, los resultados van acorde a lo mostrado en la figura anterior, con casos como el de la aplicación 10, donde casi el 40\% de las instalaciones le pertenecen a la competencia. Sin embargo, cabe destacar que en la aplicación líder en descargas, la cual supera a su perseguidora por más de 200 instalaciones (véase sección \ref{aplicaciones}), es donde las empresas rivales tienen menos presencia.
-		
-	\subsubsection{Instalaciones de la competencia}
-	
-	
-		
+
+\clearpage
 \section{Análisis de archivos en conjunto}
+\subsection{Clicks y subastas}
+	\subsubsection{Análisis general}
+	\tab Hay dos temas que se van a analizar en estos dos archivos en conjunto:
+	\begin{enumerate}
+		\item Relación entre cantidades de clicks y de subastas.
+		\item Advertisers
+	\end{enumerate}
+
+	\tab Empezamos mostrando gráficos representativos de los datos.
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/subastasterminadasenclicks.png}
+			\caption{Relación clicks/subastas}
+			\label{subastasterminadasenclicks}
+		\end{figure}
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/subyclickspordia.png}
+			\caption{Cantidad de clicks y subastas por día}
+			\label{clicksysubastaspordia}
+		\end{figure}
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/relauctionsclickspordia.png}
+			\caption{Relación clicks/subastas por día}
+			\label{relclickssubastas}
+		\end{figure}
+	\FloatBarrier
+
+	\tab Podemos obtener conclusiones importantes en base a estos gráficos, teniendo en cuenta que cuando se habla de relación clicks/subastas o de subastas que terminan en clicks no se hace referencia a subastas, o clicks, individuales sino a una relación en conjunto, ya que no podemos identificar qupe subasta termino en cada click. Por lo tanto cuando digamos relación clicks/subastas estaremos hablando de $\frac{n_{clicks}}{n_{subastas}}$, siendo $n_{clicks}$ la cantidad de clicks y $n_{subastas}$ la cantidad de subastas.
+	\begin{itemize}
+		\item La cantidad de clicks es ínfima en relación a la cantidad de subastas. Se pueden perder cantidades en dos partes del proceso (pocas subastas se ganan  y/o poca gente hace clicks una vez que se gana la subasta y se muestra un anuncio). Gráfico \ref{subastasterminadasenclicks}.
+		\item No tiene mucho sentido el gráfico \ref{clicksysubastaspordia} ya que la cantidad de subastas es tan grande en comparación con la cantidad de clicks que la figura de clicks se achata cercana a cero.
+		\item El gráfico \ref{relclickssubastas} nos permite ver mejor lo confirmado en el ítem anterior. Día a día la relación $\frac{n_{clicks}}{n_{subastas}}$ es menor al 0,005%.
+	\end{itemize}
+
+	\tab Por otra parte, vimos en la sección "Subastas" que cada device\_id tenía asociado una plataforma. Los datos obtenidos nos permiten saber quién es el advertiser predominante en cada plataforma. Para ello vemos dos gráficos (uno para la plataforma '1' y otro para la plataforma '2').
+
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/advporSO.png}
+			\caption{Cantidad de clicks en dispositivos con plataforma '1' para cada advertiser}
+			\label{advporSO}
+		\end{figure}
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/advporSO2.png}
+			\caption{Cantidad de clicks en dispositivos con plataforma '2' para cada advertiser}
+			\label{advporSO2}
+		\end{figure}
+	\FloatBarrier
+
+	\tab Se puede ver, claramente, que el advertiser '3' es predominante para ambas plataformas. Pero además, un dato interesante es la diferencia en la cantidad de clicks entre las plataformas. Cerca de 25000 para la plataforma '1' y cerca de 700 para la plataforma '2' (en el anexo 'tablas de datos' se podrán comprobar los numeros exactos). Esta diferencia entre los sistemas operativos ya la habíamso visto en la seccion "Subastas".
+
+
 
 \section{Conclusion}
 
+\clearpage
+\appendix
+\section{Tablas de datos}
+	\subsection{Subastas}
+	\input{datos-auctions.tex}
+
+	\subsection{Clicks y Subastas}
+	\input{datos-auctions-clicks.tex}
+\clearpage
 
 \bibliographystyle{plain}
 \bibliography{references}

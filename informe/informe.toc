@@ -10,18 +10,23 @@
 \contentsline {subsubsection}{\numberline {2.1.7}Subastas por source}{9}
 \contentsline {subsubsection}{\numberline {2.1.8}An\IeC {\'a}lisis de los dispositivos en las subastas}{10}
 \contentsline {subsection}{\numberline {2.2}Clicks}{14}
-\contentsline {subsection}{\numberline {2.3}Eventos}{14}
-\contentsline {subsection}{\numberline {2.4}Instalaciones}{14}
-\contentsline {subsubsection}{\numberline {2.4.1}Introducci\IeC {\'o}n}{14}
-\contentsline {subsubsection}{\numberline {2.4.2}Instalaciones por d\IeC {\'\i }a y hora}{14}
-\contentsline {subsubsection}{\numberline {2.4.3}Instalaciones por aplicaci\IeC {\'o}n}{16}
-\contentsline {subsubsection}{\numberline {2.4.4}Instalaciones por fecha seg\IeC {\'u}n la aplicaci\IeC {\'o}n}{17}
-\contentsline {subsubsection}{\numberline {2.4.5}Instalaciones por pa\IeC {\'\i }s}{19}
-\contentsline {subsubsection}{\numberline {2.4.6}Instalaciones por tipo}{19}
-\contentsline {subsubsection}{\numberline {2.4.7}Aplicaciones por pa\IeC {\'\i }s y tipo}{20}
-\contentsline {subsubsection}{\numberline {2.4.8}Idiomas y aplicaciones}{21}
-\contentsline {subsubsection}{\numberline {2.4.9}Instalaciones por marca}{22}
-\contentsline {subsubsection}{\numberline {2.4.10}Instalaciones wifi y user agents}{23}
-\contentsline {subsubsection}{\numberline {2.4.11}Instalaciones atribuidas a Jampp}{25}
-\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{27}
-\contentsline {section}{\numberline {4}Conclusion}{27}
+\contentsline {subsection}{\numberline {2.3}Eventos}{15}
+\contentsline {subsection}{\numberline {2.4}Instalaciones}{16}
+\contentsline {subsubsection}{\numberline {2.4.1}Introducci\IeC {\'o}n}{16}
+\contentsline {subsubsection}{\numberline {2.4.2}Instalaciones por d\IeC {\'\i }a y hora}{16}
+\contentsline {subsubsection}{\numberline {2.4.3}Instalaciones por aplicaci\IeC {\'o}n}{18}
+\contentsline {subsubsection}{\numberline {2.4.4}Instalaciones por fecha seg\IeC {\'u}n la aplicaci\IeC {\'o}n}{18}
+\contentsline {subsubsection}{\numberline {2.4.5}Instalaciones por pa\IeC {\'\i }s}{20}
+\contentsline {subsubsection}{\numberline {2.4.6}Instalaciones por tipo}{20}
+\contentsline {subsubsection}{\numberline {2.4.7}Aplicaciones por pa\IeC {\'\i }s y tipo}{21}
+\contentsline {subsubsection}{\numberline {2.4.8}Idiomas y aplicaciones}{22}
+\contentsline {subsubsection}{\numberline {2.4.9}Instalaciones por marca}{23}
+\contentsline {subsubsection}{\numberline {2.4.10}Instalaciones wifi y user agents}{24}
+\contentsline {subsubsection}{\numberline {2.4.11}Instalaciones atribuidas a Jampp}{26}
+\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{28}
+\contentsline {subsection}{\numberline {3.1}Clicks y subastas}{28}
+\contentsline {subsubsection}{\numberline {3.1.1}An\IeC {\'a}lisis general}{28}
+\contentsline {section}{\numberline {4}Conclusion}{31}
+\contentsline {section}{\numberline {A}Tablas de datos}{32}
+\contentsline {subsection}{\numberline {A.1}Subastas}{32}
+\contentsline {subsection}{\numberline {A.2}Clicks y Subastas}{35}
