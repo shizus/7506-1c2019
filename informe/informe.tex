@@ -69,32 +69,6 @@
 	\end{itemize}
 
 	\FloatBarrier
-	\begin{center}
-		\begin{tabular}{ |c|c| }
-	    	\hline
-        	Día de marzo & Cantidad de subastas \\
-    	    \hline\hline
-			5 & 1182401 \\
-			\hline
-			6 & 1032970 \\
-			\hline
-			7 & 2047661 \\
-			\hline
-			8 & 2303002 \\
-			\hline
-			9 & 2074552 \\
-			\hline
-			10 & 2637534 \\
-			\hline
-			11 & 2574916 \\
-			\hline
-			12 & 2779910 \\
-			\hline
-			13 & 2938373 \\
-			\hline
-		\end{tabular}
-	\end{center}
-
 		\begin{figure}
 			\centering
 			   	\makebox[\textwidth]{\includegraphics[width=300pt]{images/auctions/subastaspordia.png}}
@@ -113,42 +87,7 @@
 		\item La figura de la plataforma '1' es muy parecida a la del gráfico \ref{subastasmarzo}, mientras que la de la plataforma '2' no lo es. Esto es resultado, principalmente, de lo indicado en el primer ítem. Este análisis puede llegar a ser muy útil para reconocer partes de los datos que son representativas del total.
 	\end{itemize}
 	
-	\FloatBarrier
-	\begin{center}
-		\begin{tabular}{ |c|c|c| }
-	    	\hline
-        	Día de marzo & Sistema operativo & Cantidad de subastas \\
-    	    \hline\hline
-			5 & 1 & 719286 \\
-			  & 2 & 463115 \\
-			\hline
-			6 & 1 & 579624 \\
-			  & 2 & 453346 \\
-			\hline
-			7 & 1 & 1617609 \\
-			  & 2 & 430052 \\
-			\hline
-			8 & 1 & 1898054 \\
-			  & 2 & 404948 \\
-			\hline
-			9 & 1 & 1618742 \\
-			  & 2 & 455810 \\
-			\hline
-			10 & 1 & 2149876 \\
-			  & 2 & 487658 \\
-			\hline
-			11 & 1 & 2165005 \\
-			  & 2 & 409911 \\
-			\hline
-			12 & 1 & 2337162 \\
-			  & 2 & 442748 \\
-			\hline
-			13 & 1 & 2456467 \\
-			  & 2 & 481906 \\
-			\hline
-		\end{tabular}
-	\end{center}
-	
+	\FloatBarrier	
 	\begin{figure}
 			\centering
 	   		\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastaspordiaSO.png}}
@@ -166,62 +105,6 @@
 	\end{itemize}
 	
 	\FloatBarrier
-	\begin{center}
-		\begin{tabular}{ |c|c| }
-	    	\hline
-        	Hora del día & Cantidad de subastas \\
-    	    \hline\hline
-    	    0 & 1005716 \\
-			\hline
-			1 & 1371091 \\
-			\hline
-			2 & 1388464 \\
-			\hline
-			3 & 1027541 \\
-			\hline
-			4 & 716194 \\
-			\hline
-			5 & 487243 \\
-			\hline
-			6 & 325730 \\
-			\hline
-			7 & 245109 \\
-			\hline
-			8 & 247915 \\
-			\hline
-			9 & 329604 \\
-			\hline
-			10 & 494726 \\
-			\hline
-			11 & 627907 \\
-			\hline
-			12 & 748935 \\
-			\hline
-			13 & 741996 \\
-			\hline
-			14 & 805579 \\
-			\hline
-			15 & 883824 \\
-			\hline
-			16 & 941866 \\
-			\hline
-			17 & 967539 \\
-			\hline
-			18 & 989528 \\
-			\hline
-			19 & 994381 \\
-			\hline
-			20 & 933318 \\
-			\hline
-			21 & 1015053 \\
-			\hline
-			22 & 1108219 \\
-			\hline
-			23 & 1173841 \\
-			\hline
-		\end{tabular}
-	\end{center}
-   
 		\begin{figure}
 			\centering
 			\makebox[\textwidth]{\includegraphics[width=350pt, bb=0 0 640 480]{images/auctions/subastasporhora.png}}
@@ -284,7 +167,38 @@
 		   	\caption{Cantidad de subastas para cada source}
 			\label{subastassource}
 		\end{figure}
-	\FloatBarrier	
+	\FloatBarrier
+	
+	\subsubsection{Análisis de los dispositivos en las subastas}
+	\tab Otro punto a analizar son los dispositivos. Es un punto que trajo un problema al analizar los datos, y que puede cambiar la forma en la que se entienden los datos anteriormente mencionados.
+	Podemos, por ejemplo, ver el top diez de dispositivos de los cuales se generan mas subastas.
+	\FloatBarrier
+		\begin{figure}
+			\centering
+			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/top10devicessubastas.png}}
+		   	\caption{Top 10 de dispositivos con mayor cantidad de subastas}
+			\label{top10devicessubastas}
+		\end{figure}
+	\FloatBarrier
+	
+	\tab Ahora el problema.\newline
+	\tab En total, en las 19571319 subastas, aparecen 206171 dispositivos. Algo interesante sería conocer cuántos tienen cada plataforma. Por lo que hacemos un gráfico.
+	
+	\FloatBarrier
+		\begin{figure}
+			\centering
+			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/devicesporSO.png}}
+		   	\caption{Cantidad de dispositivos para cada plataforma}
+			\label{devicesporSO}
+		\end{figure}
+	\FloatBarrier
+	
+	\tab Al obtener los datos del gráfico, observamos que la suma de las cantidades de dispositivos para cada plataforma es 206453. ¡Esto es mayor a la cantidad total de dispositivos (206171)!\newline
+	\tab La causa de este problema se entiende al conocer cómo se obtuvieron las cantidades. Primero se contó la cantidad de dispositivos total. Luego se separaron los que tuvieran plataforma '1' de los que tuvieran plataforma '2' (tener en cuenta que como hay una fila por subasta, cada dispositivo puede aparecer en filas distintas). Al sumar ambas cantidades obtenemos un número mayor que el total, por lo que es evidente que hay dispositivos que tienen ambas plataformas, es decir, en algunas filas aparecen con un valor de la columna 'platform' y en otras filas con otro.
+	
+	\tab Haciendo una simple resta, se puede ver que la cantidad de dispositivos que aparecen con plataformas distintas es 282, y que en total participan en 47862 subastas. De hecho hay un dispositivo (5.292967062497395e+18) que aparece en el top 300 de cantidad de subastas.
+	
+	\tab Esto puede alterar los análisis que incluyen división en plataformas. Sin embargo, no es trivial que haya que borrar estos datos, porque se estarían borrando casi 50000 subastas. Además, dejar los datos como están no altera a los estudios que se hagan sin dividir el problea por sistemas operativos. Por lo tanto se decidió dejar los datos, y saber que el análisis que se hace cuando se divide el problema, puede no ser tan preciso.
 	
 
 \subsection{Clicks}
