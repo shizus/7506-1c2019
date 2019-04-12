@@ -21,6 +21,6 @@
 \contentsline {subsubsection}{\numberline {2.4.7}Aplicaciones por pa\IeC {\'\i }s y tipo}{20}
 \contentsline {subsubsection}{\numberline {2.4.8}Idiomas y aplicaciones}{21}
 \contentsline {subsubsection}{\numberline {2.4.9}Instalaciones atribuidas a Jampp}{22}
-\contentsline {subsubsection}{\numberline {2.4.10}Instalaciones wifi y user agents}{22}
-\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{24}
-\contentsline {section}{\numberline {4}Conclusion}{24}
+\contentsline {subsubsection}{\numberline {2.4.10}Instalaciones wifi y user agents}{24}
+\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{25}
+\contentsline {section}{\numberline {4}Conclusion}{25}
