@@ -198,12 +198,15 @@
 	\tab Haciendo una simple resta, se puede ver que la cantidad de dispositivos que aparecen con plataformas distintas es 282, y que en total participan en 47862 subastas. De hecho hay un dispositivo (5.292967062497395e+18) que aparece en el top 300 de cantidad de subastas.
 	
 	\tab Esto puede alterar los análisis que incluyen división en plataformas. Sin embargo, no es trivial que haya que borrar estos datos, porque se estarían borrando casi 50000 subastas. Además, dejar los datos como están no altera a los estudios que se hagan sin dividir el problea por sistemas operativos. Por lo tanto se decidió dejar los datos, y saber que el análisis que se hace cuando se divide el problema, puede no ser tan preciso.
-	
 
+\clearpage	
 \subsection{Clicks}
 
+
+\clearpage
 \subsection{Eventos}
 
+\clearpage
 \subsection{Instalaciones}
 	\subsubsection{Introducción}
 		Los datos sobre instalaciones fueron provistos por Jampp en el archivo \texttt{installs.csv}, el cual contenía información acerca de todas las instalaciones registradas entre los días 5 y 13  Marzo del corriente año, indicando el tipo de aplicaciones descargadas, su fecha de descarga, país de origen, modelo, marca e idioma del dispositivo, entre otras cosas. 
@@ -449,11 +452,81 @@
 		\FloatBarrier
 		
 		Como podemos ver, los resultados van acorde a lo mostrado en la figura anterior, con casos como el de la aplicación 10, donde casi el 40\% de las instalaciones le pertenecen a la competencia. Sin embargo, cabe destacar que en la aplicación líder en descargas, la cual supera a su perseguidora por más de 200 instalaciones (véase sección \ref{aplicaciones}), es donde las empresas rivales tienen menos presencia.
-		
-\section{Análisis de archivos en conjunto}
 
+\clearpage		
+\section{Análisis de archivos en conjunto}
+\subsection{Clicks y subastas}
+	\subsubsection{Análisis general}
+	\tab Hay dos temas que se van a analizar en estos dos archivos en conjunto:
+	\begin{enumerate}
+		\item Relación entre cantidades de clicks y de subastas.
+		\item Advertisers	
+	\end{enumerate}
+	
+	\tab Empezamos mostrando gráficos representativos de los datos.
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/subastasterminadasenclicks.png}
+			\caption{Relación clicks/subastas}
+			\label{subastasterminadasenclicks}
+		\end{figure}
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/subyclickspordia.png}
+			\caption{Cantidad de clicks y subastas por día}
+			\label{clicksysubastaspordia}
+		\end{figure}
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/relauctionsclickspordia.png}
+			\caption{Relación clicks/subastas por día}
+			\label{relclickssubastas}
+		\end{figure}
+	\FloatBarrier
+	
+	\tab Podemos obtener conclusiones importantes en base a estos gráficos, teniendo en cuenta que cuando se habla de relación clicks/subastas o de subastas que terminan en clicks no se hace referencia a subastas, o clicks, individuales sino a una relación en conjunto, ya que no podemos identificar qupe subasta termino en cada click. Por lo tanto cuando digamos relación clicks/subastas estaremos hablando de $\frac{n_{clicks}}{n_{subastas}}$, siendo $n_{clicks}$ la cantidad de clicks y $n_{subastas}$ la cantidad de subastas.
+	\begin{itemize}
+		\item La cantidad de clicks es ínfima en relación a la cantidad de subastas. Se pueden perder cantidades en dos partes del proceso (pocas subastas se ganan  y/o poca gente hace clicks una vez que se gana la subasta y se muestra un anuncio). Gráfico \ref{subastasterminadasenclicks}.
+		\item No tiene mucho sentido el gráfico \ref{clicksysubastaspordia} ya que la cantidad de subastas es tan grande en comparación con la cantidad de clicks que la figura de clicks se achata cercana a cero.
+		\item El gráfico \ref{relclickssubastas} nos permite ver mejor lo confirmado en el ítem anterior. Día a día la relación $\frac{n_{clicks}}{n_{subastas}}$ es menor al 0,005%.
+	\end{itemize}
+	
+	\tab Por otra parte, vimos en la sección "Subastas" que cada device\_id tenía asociado una plataforma. Los datos obtenidos nos permiten saber quién es el advertiser predominante en cada plataforma. Para ello vemos dos gráficos (uno para la plataforma '1' y otro para la plataforma '2').
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/advporSO.png}
+			\caption{Cantidad de clicks en dispositivos con plataforma '1' para cada advertiser}
+			\label{advporSO}
+		\end{figure}
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=350pt]{images/auctions-clicks/advporSO2.png}
+			\caption{Cantidad de clicks en dispositivos con plataforma '2' para cada advertiser}
+			\label{advporSO2}
+		\end{figure}
+	\FloatBarrier
+	
+	\tab Se puede ver, claramente, que el advertiser '3' es predominante para ambas plataformas. Pero además, un dato interesante es la diferencia en la cantidad de clicks entre las plataformas. Cerca de 25000 para la plataforma '1' y cerca de 700 para la plataforma '2' (en el anexo 'tablas de datos' se podrán comprobar los numeros exactos). Esta diferencia entre los sistemas operativos ya la habíamso visto en la seccion "Subastas".
+	
+	
+	
 \section{Conclusion}
 
+\clearpage
+\appendix
+\section{Tablas de datos}
+	\subsection{Subastas}
+	\input{datos-auctions.tex}
+	
+	\subsection{Clicks y Subastas}
+	\input{datos-auctions-clicks.tex}
+\clearpage
 
 \bibliographystyle{plain}
 \bibliography{references}
