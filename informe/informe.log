@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  12 APR 2019 14:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  12 APR 2019 15:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -419,18 +419,18 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 ) (./informe.aux)
 \openout1 = `informe.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -535,18 +535,18 @@ Package caption Info: End \AtBeginDocument code.
 <logofiuba.jpg, id=1, 706.64pt x 343.2825pt>
 File: logofiuba.jpg Graphic file (type jpg)
 <use logofiuba.jpg>
-Package pdftex.def Info: logofiuba.jpg  used on input line 22.
+Package pdftex.def Info: logofiuba.jpg  used on input line 21.
 (pdftex.def)             Requested size: 250.0pt x 121.4497pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 25.
+(Font)              <14.4> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 25.
+(Font)              <7> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 29.
+(Font)              <12> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 29.
+(Font)              <8> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 29.
+(Font)              <6> on input line 28.
 
 [1
 
@@ -556,17 +556,17 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `informe.toc'.
 
  [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 65.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
 <images/auctions/subastaspordia.png, id=13, 645.41125pt x 497.86pt>
 File: images/auctions/subastaspordia.png Graphic file (type png)
 <use images/auctions/subastaspordia.png>
 Package pdftex.def Info: images/auctions/subastaspordia.png  used on input line
- 74.
+ 73.
 (pdftex.def)             Requested size: 300.0pt x 231.41135pt.
 
 [3]
@@ -574,23 +574,23 @@ Package pdftex.def Info: images/auctions/subastaspordia.png  used on input line
 File: images/auctions/subastaspordiaSO.png Graphic file (type png)
 <use images/auctions/subastaspordiaSO.png>
 Package pdftex.def Info: images/auctions/subastaspordiaSO.png  used on input li
-ne 93.
+ne 92.
 (pdftex.def)             Requested size: 350.0pt x 181.25665pt.
  [4 <./images/auctions/subastaspordia.png>]
 Package pdftex.def Info: Option `bb' equivalent to `viewport' with pdftex drive
-r on input line 110.
+r on input line 109.
 <images/auctions/subastasporhora.png, id=24, 642.4pt x 334.24875pt>
 File: images/auctions/subastasporhora.png Graphic file (type png)
 <use images/auctions/subastasporhora.png>
 Package pdftex.def Info: images/auctions/subastasporhora.png  used on input lin
-e 110.
+e 109.
 (pdftex.def)             Requested size: 350.0pt x 262.50659pt.
  [5 <./images/auctions/subastaspordiaSO.png>]
 <images/auctions/subastasporhoraS0.png, id=29, 754.82pt x 497.86pt>
 File: images/auctions/subastasporhoraS0.png Graphic file (type png)
 <use images/auctions/subastasporhoraS0.png>
 Package pdftex.def Info: images/auctions/subastasporhoraS0.png  used on input l
-ine 121.
+ine 120.
 (pdftex.def)             Requested size: 220.0pt x 145.10498pt.
  [6 <./images/auctions/subastasporhora.png> <./images/auctions/subastasporhoraS
 0.png>]
@@ -598,14 +598,14 @@ ine 121.
 File: images/auctions/subastasporSO.png Graphic file (type png)
 <use images/auctions/subastasporSO.png>
 Package pdftex.def Info: images/auctions/subastasporSO.png  used on input line 
-134.
+133.
 (pdftex.def)             Requested size: 350.0pt x 231.14435pt.
  [7]
 <images/auctions/subastasporSOcantidad.png, id=40, 390.45876pt x 276.03125pt>
 File: images/auctions/subastasporSOcantidad.png Graphic file (type png)
 <use images/auctions/subastasporSOcantidad.png>
 Package pdftex.def Info: images/auctions/subastasporSOcantidad.png  used on inp
-ut line 143.
+ut line 142.
 (pdftex.def)             Requested size: 350.0pt x 247.44023pt.
  [8 <./images/auctions/subastasporSO.png> <./images/auctions/subastasporSOcanti
 dad.png>]
@@ -613,7 +613,7 @@ dad.png>]
 File: images/auctions/subastasporsource.png Graphic file (type png)
 <use images/auctions/subastasporsource.png>
 Package pdftex.def Info: images/auctions/subastasporsource.png  used on input l
-ine 166.
+ine 165.
 (pdftex.def)             Requested size: 424.06033pt x 233.02898pt.
  [9
 
@@ -622,7 +622,7 @@ ine 166.
 File: images/auctions/top10devicessubastas.png Graphic file (type png)
 <use images/auctions/top10devicessubastas.png>
 Package pdftex.def Info: images/auctions/top10devicessubastas.png  used on inpu
-t line 178.
+t line 177.
 (pdftex.def)             Requested size: 350.0pt x 346.55797pt.
  [10 <./images/auctions/subastasporsource.png>] [11 <./images/auctions/top10dev
 icessubastas.png>]
@@ -630,10 +630,10 @@ icessubastas.png>]
 File: images/auctions/devicesporSO.png Graphic file (type png)
 <use images/auctions/devicesporSO.png>
 Package pdftex.def Info: images/auctions/devicesporSO.png  used on input line 1
-90.
+89.
 (pdftex.def)             Requested size: 350.0pt x 236.74442pt.
  [12]
-Overfull \hbox (6.25269pt too wide) in paragraph at lines 210--211
+Overfull \hbox (6.25269pt too wide) in paragraph at lines 209--210
 \OT1/cmr/m/n/12 Los datos so-bre in-sta-la-ciones fueron pro-vis-tos por Jampp 
 en el archivo \OT1/cmtt/m/n/12 installs.csv\OT1/cmr/m/n/12 ,
  []
@@ -643,20 +643,20 @@ en el archivo \OT1/cmtt/m/n/12 installs.csv\OT1/cmr/m/n/12 ,
 File: images/installs/installspordia.png Graphic file (type png)
 <use images/installs/installspordia.png>
 Package pdftex.def Info: images/installs/installspordia.png  used on input line
- 219.
+ 218.
 (pdftex.def)             Requested size: 424.06033pt x 297.13062pt.
  [14 <./images/installs/installspordia.png>]
 <images/installs/installsxhora.png, id=75, 734.745pt x 516.93124pt>
 File: images/installs/installsxhora.png Graphic file (type png)
 <use images/installs/installsxhora.png>
 Package pdftex.def Info: images/installs/installsxhora.png  used on input line 
-229.
+228.
 (pdftex.def)             Requested size: 424.06033pt x 298.35321pt.
 <images/installs/heatmapfecha.png, id=76, 996.72375pt x 516.93124pt>
 File: images/installs/heatmapfecha.png Graphic file (type png)
 <use images/installs/heatmapfecha.png>
 Package pdftex.def Info: images/installs/heatmapfecha.png  used on input line 2
-41.
+40.
 (pdftex.def)             Requested size: 424.06033pt x 219.92555pt.
 
 
@@ -667,7 +667,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: images/installs/aplicacionesvc.png Graphic file (type png)
 <use images/installs/aplicacionesvc.png>
 Package pdftex.def Info: images/installs/aplicacionesvc.png  used on input line
- 254.
+ 253.
 (pdftex.def)             Requested size: 424.06033pt x 252.07504pt.
 
 
@@ -678,7 +678,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: images/installs/appsxdiaarea.png Graphic file (type png)
 <use images/installs/appsxdiaarea.png>
 Package pdftex.def Info: images/installs/appsxdiaarea.png  used on input line 2
-67.
+66.
 (pdftex.def)             Requested size: 424.06033pt x 214.95628pt.
 
 
@@ -688,7 +688,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/installs/appsxhora.png, id=91, 1249.66875pt x 639.38875pt>
 File: images/installs/appsxhora.png Graphic file (type png)
 <use images/installs/appsxhora.png>
-Package pdftex.def Info: images/installs/appsxhora.png  used on input line 277.
+Package pdftex.def Info: images/installs/appsxhora.png  used on input line 276.
 
 (pdftex.def)             Requested size: 424.06033pt x 216.96977pt.
  [18 <./images/installs/appsxdiaarea.png> <./images/installs/appsxhora.png>]
@@ -696,10 +696,10 @@ Package pdftex.def Info: images/installs/appsxhora.png  used on input line 277.
 File: images/installs/piechartpaises.png Graphic file (type png)
 <use images/installs/piechartpaises.png>
 Package pdftex.def Info: images/installs/piechartpaises.png  used on input line
- 290.
+ 289.
 (pdftex.def)             Requested size: 200.0pt x 211.83807pt.
 
-Overfull \hbox (29.40707pt too wide) in paragraph at lines 295--296
+Overfull \hbox (29.40707pt too wide) in paragraph at lines 294--295
 []\OT1/cmr/m/n/12 La pro-porci^^Son es bas-tante pareja, con leve mayor^^S^^Pa 
 para el pa^^S^^Ps \OT1/cmtt/m/n/12 6333597102633388268\OT1/cmr/m/n/12 . 
  []
@@ -707,85 +707,95 @@ para el pa^^S^^Ps \OT1/cmtt/m/n/12 6333597102633388268\OT1/cmr/m/n/12 .
 <images/installs/ref_type.png, id=98, 457.71pt x 482.80376pt>
 File: images/installs/ref_type.png Graphic file (type png)
 <use images/installs/ref_type.png>
-Package pdftex.def Info: images/installs/ref_type.png  used on input line 303.
+Package pdftex.def Info: images/installs/ref_type.png  used on input line 302.
 (pdftex.def)             Requested size: 200.0pt x 210.9609pt.
 <images/installs/appsxpais.png, id=99, 953.5625pt x 516.93124pt>
 File: images/installs/appsxpais.png Graphic file (type png)
 <use images/installs/appsxpais.png>
-Package pdftex.def Info: images/installs/appsxpais.png  used on input line 317.
+Package pdftex.def Info: images/installs/appsxpais.png  used on input line 316.
 
 (pdftex.def)             Requested size: 424.06033pt x 229.88776pt.
 [19 <./images/installs/piechartpaises.png> <./images/installs/ref_type.png>]
 <images/installs/paisref.png, id=106, 953.5625pt x 516.93124pt>
 File: images/installs/paisref.png Graphic file (type png)
 <use images/installs/paisref.png>
-Package pdftex.def Info: images/installs/paisref.png  used on input line 327.
+Package pdftex.def Info: images/installs/paisref.png  used on input line 326.
 (pdftex.def)             Requested size: 424.06033pt x 229.88776pt.
 
 [20 <./images/installs/appsxpais.png> <./images/installs/paisref.png>]
 <images/installs/idiomas.png, id=112, 1094.0875pt x 831.105pt>
 File: images/installs/idiomas.png Graphic file (type png)
 <use images/installs/idiomas.png>
-Package pdftex.def Info: images/installs/idiomas.png  used on input line 340.
+Package pdftex.def Info: images/installs/idiomas.png  used on input line 339.
 (pdftex.def)             Requested size: 424.06033pt x 322.12595pt.
 <images/installs/idiomasapps.png, id=113, 1145.27875pt x 519.9425pt>
 File: images/installs/idiomasapps.png Graphic file (type png)
 <use images/installs/idiomasapps.png>
 Package pdftex.def Info: images/installs/idiomasapps.png  used on input line 35
-3.
+2.
 (pdftex.def)             Requested size: 424.06033pt x 192.51852pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./images/installs/idiomas.png>]
-<images/installs/Wifi.png, id=118, 550.055pt x 484.81125pt>
+<images/installs/marcas.png, id=118, 1071.00125pt x 640.3925pt>
+File: images/installs/marcas.png Graphic file (type png)
+<use images/installs/marcas.png>
+Package pdftex.def Info: images/installs/marcas.png  used on input line 366.
+(pdftex.def)             Requested size: 424.06033pt x 253.56299pt.
+ [22 <./images/installs/idiomasapps.png> <./images/installs/marcas.png>]
+<images/installs/Wifi.png, id=124, 550.055pt x 484.81125pt>
 File: images/installs/Wifi.png Graphic file (type png)
 <use images/installs/Wifi.png>
-Package pdftex.def Info: images/installs/Wifi.png  used on input line 369.
+Package pdftex.def Info: images/installs/Wifi.png  used on input line 385.
 (pdftex.def)             Requested size: 200.0pt x 176.27774pt.
- [22 <./images/installs/idiomasapps.png> <./images/installs/Wifi.png>]
-<images/installs/appswifi.png, id=124, 734.745pt x 520.94624pt>
+<images/installs/appswifi.png, id=125, 734.745pt x 520.94624pt>
 File: images/installs/appswifi.png Graphic file (type png)
 <use images/installs/appswifi.png>
-Package pdftex.def Info: images/installs/appswifi.png  used on input line 381.
+Package pdftex.def Info: images/installs/appswifi.png  used on input line 397.
 (pdftex.def)             Requested size: 424.06033pt x 300.67052pt.
-<images/installs/useragents.png, id=125, 789.95125pt x 406.51875pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23 <./images/installs/Wifi.png>]
+<images/installs/useragents.png, id=130, 789.95125pt x 406.51875pt>
 File: images/installs/useragents.png Graphic file (type png)
 <use images/installs/useragents.png>
-Package pdftex.def Info: images/installs/useragents.png  used on input line 395
+Package pdftex.def Info: images/installs/useragents.png  used on input line 412
 .
 (pdftex.def)             Requested size: 424.06033pt x 218.22662pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23 <./images/installs/appswifi.png>]
-<images/installs/implicit.png, id=130, 717.68124pt x 482.80376pt>
+[24 <./images/installs/appswifi.png>]
+<images/installs/implicit.png, id=135, 717.68124pt x 482.80376pt>
 File: images/installs/implicit.png Graphic file (type png)
 <use images/installs/implicit.png>
-Package pdftex.def Info: images/installs/implicit.png  used on input line 417.
+Package pdftex.def Info: images/installs/implicit.png  used on input line 434.
 (pdftex.def)             Requested size: 300.0pt x 201.81848pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24 <./images/installs/useragents.png>]
-<images/installs/incidenciacomp.png, id=135, 1058.95625pt x 519.9425pt>
+[25 <./images/installs/useragents.png>]
+<images/installs/incidenciacomp.png, id=141, 1058.95625pt x 519.9425pt>
 File: images/installs/incidenciacomp.png Graphic file (type png)
 <use images/installs/incidenciacomp.png>
 Package pdftex.def Info: images/installs/incidenciacomp.png  used on input line
- 429.
+ 446.
 (pdftex.def)             Requested size: 424.06033pt x 208.21132pt.
 
 No file informe.bbl.
-[25 <./images/installs/implicit.png> <./images/installs/incidenciacomp.png>]
-[26] (./informe.aux) ) 
+[26 <./images/installs/implicit.png> <./images/installs/incidenciacomp.png>]
+[27] (./informe.aux) ) 
 Here is how much of TeX's memory you used:
- 3826 strings out of 492982
- 58751 string characters out of 6134895
+ 3831 strings out of 492982
+ 58884 string characters out of 6134895
  122747 words of memory out of 5000000
- 7323 multiletter control sequences out of 15000+600000
+ 7327 multiletter control sequences out of 15000+600000
  9324 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,7n,39p,748b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -795,10 +805,10 @@ mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on informe.pdf (26 pages, 1368514 bytes).
+Output written on informe.pdf (27 pages, 1400769 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 171 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

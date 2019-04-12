@@ -11,7 +11,6 @@
 \setlength{\textfloatsep}{1\baselineskip plus 0.2\baselineskip minus 0.5\baselineskip}
 \renewcommand\textfraction{.1}
 
-
 \title{Análisis Exploratorio de Datos \\ Trabajo Práctico 1 - Organización de Datos}
 \author{Nombre de grupo}
 \date{Poner fecha}
@@ -357,6 +356,23 @@
 		
 		Como se puede ver, las aplicaciones líderes (7 y 9 respectivamente) se utilizan con idiomas distintos, mientras que en 10 y 16 predominan otros dos lenguajes diferentes.
 		
+	\subsubsection{Instalaciones por marca}
+		
+		La información de marca y modelo de los dispositivos que instalaron ........
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/installs/marcas.png}
+			\caption{Marcas con más instalaciones}
+		\end{figure}
+		\FloatBarrier
+		
+		Como se aprecia, hay una marca que lidera absolutamente con una cantidad de installs dos veces y media mayor a su inmediata competidora. 
+		
+		Lo interesante será conocer además el tipo de dispositivo que producen esas marcas, para así determinar el tipo de publicidades que soportarán y así elegir mejor al advertiser.
+		
+		Del gráfico vemos que todas las marcas de las que se tiene registro utilizan el tipo \texttt{1891515180541284343} a excpción de una, la \texttt{5.951324980112395e+18}, que utiliza el otro.
 	\subsubsection{Instalaciones wifi y user agents}
 	
 		Otro aspecto a considerar es la conexión con la que cuentan los usuarios al momento de decidir si hacer caso o no a alguna publicidad. Los datos que nos proporciona Jampp nos indican si las instalaciones fueron hechas vía conexión wifi.
@@ -384,6 +400,7 @@
 		\FloatBarrier
 		
 		Lo primero que observamos es que la cantidad de aplicaciones de las que se tienen datos de conexión es reducida en comparación al total, ya que , por ejemplo, la aplicación líder en instalaciones no especifica tipo de conexión en ninguna de sus installs. Sin embargo, de este gráfico puede tomarse el hecho de que, si bien la tendencia indica que la mayoría de las instalaciones de las que se tienen datos se realizaron vía wifi, hay aplicaciones como 21 ,donde la proporción es más pareja, o la 36, donde se invierte. Esto puede servir para determinar qué tipo de publicidad mostrar, puesto que en los casos donde no se cuenta con wifi hay que tener en cuenta el consumo, para no gastarle los datos al usuario.
+		
 		
 		Por otra parte, el hecho de que un install se haya realizado por wifi nos permite conocer otro dato importante, el \textit{user agent} relacionado a la acción. 
 		
