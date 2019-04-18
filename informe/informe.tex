@@ -205,11 +205,124 @@
 
 \clearpage
 \subsection{Eventos}
-
+	\subsubsection{Introducción}
+		Los datos sobre eventos se encontraron en el archivo \texttt{events.csv.gzip}, que contenía información sobre los eventos registrados entre el 5/3/19 y el 13/3/19. Esta información incluía el tipo y la fecha del evento, la aplicación que lo generó, datos sobre el dispositivo y sobre el tipo de conexión e información sobre el user agent. A su vez, se tomó la decisión de descartar columnas como el id del dispositivo, el id del evento, la información del país y el id de la transacción, ya que no aportaban información relevante a este análisis.
+		
+	\subsubsection{Eventos por fecha y hora}
+		
+		Lo primero que analizaremos será cómo se distribuyeron los eventos cronológicamente, para eso los siguientes gráficos nos muestran esa información de formas distintas.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/eventsxhora.png}
+			\caption{Cantidad de eventos por hora del día}
+		\end{figure}
+		\FloatBarrier
+		
+		Como se aprecia, se registra una mayor cantidad de eventos en horas de la noche/madrugada y un mínimo absoluto en horas de la mañana. Sin embargo, es de destacar el pico y posterior descenso en horas de la tarde, ya que los valores de las 16 superan incluso a los de horas normalmente no laborables, como las 19 o 20.
+		Añadamos ahora a este análisis la fecha de los eventos.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/eventsxdiayhora.png}
+			\caption{Cantidad de eventos por fecha y hora del día}
+		\end{figure}
+		\FloatBarrier
+		
+		En la figura se puede apreciar claramente el valle de las horas de la mañana, pero además se ve que el día con más eventos fue el 13, con un llamativo pico a las 11 a.m., mientras que el día 5 fue el de menos ocurrencias. El máximo número de eventos, sin embargo, se registró a comienzos del día 8 y el gráfico muestra un notorio corrimiento de la franja para el 9 y 10 de Marzo, lo que tiene sentido ya que son los días del fin de semana.
+		
+		Si quisiéramos ver la distribución por días de la semana, primero debemos tener en cuenta que contamos con días repetidos, por lo que será necesario utilizar el promedio.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/eventsxdia.png}
+			\caption{Promedio de eventos por día de la semana}
+		\end{figure}
+		\FloatBarrier
+		
+		Observamos que es bastante pareja, con un leve aumento los domingos, el día que menos gente trabaja.
+		
+	\subsubsection{Eventos por aplicación y detalles de los dispositivos}
+	
+		Al evaluar la cantidad de eventos por aplicación, se debe tener en cuenta primero que se tienen eventos registrados en 269 aplicaciones distintas, por lo que se hace imposible graficarlas todas. Para ello, se decició tomar las diez que mayor cantidad de eventos generaron.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/evxapp.png}
+			\caption{Aplicaciones con mayor cantidad de eventos}
+		\end{figure}
+		\FloatBarrier
+		
+		Teniendo éstas, podemos observar, por ejemplo, cuáles son los idiomas predominantes en cada una.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/idiomasapps.png}
+			\caption{Distribución de idiomas para las diez aplicaciones con más eventos}
+		\end{figure}
+		\FloatBarrier
+		
+		Como se observa, cada app tiene un idioma que es muy predominante, lo que sugiere que cada una apunta a un público diferente, y cada idioma se distribuye de forma bastante pareja, siendo \texttt{3.3013777759776993e+18} el más utilizado, ya que domina en tres de las diez líderes.
+		
+		Analicemos ahora el ref type para cada una de las diez.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/evxrf.png}
+			\caption{Cantidad de eventos por aplicación del top 10 y ref type}
+		\end{figure}
+		\FloatBarrier
+		
+		Como se ve, cada aplicación opera con un solo ref type y el predominante es \texttt{1891515180541284343}.
+		
+		También se puede analizar qué \textit{session user agent} utiliza cada aplicación.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/evxsua.png}
+			\caption{Cantidad de eventos por aplicación del top 10 y session user agent}
+		\end{figure}
+		\FloatBarrier
+		
+		A excepción de dos aplicaciones, todas operan con un único session user agent y el que predomina es \texttt{3.819516403548394e+18}, presente en seis. Cabe aclarar que la catgoría \textit{other} está compuesta por 1455 session user agents que aparecían en cantidades muy pequeñas.
+		
+	\subsubsection{Eventos más frecuentes por tipo}
+	
+		Otro aspecto interesante a analizar será el tipo de los evento s registrados, el cual nos permite saber cual era el objetivo del usuario en ese momento. Como se registraron en total 589 tipos distintos de eventos, y como la cantidad de eventos de cada tipo sigue una distribución bastante acorde a la ley de Zipf, se tomarán los primeros diez para este análisis.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/top10events.png}
+			\caption{Tipos de eventos con más cantidad de apariciones}
+		\end{figure}
+		\FloatBarrier
+		
+		Como se puede apreciar, el segundo tipo más común aparece casi exactamente la mitad de las veces que el primero, el tercero casi exactamente un tercio y así sucesivamente, lo que se condice con la ley de Zipf.
+		
+		Analicemos ahora de dónde provinieron dichos eventos.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/appsxev.png}
+			\caption{Distribución de las aplicaciones para los diez tipos de evento más comunes}
+		\end{figure}
+		\FloatBarrier
+		
+		
+		
 \clearpage
 \subsection{Instalaciones}
 	\subsubsection{Introducción}
-		Los datos sobre instalaciones fueron provistos por Jampp en el archivo \texttt{installs.csv}, el cual contenía información acerca de todas las instalaciones registradas entre los días 5 y 13  Marzo del corriente año, indicando el tipo de aplicaciones descargadas, su fecha de descarga, país de origen, modelo, marca e idioma del dispositivo, entre otras cosas.
+		Los datos sobre instalaciones fueron provistos por Jampp en el archivo \texttt{installs.csv.gzip}, el cual contenía información acerca de todas las instalaciones registradas entre los días 5 y 13  Marzo del corriente año, indicando el tipo de aplicaciones descargadas, su fecha de descarga, país de origen, modelo, marca e idioma del dispositivo, entre otras cosas.
 
 		Cabe destacar que se descartaron datos como las direcciones ip y los varios id únicos generados para cada instalación, puesto que no aportaban información relevante al análisis que se pretende hacer en este trabajo, como también los datos del \textit{session user agent}, ya que la misma empresa informó que no los consideran de importancia y pudieron haberse visto modificados por los propios agentes que les proveyeron los datos.
 
@@ -426,7 +539,7 @@
 		\FloatBarrier
 		\begin{itemize}
 		\item \textbf{Attributed}: Indica si la instalación le fue reconocida oficialmente a Jampp.
-		\item \textbf{Implicit}: Indica si la instalación se registró de manera implícita, es decir, le fue atribuida a una empresa de la competencia.
+		\item \textbf{Implicit}: Indica si la instalación se registró de manera implícita, es decir, se realizó por otro canal.
 		\end{itemize}
 		\FloatBarrier
 
@@ -436,11 +549,11 @@
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=300pt]{images/installs/implicit.png}
-			\caption{Porcentaje de instalaciones atribuidas a la competencia}
+			\caption{Porcentaje de instalaciones registradas por un canal distinto a Jampp}
 		\end{figure}
 		\FloatBarrier
 
-		Los datos muestran un \textit{ratio} de algo más de 1 de cada 4 instalaciones atribuidas a empresas rivales.
+		Los datos muestran un \textit{ratio} de algo más de 1 de cada 4 instalaciones se realizaron por fuera de la influencia de Jampp.
 
 		Si lo trasladamos nuevamente a las 5 aplicaciones más instaladas.
 
@@ -448,11 +561,11 @@
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=\textwidth]{images/installs/incidenciacomp.png}
-			\caption{Porcentaje de instalaciones atribuidas a la competencia para las top 5 apps en descargas}
+			\caption{Porcentaje de instalaciones por algún otro método para las top 5 apps en descargas}
 		\end{figure}
 		\FloatBarrier
 
-		Como podemos ver, los resultados van acorde a lo mostrado en la figura anterior, con casos como el de la aplicación 10, donde casi el 40\% de las instalaciones le pertenecen a la competencia. Sin embargo, cabe destacar que en la aplicación líder en descargas, la cual supera a su perseguidora por más de 200 instalaciones (véase sección \ref{aplicaciones}), es donde las empresas rivales tienen menos presencia.
+		Como podemos ver, los resultados van acorde a lo mostrado en la figura anterior, con casos como el de la aplicación 10, donde casi el 40\% de las instalaciones son externas. Sin embargo, cabe destacar que en la aplicación líder en descargas, la cual supera a su perseguidora por más de 200 instalaciones (véase sección \ref{aplicaciones}), es donde estos métodos tienen menos presencia.
 
 \clearpage
 \section{Análisis de archivos en conjunto}
