@@ -201,7 +201,307 @@
 
 \clearpage
 \subsection{Clicks}
+	\subsubsection{Análisis General}
+		\tab En el archivo \texttt{clicks.csv} se nos muestran los clicks que se realizaron entre el 5 y el 13 de Marzo de este año. Este csv cuenta con 20 columnas y 26000 filas aproximadamente. En las columans tenemos datos como en que latitud y longitud se hizo el click, cuanto tardo el usuario en hacer el click, de que pais es el dispositivo, en que parte de la pantalla del celular se realizo click, entre otras cosas.
+		\tab En primera medida sacamos las columnas que no nos aportaban nada. La columna action_id tenia todos NaN así que fue removida. La columna que indicaba el país solo daba como resultado un país solo asiq eu nos parecio irrelevante y la quitamos. Así también eliminamos la columan de wifi_connection ya que todas daban False, lo cual es un poco raro que ninguno haya estado conectado a wifi. Finalmente se sacó la columna trans_id ya que era un identificador único para cada uno de los clicks y para analizar este archivo splamente no nos aportaba nada.
+		\tab También, se tomó la desicion de cambiar los tipos de algunas columnas para ahorrar más espacio. Las columnas advertiser_id y source_id se las cambio a category ya que tenian pocos valores y siempre eran los mismos. Y a varias de las columnas se las paso de float64 a float32, ya que no nesecitaban tantos bits para representar sus datos.
 
+	\subsubsection{Clicks en los distintas publicidades}
+		\tab Se van a observar la cantidad de clicks en las distintas publicidades
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id.png}
+			\caption{Clicks en los advertiser_id}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Se puede observar que prácticamente todos son clicks en la publicidad con el id 3. El porcentaje de clicks en este id es de 99.7. Al parecer, le sirve mucho más a Jampp mostrar las publicidades del id 3 o es una publicidad de una app que es más común que todos usen.
+
+	\subsubsection{Clicks en los source_id}
+		\tab En este gráfico vamos a mostrar la cantidad de clicks que se hacen en los distintos source_id que hay en el archivo
+		
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_source_id.png}
+			\caption{Clicks en los source_id}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Como se puede observar la mayoria de los clicks estan dsitribuidos entre los id 0, 1, 6 y 5 siendo el source_id 1 el que mas cantidad de clicks tiene.
+
+
+	\subsubsection{Clicks en los carrier_id}
+		\tab En el siguiente gráfico se mostrará la cantidad de clicks que tiene cada carrier_id
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_carrier_id.png}
+			\caption{Clicks en los carrier_id}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Por mas que hay varios carreir_id se ve que la mayoria de clicks se distribuyen en aproximadamente 20 carriers_id. El carreir_id que mas realiza clicks es el 4.0.
+
+	\subsubsection{Clicks en los os_minor}
+		\tab Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas minimas versiones de sus sistemas operativos.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_minor_OS.png}
+			\caption{Clicks en los os_minor}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Vemos que la cantidad de clicks es lidearada por los dispositivos con un os_minor 3.378640e+18.
+
+	\subsubsection{Clicks en los os_major}
+		\tab Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas maximas versiones de sus sistemas operativos.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_major_OS.png}
+			\caption{Clicks en los os_major}
+		\end{figure}
+		\FloatBarrier
+
+		\tab En este casos se reparte bastante equitativamente la cantidad de clicks en cuatro distintos os_major. No podemos saber cuanto es la cantidad total de los os_major debido a que una categoria es "others" y no sabemos cuantos distintos sistemas operativos tiene encerrado ese término.
+
+	\subsubsection{Clicks en los agent_device}
+		\tab En este caso notamos que la cantidad de agent_device es mucha. Hay un total de 190 diferentes agent_device y la mayoria de sus datos son NaN. Solamente posee alrededor de 3000 datos. Por lo tanto, llegamos a la conclusión de que no aporta ningún dato importante ni tampoco es confiable la información que dé ya que la cantidad de datos que tiene es muy poca.
+
+	\subsubsection{Clicks en los specs_brand}
+		\tab A continuación mostraremos un gráfico donde podemos ver la cantidad de clicks que tienen los distintos specs_brand.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_specs_brand.png}
+			\caption{Clicks en los specs_brand}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Por más que hay 5 specs_brand, se ve claramente que los clicks se realiazan practimacmente dos specs_brand. Estos son 392184377613098015 y 2733035977666442898.
+		
+
+	\subsubsection{Clicks en las distintas marcas}
+		\tab Este grafico nos muestra la cantidad de clicks en las distintas marcas de celular.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_brand.png}
+			\caption{Clicks en las distintas marcas de telefono}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Como se puede observar, hay un total de 13 marcas distintas de teléfonos y la mayoria de clicks la relizan celulares de la marca 2.0, 0.0y 1.0. Podemos suponer que estas tres son marcas de celulares que más se venden, como por ejemplo Samsung.
+
+	\subsubsection{Clicks en Android y IOS}
+		\tab En el siguiente gráfico se muestra la cantidad de clicks que tienen los celulares con Android o IOS.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_ref_type.png}
+			\caption{Clicks en las distintos sistemas operativos}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Algo raro que se observa es que hay un total de cuatro sistemas operativos. Esto esta mal debido aque solo debería haber Android o IOS. Por lo tanto, se puede concluir que los dos valores que menos clicks tienen son datos erroneos. Es decir, solo hay que tener en cuanta los que clicks que tienen como sistema operativo los dos que más clicks consentran en este gráfico. Se podria suponer que el que más clicks tiene es Android y el que le sigue es IOS debido a que la mayoria de las personas que viven en donde se analizan estos datos tiene celular con Android.
+
+	\subsubsection{Clicks en ref_hash}
+		\tab El ref_hash nos muestra un id unico de cada dsipositivo que realiza click. Encontramos que hay ciertos ref_hash que se repiten varias veces. Por ejemplo, el que más veces lo hace, realiza un total de 41 clicks. La verdad es que es muy raro que una persona toque click 41 veces en 9 días. Por lo tanto, no podemos descartar que esos casos con muchos clicks sea un fraude. Hay muchisimos que tienen más de 10 clicks. Es información que hayq ue manejar con cuidado ya que uno no sabe si es verdad. Son numeros difíciles de creer pero no imposibles de que pasen.
+
+
+	\subsubsection{Clicks en los dias y horas}
+		En este primer gráfico se puede ver la evolución de la cantidad de clicks que si hicieron entre los dias 5 y 13 de Marzo
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_days.png}
+			\caption{Clicks entre 5 y 13 de Marzo}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Se observa que la cantidad de clicks empieza a aumentar a partir del dia 8 y sube hasta alcanzar su máximo el dia 12 y luego baja.
+
+		\tab Ahora vamos a mostrar un gráfico que indica la cantidad de clicks distribuidos en las distintas horas del dia.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_hours.png}
+			\caption{Clicks en las horas del dia}
+		\end{figure}
+		\FloatBarrier
+		
+		\tab En este gráfico se ve claramente que la cantidad de clicks suben exageradamente cuando llega la noche, mas precisamente entre las 8pm y las 2am. Se podría decir que la gente utiliza mas el celular a estas horas.
+
+		\tab En estos graficos de areas se muestan la catidad de clicks por hora en el dia de los distintos advertiser_id
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id_hours.png}
+			\caption{Clicks en las horas del dia de los advertiser_id}
+		\end{figure}
+		\FloatBarrier
+	
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id_hours_persentage.png}
+			\caption{Clicks en las horas del dia de los advertiser_id (Porcentaje)}
+		\end{figure}
+		\FloatBarrier
+
+
+
+		\tab Se puede ver, como se esperaba, que practicamente toda el area esta pintada del advertiser id 3 que es el que más abunda en este archivo
+
+		\tab El siguiente gráfico muestra la cantidad de clicks en las distintas horas del dia de los source_id que se encuentran en este archivo.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_source_id_hours_persentage.png}
+			\caption{Clicks en las horas del dia de los source_id}
+		\end{figure}
+		\FloatBarrier
+
+	
+		\tab No se ve diferencia en como evoluciona la cantidad de clicks de los distintos source_id dependiendo la hora del dia. No obstante, se puede observar que la mayoria de lso clicks son de los source_id 0, 1, 5, 6.
+
+		
+		\tab Este nuevo gráfico nos mostrará los clicks en las horas del dia distribuidos en los distintos specs_brand existentes.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_specs_brand_hours.png}
+			\caption{Clicks en las horas del dia de los specs_brand}
+		\end{figure}
+		\FloatBarrier
+
+		\tab La cantidad de clicks se consentra en los specs_brands 392184377613098015 y 2733035977666442898 que son los que predominan en el csv.
+
+	\subsubsection{Posición geográfica del click}
+		
+		\tab En estos gráficos mostraremos las latitudes y longitudes de los clicks efectuados.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_lat_long_scatter.png}
+			\caption{Latitud y longitud del click}
+		\end{figure}
+		\FloatBarrier
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_lat_long_heat.png}
+			\caption{Latitud y longitud del click}
+		\end{figure}
+		\FloatBarrier
+
+
+		\tab Se ve que se consentran muchos clicks entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Posiblemente sea una ciudad mas poblada.
+
+		
+		\tab En este gráfico se vuelve a mostrar la latitud y la longitud de los clicks pero en este caso identificaremos los clicks con la mayor version de sistema operativo que tiene el dispositivo
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_lat_long_major_OS.png}
+			\caption{Latitud y longitud del click de los dispositivos con distintos os_major}
+		\end{figure}
+		\FloatBarrier
+
+		\tab No se observa que haya una consentracion de algun tipo de dispositivo con la mayor version de sistema operativo en ningun lugar. De hecho, estan bastantes repartidos.
+
+	\subsubsection{Clicks en la pantalla del dispositivo}
+
+		\tab Los siguientes gráficos muestran en que posición del celular se realiza el click
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_touch_scatter.png}
+			\caption{Posicion del click en pantalla}
+		\end{figure}
+		\FloatBarrier
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_touch_heat.png}
+			\caption{Posicion del click en pantalla}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Se puede ver claramente que la mayor cantidad de clicks se consentra en la parte inferior del teléfono y mayormente se consentran en la parte inferior derecha.
+
+
+	\subsubsection{Tiempo en realizar el click}
+ 
+		\tab Se nos ocurrió analzar el promedio de tiempo que tarda una persona en realizar click. Primero decidimos filtrar los clicks en el que la persona tardaba mas de 10 minutos en hacer click. Esto lo hicimos debido a que habia clicks que tardaban más de un año en realizarse y supucimos que es un error en los datos. Llegamos a que una persona tarda 55.5921630859375 segundos en promedio en tocar click.
+
+	
+		\tab En los siguietes gráficos se mostrará la distribución en el tiempo que tardan los distintos advertiser_id en hacer click.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id_timeToTouch.png}
+			\caption{Clicks en el tiempo de los advertiser_id}
+		\end{figure}
+		\FloatBarrier
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id_timeToTouch2.png}
+			\caption{Clicks en el tiempo de los advertiser_id}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Se observa que la mayoria de clicks se realizan en los primeros segundos y practicamente todos por el advertiser_id 3. Esto es algo totalmente esperable debido a lo que se analizó previamente.
+
+		\tab En el siguiete gráfico se mostrará la distribución en el tiempo que tardan los distintos specs_brand en hacer click.
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_specs_brand_timeToTouch.png}
+			\caption{Clicks en el tiempo de los specs_brand}
+		\end{figure}
+		\FloatBarrier
+
+		\tab El siguiete gráfico nos muestra la distribución en el tiempo que tardan los distitos sistemas operativos en hacer click
+
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks/clicks_ref_type_timeToTouch.png}
+			\caption{Clicks en el tiempo de los sistemas opertativos}
+		\end{figure}
+		\FloatBarrier
+
+		\tab Se observa lo normal, en ambos sistemas operativos los clicks se consentran en los prmeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que mas clicks tiene, tiene clicks que tardaron bastante en tocarse.
+
+
+
+		
 
 \clearpage
 \subsection{Eventos}
