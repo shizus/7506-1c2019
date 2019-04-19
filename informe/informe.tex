@@ -621,7 +621,88 @@
 		\end{figure}
 		\FloatBarrier
 		
+		Podemos también contrastarlos con las aplicaciones que más eventos generan.
 		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/top10appsevents.png}
+			\caption{Distribución de las diez aplicaciones con más eventos para los diez tipos de evento más comunes}
+		\end{figure}
+		\FloatBarrier
+		
+		Como se puede ver, la distribución es bastante heterogénea. Los eventos que genera la app líder son todos del mismo tipo, que a su vez es el tipo de evento más común, por lo que si se busca que los usuarios hagan lo indicado por el evento \texttt{5.500848e+18}, la mejor opción es mostrarles publicidad a través de la app 66. Esto también aplica para las demás, ya que la mayoría solo generan dos o tres tipos de evento distintos y puede utilizarse la misma lógica.
+		
+	\subsubsection{Eventos por tipo de conexión}
+	
+		El archivo nos provee con información acerca de la conexión con la que contaban los usuarios a la hora de generar cada evento, ya sea wifi o datos móviles, y en caso de los datos, el tipo de conexión.
+	
+		En el caso del wifi, vemos que la distribución es la siguiente.
+	
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=200pt]{images/events/eventosxwifi.png}
+			\caption{Distribución de eventos generados vía wifi}
+		\end{figure}
+		\FloatBarrier
+		
+		Como se puede observar, no contamos con datos en la mayoría de los eventos, aunque en los que sí se brindan la tendencia es claramente favorable al wifi, como sería esperable.
+		
+		Sin embargo, para la gran mayoría de los eventos de los que no se tienen datos de conexión wifi sí se tiene información relacionada a conexiones por datos móviles, como la empresa que los provee o el tipo de conexión.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=200pt]{images/events/eventsxdatos.png}
+			\caption{Tipo de conexión para los eventos generados con datos móviles}
+		\end{figure}
+		\FloatBarrier
+		
+		La distribución es pareja con una leve ventaja para las conexiones por cable, mientras que las corporativas son prácticamente despreciables.
+		
+		Analicemos ahora las empresas que proveen dichas conexiones.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/carriers.png}
+			\caption{Proveedores de servicio más comunes para conexiones por datos móviles}
+		\end{figure}
+		\FloatBarrier
+	
+		Se ve que hay un carrier dominante con mucha diferencia con el resto y cabe aclarar que la categoría \textit{other} engloba a 79 carriers distintos con valores muy bajos.
+		
+		Si combinamos ambos, podemos observar qué tipo de conexión utiliza cada una de las empresas.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/carriersxtipo.png}
+			\caption{Tipo de conexión por empresa proveedora}
+		\end{figure}
+		\FloatBarrier
+		
+		La mayoría usa Cellular mientras que el carrier líder utiliza mayormente Cable/DSL.
+		
+		\subsubsection*{Eventos más frecuentes para cada tipo de conexión}
+		
+			\begin{itemize}
+				\item \textbf{Wifi}
+				\FloatBarrier
+				\begin{figure}[h]
+					\centering
+					\includegraphics[width=\textwidth]{images/events/eventsxwifi.png}
+					\caption{Tipos de evento más frecuentes en conexiones wifi}
+				\end{figure}
+				\FloatBarrier
+				\item \textbf{Datos móviles}
+			\end{itemize}
+	\subsubsection{Marcas, modelos y eventos}
+	
+	\subsubsection{Ciudades y eventos}
+	
+	\subsubsection{Eventos atribuidos a Jampp}
 		
 \clearpage
 \subsection{Instalaciones}
