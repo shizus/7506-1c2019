@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.16)  19 APR 2019 13:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.23)  19 APR 2019 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **informe.tex
 (./informe.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 3 language(s) loaded.
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 8 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -29,14 +29,14 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@posthook=\toks15
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2015/12/03 v1.1r UTF-8 support for inputenc
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -248,11 +248,17 @@ File: t1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
    defining Unicode char U+0219 (decimal 537)
    defining Unicode char U+021A (decimal 538)
    defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+01E02 (decimal 7682)
-   defining Unicode char U+01E03 (decimal 7683)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
    defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
    defining Unicode char U+2018 (decimal 8216)
    defining Unicode char U+2019 (decimal 8217)
    defining Unicode char U+201A (decimal 8218)
@@ -264,12 +270,14 @@ File: t1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
    defining Unicode char U+2039 (decimal 8249)
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -310,7 +318,7 @@ Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -345,11 +353,10 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
@@ -376,29 +383,21 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count90
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count91
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
@@ -410,7 +409,7 @@ Package: placeins 2005/04/18  v 2.2
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen113
 \captionmargin@=\dimen114
@@ -420,7 +419,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen118
 \caption@hangindent=\dimen119
 )
-\c@ContinuedFloat=\count92
+\c@ContinuedFloat=\count91
 ) (./informe.aux)
 \openout1 = `informe.aux'.
 
@@ -470,58 +469,66 @@ LaTeX Font Info:    ... okay on input line 18.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count93
+\scratchcounter=\count92
 \scratchdimen=\dimen120
 \scratchbox=\box26
-\nofMPsegments=\count94
-\nofMParguments=\count95
+\nofMPsegments=\count93
+\nofMParguments=\count94
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count96
+\MPscratchCnt=\count95
 \MPscratchDim=\dimen121
-\MPnumerator=\count97
-\makeMPintoPDFobject=\count98
+\MPnumerator=\count96
+\makeMPintoPDFobject=\count97
 \everyMPtoPDFconversion=\toks19
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -529,11 +536,10 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
 <logofiuba.jpg, id=1, 706.64pt x 343.2825pt>
 File: logofiuba.jpg Graphic file (type jpg)
- <use logofiuba.jpg>
-Package pdftex.def Info: logofiuba.jpg used on input line 21.
+<use logofiuba.jpg>
+Package pdftex.def Info: logofiuba.jpg  used on input line 21.
 (pdftex.def)             Requested size: 250.0pt x 121.4497pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 24.
@@ -545,732 +551,639 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 28.
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logofiuba.jpg>] (./infor
-me.toc)
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logofiuba.jpg>]
+(./informe.toc [2])
 \tf@toc=\write4
 \openout4 = `informe.toc'.
 
+ [3]
+<images/auctions/top10devicessubastas.png, id=16, 406.51875pt x 402.50375pt>
+File: images/auctions/top10devicessubastas.png Graphic file (type png)
+<use images/auctions/top10devicessubastas.png>
+Package pdftex.def Info: images/auctions/top10devicessubastas.png  used on inpu
+t line 67.
+(pdftex.def)             Requested size: 350.0pt x 346.55797pt.
+ [4] [5 <./images/auctions/top10devicessubastas.png>]
+<images/auctions/devicesporSO.png, id=25, 412.54124pt x 279.0425pt>
+File: images/auctions/devicesporSO.png Graphic file (type png)
+<use images/auctions/devicesporSO.png>
+Package pdftex.def Info: images/auctions/devicesporSO.png  used on input line 7
+9.
+(pdftex.def)             Requested size: 350.0pt x 236.74442pt.
 
-[2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
+[6]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 92.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
-
-<images/auctions/subastaspordia.png, id=13, 645.41125pt x 497.86pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
+ [7 <./images/auctions/devicesporSO.png>]
+<images/auctions/subastaspordia.png, id=35, 645.41125pt x 497.86pt>
 File: images/auctions/subastaspordia.png Graphic file (type png)
-
 <use images/auctions/subastaspordia.png>
-Package pdftex.def Info: images/auctions/subastaspordia.png used on input line 
-73.
+Package pdftex.def Info: images/auctions/subastaspordia.png  used on input line
+ 111.
 (pdftex.def)             Requested size: 300.0pt x 231.41135pt.
- [3]
-<images/auctions/subastaspordiaSO.png, id=19, 645.41125pt x 334.24875pt>
-File: images/auctions/subastaspordiaSO.png Graphic file (type png)
+ [8]
+<images/auctions/subastaspordiaporSO_corregido.png, id=39, 645.41125pt x 334.24
+875pt>
+File: images/auctions/subastaspordiaporSO_corregido.png Graphic file (type png)
 
-<use images/auctions/subastaspordiaSO.png>
-Package pdftex.def Info: images/auctions/subastaspordiaSO.png used on input lin
-e 92.
+<use images/auctions/subastaspordiaporSO_corregido.png>
+Package pdftex.def Info: images/auctions/subastaspordiaporSO_corregido.png  use
+d on input line 131.
 (pdftex.def)             Requested size: 350.0pt x 181.25665pt.
- [4 <./images/auctions/subastaspordia.png>]
-
-Package pdftex.def Warning: Option `bb' does not make sense,
-(pdftex.def)                using `viewport' instead on input line 109.
-
-<images/auctions/subastasporhora.png, id=24, 642.4pt x 334.24875pt>
+ [9 <./images/auctions/subastaspordia.png>]
+Package pdftex.def Info: Option `bb' equivalent to `viewport' with pdftex drive
+r on input line 148.
+<images/auctions/subastasporhora.png, id=44, 642.4pt x 334.24875pt>
 File: images/auctions/subastasporhora.png Graphic file (type png)
-
 <use images/auctions/subastasporhora.png>
-Package pdftex.def Info: images/auctions/subastasporhora.png used on input line
- 109.
+Package pdftex.def Info: images/auctions/subastasporhora.png  used on input lin
+e 148.
 (pdftex.def)             Requested size: 350.0pt x 262.50659pt.
- [5 <./images/auctions/subastaspordiaSO.png>] <images/auctions/subastasporhoraS
-0.png, id=29, 754.82pt x 497.86pt>
-File: images/auctions/subastasporhoraS0.png Graphic file (type png)
-
-<use images/auctions/subastasporhoraS0.png>
-Package pdftex.def Info: images/auctions/subastasporhoraS0.png used on input li
-ne 120.
-(pdftex.def)             Requested size: 220.0pt x 145.10498pt.
- [6 <./images/auctions/subastasporhora.png> <./images/auctions/subastasporhoraS
-0.png>]
-<images/auctions/subastasporSO.png, id=35, 425.59pt x 281.05pt>
-File: images/auctions/subastasporSO.png Graphic file (type png)
-
-<use images/auctions/subastasporSO.png>
-Package pdftex.def Info: images/auctions/subastasporSO.png used on input line 1
-33.
+ [10 <./images/auctions/subastaspordiaporSO_corregido.png>]
+<images/auctions/subastasporhoraSO_corregido.png, id=49, 754.82pt x 497.86pt>
+File: images/auctions/subastasporhoraSO_corregido.png Graphic file (type png)
+<use images/auctions/subastasporhoraSO_corregido.png>
+Package pdftex.def Info: images/auctions/subastasporhoraSO_corregido.png  used 
+on input line 159.
+(pdftex.def)             Requested size: 350.0pt x 230.84918pt.
+ [11 <./images/auctions/subastasporhora.png>]
+<images/auctions/subastasporSO_corregido.png, id=54, 425.59pt x 281.05pt>
+File: images/auctions/subastasporSO_corregido.png Graphic file (type png)
+<use images/auctions/subastasporSO_corregido.png>
+Package pdftex.def Info: images/auctions/subastasporSO_corregido.png  used on i
+nput line 172.
 (pdftex.def)             Requested size: 350.0pt x 231.14435pt.
- [7]
-<images/auctions/subastasporSOcantidad.png, id=40, 390.45876pt x 276.03125pt>
-File: images/auctions/subastasporSOcantidad.png Graphic file (type png)
-
-<use images/auctions/subastasporSOcantidad.png>
-Package pdftex.def Info: images/auctions/subastasporSOcantidad.png used on inpu
-t line 142.
+ [12 <./images/auctions/subastasporhoraSO_corregido.png>]
+<images/auctions/subastasporSOcantidad_corregido.png, id=59, 390.45876pt x 276.
+03125pt>
+File: images/auctions/subastasporSOcantidad_corregido.png Graphic file (type pn
+g)
+<use images/auctions/subastasporSOcantidad_corregido.png>
+Package pdftex.def Info: images/auctions/subastasporSOcantidad_corregido.png  u
+sed on input line 181.
 (pdftex.def)             Requested size: 350.0pt x 247.44023pt.
- [8 <./images/auctions/subastasporSO.png> <./images/auctions/subastasporSOcanti
-dad.png>]
-<images/auctions/subastasporsource.png, id=46, 608.2725pt x 334.24875pt>
+
+[13 <./images/auctions/subastasporSO_corregido.png> <./images/auctions/subastas
+porSOcantidad_corregido.png>]
+<images/auctions/subastasporsource.png, id=66, 608.2725pt x 334.24875pt>
 File: images/auctions/subastasporsource.png Graphic file (type png)
-
 <use images/auctions/subastasporsource.png>
-Package pdftex.def Info: images/auctions/subastasporsource.png used on input li
-ne 165.
+Package pdftex.def Info: images/auctions/subastasporsource.png  used on input l
+ine 204.
 (pdftex.def)             Requested size: 424.06033pt x 233.02898pt.
- [9
+ [14
 
-]
-<images/auctions/top10devicessubastas.png, id=50, 406.51875pt x 402.50375pt>
-File: images/auctions/top10devicessubastas.png Graphic file (type png)
-
-<use images/auctions/top10devicessubastas.png>
-Package pdftex.def Info: images/auctions/top10devicessubastas.png used on input
- line 177.
-(pdftex.def)             Requested size: 350.0pt x 346.55797pt.
- [10 <./images/auctions/subastasporsource.png>] [11 <./images/auctions/top10dev
-icessubastas.png>]
-<images/auctions/devicesporSO.png, id=59, 412.54124pt x 279.0425pt>
-File: images/auctions/devicesporSO.png Graphic file (type png)
-
-<use images/auctions/devicesporSO.png>
-Package pdftex.def Info: images/auctions/devicesporSO.png used on input line 18
-9.
-(pdftex.def)             Requested size: 350.0pt x 236.74442pt.
- [12] [13 <./images/auctions/devicesporSO.png>]
-<images/clicks/clicks_advertiser_id.png, id=68, 630.355pt x 1149.29375pt>
+] [15 <./images/auctions/subastasporsource.png>]
+<images/clicks/clicks_advertiser_id.png, id=74, 630.355pt x 1149.29375pt>
 File: images/clicks/clicks_advertiser_id.png Graphic file (type png)
-
 <use images/clicks/clicks_advertiser_id.png>
-Package pdftex.def Info: images/clicks/clicks_advertiser_id.png used on input l
-ine 215.
+Package pdftex.def Info: images/clicks/clicks_advertiser_id.png  used on input 
+line 223.
 (pdftex.def)             Requested size: 424.06033pt x 773.16191pt.
 
 
-LaTeX Warning: Float too large for page by 111.60881pt on input line 217.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14
-
-] [15 <./images/clicks/clicks_advertiser_id.png>]
-<images/clicks/clicks_source_id.png, id=77, 742.775pt x 500.87125pt>
-File: images/clicks/clicks_source_id.png Graphic file (type png)
-
-<use images/clicks/clicks_source_id.png>
-Package pdftex.def Info: images/clicks/clicks_source_id.png used on input line 
-229.
-(pdftex.def)             Requested size: 424.06033pt x 285.95813pt.
-
-<images/clicks/clicks_carrier_id.png, id=78, 1184.425pt x 626.34pt>
-File: images/clicks/clicks_carrier_id.png Graphic file (type png)
-
-<use images/clicks/clicks_carrier_id.png>
-Package pdftex.def Info: images/clicks/clicks_carrier_id.png used on input line
- 243.
-(pdftex.def)             Requested size: 424.06033pt x 224.24934pt.
+LaTeX Warning: Float too large for page by 111.60881pt on input line 225.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [16
 
- <./images/clicks/clicks_source_id.png>]
-<images/clicks/clicks_minor_OS.png, id=83, 1184.425pt x 1281.78876pt>
-File: images/clicks/clicks_minor_OS.png Graphic file (type png)
+] [17 <./images/clicks/clicks_advertiser_id.png>]
+<images/clicks/clicks_source_id.png, id=83, 742.775pt x 500.87125pt>
+File: images/clicks/clicks_source_id.png Graphic file (type png)
+<use images/clicks/clicks_source_id.png>
+Package pdftex.def Info: images/clicks/clicks_source_id.png  used on input line
+ 237.
+(pdftex.def)             Requested size: 424.06033pt x 285.95813pt.
+<images/clicks/clicks_carrier_id.png, id=84, 1184.425pt x 626.34pt>
+File: images/clicks/clicks_carrier_id.png Graphic file (type png)
+<use images/clicks/clicks_carrier_id.png>
+Package pdftex.def Info: images/clicks/clicks_carrier_id.png  used on input lin
+e 251.
+(pdftex.def)             Requested size: 424.06033pt x 224.24934pt.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18
+
+ <./images/clicks/clicks_source_id.png>]
+<images/clicks/clicks_minor_OS.png, id=89, 1184.425pt x 1281.78876pt>
+File: images/clicks/clicks_minor_OS.png Graphic file (type png)
 <use images/clicks/clicks_minor_OS.png>
-Package pdftex.def Info: images/clicks/clicks_minor_OS.png used on input line 2
-56.
+Package pdftex.def Info: images/clicks/clicks_minor_OS.png  used on input line 
+264.
 (pdftex.def)             Requested size: 424.06033pt x 458.92056pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17 <./images/clicks/clicks_carrier_id.png>] [18 <./images/clicks/clicks_minor_
-OS.png>] <images/clicks/clicks_major_OS.png, id=92, 1184.425pt x 1281.78876pt>
+[19 <./images/clicks/clicks_carrier_id.png>] [20 <./images/clicks/clicks_minor_
+OS.png>]
+<images/clicks/clicks_major_OS.png, id=99, 1184.425pt x 1281.78876pt>
 File: images/clicks/clicks_major_OS.png Graphic file (type png)
-
 <use images/clicks/clicks_major_OS.png>
-Package pdftex.def Info: images/clicks/clicks_major_OS.png used on input line 2
-69.
+Package pdftex.def Info: images/clicks/clicks_major_OS.png  used on input line 
+277.
 (pdftex.def)             Requested size: 424.06033pt x 458.92056pt.
- [19
+ [21
 
- <./images/clicks/clicks_major_OS.png>] <images/clicks/clicks_specs_brand.png, 
-id=98, 350.30875pt x 1264.725pt>
+ <./images/clicks/clicks_major_OS.png>]
+<images/clicks/clicks_specs_brand.png, id=104, 350.30875pt x 1264.725pt>
 File: images/clicks/clicks_specs_brand.png Graphic file (type png)
-
 <use images/clicks/clicks_specs_brand.png>
-Package pdftex.def Info: images/clicks/clicks_specs_brand.png used on input lin
-e 285.
+Package pdftex.def Info: images/clicks/clicks_specs_brand.png  used on input li
+ne 293.
 (pdftex.def)             Requested size: 424.06033pt x 1531.09393pt.
 
 
-LaTeX Warning: Float too large for page by 869.54083pt on input line 287.
+LaTeX Warning: Float too large for page by 869.54083pt on input line 295.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] [21 <./images/clicks/clicks_specs_brand.png>]
-Overfull \hbox (31.02559pt too wide) in paragraph at lines 290--291
+[22] [23 <./images/clicks/clicks_specs_brand.png>]
+Overfull \hbox (31.02559pt too wide) in paragraph at lines 298--299
 \OT1/cmr/m/n/12 prac-ti-mac-mente dos specs[]brand. Es-tos son 3921843776130980
 15 y 2733035977666442898. 
  []
 
-<images/clicks/clicks_brand.png, id=106, 904.37875pt x 892.33376pt>
+<images/clicks/clicks_brand.png, id=112, 904.37875pt x 892.33376pt>
 File: images/clicks/clicks_brand.png Graphic file (type png)
-
 <use images/clicks/clicks_brand.png>
-Package pdftex.def Info: images/clicks/clicks_brand.png used on input line 299.
-
+Package pdftex.def Info: images/clicks/clicks_brand.png  used on input line 307
+.
 (pdftex.def)             Requested size: 424.06033pt x 418.40297pt.
-
-<images/clicks/clicks_ref_type.png, id=107, 361.35pt x 1280.785pt>
+<images/clicks/clicks_ref_type.png, id=113, 361.35pt x 1280.785pt>
 File: images/clicks/clicks_ref_type.png Graphic file (type png)
-
 <use images/clicks/clicks_ref_type.png>
-Package pdftex.def Info: images/clicks/clicks_ref_type.png used on input line 3
-12.
+Package pdftex.def Info: images/clicks/clicks_ref_type.png  used on input line 
+320.
 (pdftex.def)             Requested size: 424.06033pt x 1503.06601pt.
 
-
-LaTeX Warning: Float too large for page by 841.51291pt on input line 314.
+LaTeX Warning: Float too large for page by 841.51291pt on input line 322.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22
+[24
 
- <./images/clicks/clicks_brand.png>] [23 <./images/clicks/clicks_ref_type.png>]
- <images/clicks/clicks_days.png, id=116, 735.74875pt x 497.86pt>
+ <./images/clicks/clicks_brand.png>] [25 <./images/clicks/clicks_ref_type.png>]
+<images/clicks/clicks_days.png, id=123, 735.74875pt x 497.86pt>
 File: images/clicks/clicks_days.png Graphic file (type png)
-
 <use images/clicks/clicks_days.png>
-Package pdftex.def Info: images/clicks/clicks_days.png used on input line 329.
-(pdftex.def)             Requested size: 424.06033pt x 286.95857pt.
+Package pdftex.def Info: images/clicks/clicks_days.png  used on input line 337.
 
-<images/clicks/clicks_hours.png, id=117, 735.74875pt x 497.86pt>
+(pdftex.def)             Requested size: 424.06033pt x 286.95857pt.
+<images/clicks/clicks_hours.png, id=124, 735.74875pt x 497.86pt>
 File: images/clicks/clicks_hours.png Graphic file (type png)
-
 <use images/clicks/clicks_hours.png>
-Package pdftex.def Info: images/clicks/clicks_hours.png used on input line 341.
-
+Package pdftex.def Info: images/clicks/clicks_hours.png  used on input line 349
+.
 (pdftex.def)             Requested size: 424.06033pt x 286.95857pt.
- [24
+ [26
 
  <./images/clicks/clicks_days.png>]
-<images/clicks/clicks_advertiser_id_hours.png, id=122, 721.69624pt x 497.86pt>
+<images/clicks/clicks_advertiser_id_hours.png, id=129, 721.69624pt x 497.86pt>
 File: images/clicks/clicks_advertiser_id_hours.png Graphic file (type png)
-
 <use images/clicks/clicks_advertiser_id_hours.png>
-Package pdftex.def Info: images/clicks/clicks_advertiser_id_hours.png used on i
-nput line 353.
+Package pdftex.def Info: images/clicks/clicks_advertiser_id_hours.png  used on 
+input line 361.
 (pdftex.def)             Requested size: 424.06033pt x 292.53456pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25 <./images/clicks/clicks_hours.png>]
-<images/clicks/clicks_advertiser_id_hours_persentage.png, id=128, 999.735pt x 5
+[27 <./images/clicks/clicks_hours.png>]
+<images/clicks/clicks_advertiser_id_hours_persentage.png, id=134, 999.735pt x 5
 16.93124pt>
 File: images/clicks/clicks_advertiser_id_hours_persentage.png Graphic file (typ
 e png)
- <use images/clicks/clicks_advertiser_id_hours_persentage.png>
+<use images/clicks/clicks_advertiser_id_hours_persentage.png>
 Package pdftex.def Info: images/clicks/clicks_advertiser_id_hours_persentage.pn
-g used on input line 361.
+g  used on input line 369.
 (pdftex.def)             Requested size: 424.06033pt x 219.27087pt.
-
-Excluding 'comment' comment. [26 <./images/clicks/clicks_advertiser_id_hours.pn
-g> <./images/clicks/clicks_advertiser_id_hours_persentage.png>]
-<images/clicks/clicks_specs_brand_hours.png, id=134, 721.69624pt x 497.86pt>
+ Excluding 'comment' comment. [28 <./images/clicks/clicks_advertiser_id_hours.p
+ng> <./images/clicks/clicks_advertiser_id_hours_persentage.png>]
+<images/clicks/clicks_specs_brand_hours.png, id=140, 721.69624pt x 497.86pt>
 File: images/clicks/clicks_specs_brand_hours.png Graphic file (type png)
-
 <use images/clicks/clicks_specs_brand_hours.png>
-Package pdftex.def Info: images/clicks/clicks_specs_brand_hours.png used on inp
-ut line 392.
+Package pdftex.def Info: images/clicks/clicks_specs_brand_hours.png  used on in
+put line 400.
 (pdftex.def)             Requested size: 424.06033pt x 292.53456pt.
-
-<images/clicks/clicks_lat_long_scatter.png, id=135, 736.7525pt x 484.81125pt>
+<images/clicks/clicks_lat_long_scatter.png, id=141, 736.7525pt x 484.81125pt>
 File: images/clicks/clicks_lat_long_scatter.png Graphic file (type png)
-
 <use images/clicks/clicks_lat_long_scatter.png>
-Package pdftex.def Info: images/clicks/clicks_lat_long_scatter.png used on inpu
-t line 406.
+Package pdftex.def Info: images/clicks/clicks_lat_long_scatter.png  used on inp
+ut line 414.
 (pdftex.def)             Requested size: 424.06033pt x 279.04541pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[27 <./images/clicks/clicks_specs_brand_hours.png>]
-<images/clicks/clicks_lat_long_heat.png, id=140, 729.72626pt x 581.17125pt>
+[29 <./images/clicks/clicks_specs_brand_hours.png>]
+<images/clicks/clicks_lat_long_heat.png, id=146, 729.72626pt x 581.17125pt>
 File: images/clicks/clicks_lat_long_heat.png Graphic file (type png)
-
 <use images/clicks/clicks_lat_long_heat.png>
-Package pdftex.def Info: images/clicks/clicks_lat_long_heat.png used on input l
-ine 414.
+Package pdftex.def Info: images/clicks/clicks_lat_long_heat.png  used on input 
+line 422.
 (pdftex.def)             Requested size: 424.06033pt x 337.72691pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[28 <./images/clicks/clicks_lat_long_scatter.png> <./images/clicks/clicks_lat_l
+[30 <./images/clicks/clicks_lat_long_scatter.png> <./images/clicks/clicks_lat_l
 ong_heat.png>]
-<images/clicks/clicks_lat_long_major_OS.png, id=146, 901.3675pt x 594.22pt>
+<images/clicks/clicks_lat_long_major_OS.png, id=152, 901.3675pt x 594.22pt>
 File: images/clicks/clicks_lat_long_major_OS.png Graphic file (type png)
-
 <use images/clicks/clicks_lat_long_major_OS.png>
-Package pdftex.def Info: images/clicks/clicks_lat_long_major_OS.png used on inp
-ut line 428.
+Package pdftex.def Info: images/clicks/clicks_lat_long_major_OS.png  used on in
+put line 436.
 (pdftex.def)             Requested size: 424.06033pt x 279.56451pt.
-
-<images/clicks/clicks_touch_scatter.png, id=147, 1181.41376pt x 1698.345pt>
+<images/clicks/clicks_touch_scatter.png, id=153, 1181.41376pt x 1698.345pt>
 File: images/clicks/clicks_touch_scatter.png Graphic file (type png)
-
 <use images/clicks/clicks_touch_scatter.png>
-Package pdftex.def Info: images/clicks/clicks_touch_scatter.png used on input l
-ine 442.
+Package pdftex.def Info: images/clicks/clicks_touch_scatter.png  used on input 
+line 450.
 (pdftex.def)             Requested size: 424.06033pt x 609.58972pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[29
-
- <./images/clicks/clicks_lat_long_major_OS.png>] [30 <./images/clicks/clicks_to
-uch_scatter.png>]
-<images/clicks/clicks_touch_heat.png, id=155, 709.65125pt x 580.1675pt>
-File: images/clicks/clicks_touch_heat.png Graphic file (type png)
-
-<use images/clicks/clicks_touch_heat.png>
-Package pdftex.def Info: images/clicks/clicks_touch_heat.png used on input line
- 450.
-(pdftex.def)             Requested size: 424.06033pt x 346.6956pt.
-
-<images/clicks/clicks_advertiser_id_timeToTouch.png, id=156, 1263.72125pt x 513
-.92pt>
-File: images/clicks/clicks_advertiser_id_timeToTouch.png Graphic file (type png
-)
- <use images/clicks/clicks_advertiser_id_timeToTouch.png>
-Package pdftex.def Info: images/clicks/clicks_advertiser_id_timeToTouch.png use
-d on input line 468.
-(pdftex.def)             Requested size: 424.06033pt x 172.45636pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [31
 
+ <./images/clicks/clicks_lat_long_major_OS.png>] [32 <./images/clicks/clicks_to
+uch_scatter.png>]
+<images/clicks/clicks_touch_heat.png, id=162, 709.65125pt x 580.1675pt>
+File: images/clicks/clicks_touch_heat.png Graphic file (type png)
+<use images/clicks/clicks_touch_heat.png>
+Package pdftex.def Info: images/clicks/clicks_touch_heat.png  used on input lin
+e 458.
+(pdftex.def)             Requested size: 424.06033pt x 346.6956pt.
+<images/clicks/clicks_advertiser_id_timeToTouch.png, id=163, 1263.72125pt x 513
+.92pt>
+File: images/clicks/clicks_advertiser_id_timeToTouch.png Graphic file (type png
+)
+<use images/clicks/clicks_advertiser_id_timeToTouch.png>
+Package pdftex.def Info: images/clicks/clicks_advertiser_id_timeToTouch.png  us
+ed on input line 476.
+(pdftex.def)             Requested size: 424.06033pt x 172.45636pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[33
+
  <./images/clicks/clicks_touch_heat.png>]
-<images/clicks/clicks_advertiser_id_timeToTouch2.png, id=162, 1166.3575pt x 540
+<images/clicks/clicks_advertiser_id_timeToTouch2.png, id=168, 1166.3575pt x 540
 .0175pt>
 File: images/clicks/clicks_advertiser_id_timeToTouch2.png Graphic file (type pn
 g)
- <use images/clicks/clicks_advertiser_id_timeToTouch2.png>
-Package pdftex.def Info: images/clicks/clicks_advertiser_id_timeToTouch2.png us
-ed on input line 476.
+<use images/clicks/clicks_advertiser_id_timeToTouch2.png>
+Package pdftex.def Info: images/clicks/clicks_advertiser_id_timeToTouch2.png  u
+sed on input line 484.
 (pdftex.def)             Requested size: 424.06033pt x 196.3343pt.
-
-<images/clicks/clicks_specs_brand_timeToTouch.png, id=163, 1379.1525pt x 513.92
+<images/clicks/clicks_specs_brand_timeToTouch.png, id=169, 1379.1525pt x 513.92
 pt>
 File: images/clicks/clicks_specs_brand_timeToTouch.png Graphic file (type png)
- <use images/clicks/clicks_specs_brand_timeToTouch.png>
-Package pdftex.def Info: images/clicks/clicks_specs_brand_timeToTouch.png used 
-on input line 488.
+<use images/clicks/clicks_specs_brand_timeToTouch.png>
+Package pdftex.def Info: images/clicks/clicks_specs_brand_timeToTouch.png  used
+ on input line 496.
 (pdftex.def)             Requested size: 424.06033pt x 158.01965pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32 <./images/clicks/clicks_advertiser_id_timeToTouch.png> <./images/clicks/cli
+[34 <./images/clicks/clicks_advertiser_id_timeToTouch.png> <./images/clicks/cli
 cks_advertiser_id_timeToTouch2.png>]
-<images/clicks/clicks_ref_type_timeToTouch.png, id=169, 1397.22pt x 516.93124pt
+<images/clicks/clicks_ref_type_timeToTouch.png, id=175, 1397.22pt x 516.93124pt
 >
 File: images/clicks/clicks_ref_type_timeToTouch.png Graphic file (type png)
- <use images/clicks/clicks_ref_type_timeToTouch.png>
-Package pdftex.def Info: images/clicks/clicks_ref_type_timeToTouch.png used on 
-input line 498.
+<use images/clicks/clicks_ref_type_timeToTouch.png>
+Package pdftex.def Info: images/clicks/clicks_ref_type_timeToTouch.png  used on
+ input line 506.
 (pdftex.def)             Requested size: 424.06033pt x 156.88686pt.
- [33 <./images/clicks/clicks_specs_brand_timeToTouch.png> <./images/clicks/clic
+ [35 <./images/clicks/clicks_specs_brand_timeToTouch.png> <./images/clicks/clic
 ks_ref_type_timeToTouch.png>]
-Overfull \hbox (6.99492pt too wide) in paragraph at lines 516--517
+Overfull \hbox (6.99492pt too wide) in paragraph at lines 524--525
 \OT1/cmr/m/n/12 Lo primero que analizare-mos ser^^Sa c^^Somo se dis-tribuyeron 
 los even-tos cronol^^Sogicamente,
  []
 
-<images/events/eventsxhora.png, id=175, 756.8275pt x 516.93124pt>
+<images/events/eventsxhora.png, id=181, 756.8275pt x 516.93124pt>
 File: images/events/eventsxhora.png Graphic file (type png)
-
 <use images/events/eventsxhora.png>
-Package pdftex.def Info: images/events/eventsxhora.png used on input line 521.
+Package pdftex.def Info: images/events/eventsxhora.png  used on input line 529.
+
 (pdftex.def)             Requested size: 424.06033pt x 289.64516pt.
-
-<images/events/eventsxdiayhora.png, id=176, 967.615pt x 512.91624pt>
+<images/events/eventsxdiayhora.png, id=182, 967.615pt x 512.91624pt>
 File: images/events/eventsxdiayhora.png Graphic file (type png)
-
 <use images/events/eventsxdiayhora.png>
-Package pdftex.def Info: images/events/eventsxdiayhora.png used on input line 5
-32.
+Package pdftex.def Info: images/events/eventsxdiayhora.png  used on input line 
+540.
 (pdftex.def)             Requested size: 424.06033pt x 224.7838pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[34
+[36
 
  <./images/events/eventsxhora.png>]
-<images/events/eventsxdia.png, id=181, 751.80875pt x 504.88625pt>
+<images/events/eventsxdia.png, id=187, 751.80875pt x 504.88625pt>
 File: images/events/eventsxdia.png Graphic file (type png)
-
 <use images/events/eventsxdia.png>
-Package pdftex.def Info: images/events/eventsxdia.png used on input line 544.
+Package pdftex.def Info: images/events/eventsxdia.png  used on input line 552.
 (pdftex.def)             Requested size: 424.06033pt x 284.7913pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[35 <./images/events/eventsxdiayhora.png>]
-<images/events/evxapp.png, id=186, 753.81625pt x 513.92pt>
+[37 <./images/events/eventsxdiayhora.png>]
+<images/events/evxapp.png, id=193, 753.81625pt x 513.92pt>
 File: images/events/evxapp.png Graphic file (type png)
-
 <use images/events/evxapp.png>
-Package pdftex.def Info: images/events/evxapp.png used on input line 558.
+Package pdftex.def Info: images/events/evxapp.png  used on input line 566.
 (pdftex.def)             Requested size: 424.06033pt x 289.1028pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[36 <./images/events/eventsxdia.png>]
-<images/events/idiomasapps.png, id=191, 1132.23pt x 525.965pt>
+[38 <./images/events/eventsxdia.png>]
+<images/events/idiomasapps.png, id=198, 1132.23pt x 525.965pt>
 File: images/events/idiomasapps.png Graphic file (type png)
-
 <use images/events/idiomasapps.png>
-Package pdftex.def Info: images/events/idiomasapps.png used on input line 568.
+Package pdftex.def Info: images/events/idiomasapps.png  used on input line 576.
+
 (pdftex.def)             Requested size: 424.06033pt x 196.9876pt.
-
-<images/events/evxrf.png, id=192, 1199.48125pt x 564.1075pt>
+<images/events/evxrf.png, id=199, 1199.48125pt x 564.1075pt>
 File: images/events/evxrf.png Graphic file (type png)
-
 <use images/events/evxrf.png>
-Package pdftex.def Info: images/events/evxrf.png used on input line 580.
+Package pdftex.def Info: images/events/evxrf.png  used on input line 588.
 (pdftex.def)             Requested size: 424.06033pt x 199.42892pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[37 <./images/events/evxapp.png> <./images/events/idiomasapps.png>]
-<images/events/evxsua.png, id=199, 1201.48875pt x 567.11874pt>
+[39 <./images/events/evxapp.png> <./images/events/idiomasapps.png>]
+<images/events/evxsua.png, id=205, 1201.48875pt x 567.11874pt>
 File: images/events/evxsua.png Graphic file (type png)
-
 <use images/events/evxsua.png>
-Package pdftex.def Info: images/events/evxsua.png used on input line 592.
+Package pdftex.def Info: images/events/evxsua.png  used on input line 600.
 (pdftex.def)             Requested size: 424.06033pt x 200.16466pt.
-
-<images/events/top10events.png, id=200, 854.19125pt x 512.91624pt>
+<images/events/top10events.png, id=206, 854.19125pt x 512.91624pt>
 File: images/events/top10events.png Graphic file (type png)
-
 <use images/events/top10events.png>
-Package pdftex.def Info: images/events/top10events.png used on input line 606.
-(pdftex.def)             Requested size: 424.06033pt x 254.63393pt.
- [38 <./images/events/evxrf.png> <./images/events/evxsua.png>] <images/events/a
-ppsxev.png, id=207, 1019.81pt x 644.4075pt>
-File: images/events/appsxev.png Graphic file (type png)
+Package pdftex.def Info: images/events/top10events.png  used on input line 614.
 
+(pdftex.def)             Requested size: 424.06033pt x 254.63393pt.
+ [40 <./images/events/evxrf.png> <./images/events/evxsua.png>]
+<images/events/appsxev.png, id=213, 1019.81pt x 644.4075pt>
+File: images/events/appsxev.png Graphic file (type png)
 <use images/events/appsxev.png>
-Package pdftex.def Info: images/events/appsxev.png used on input line 618.
+Package pdftex.def Info: images/events/appsxev.png  used on input line 626.
 (pdftex.def)             Requested size: 424.06033pt x 267.96494pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[39 <./images/events/top10events.png>] [40 <./images/events/appsxev.png>]
-Overfull \hbox (37.1277pt too wide) in paragraph at lines 628--629
+[41 <./images/events/top10events.png>] [42 <./images/events/appsxev.png>]
+Overfull \hbox (37.1277pt too wide) in paragraph at lines 636--637
 \OT1/cmr/m/n/12 Los datos so-bre in-sta-la-ciones fueron pro-vis-tos por Jampp 
 en el archivo \OT1/cmtt/m/n/12 installs.csv.gzip\OT1/cmr/m/n/12 ,
  []
 
-<images/installs/installspordia.png, id=216, 737.75626pt x 516.93124pt>
+<images/installs/installspordia.png, id=222, 737.75626pt x 516.93124pt>
 File: images/installs/installspordia.png Graphic file (type png)
-
 <use images/installs/installspordia.png>
-Package pdftex.def Info: images/installs/installspordia.png used on input line 
-637.
+Package pdftex.def Info: images/installs/installspordia.png  used on input line
+ 645.
 (pdftex.def)             Requested size: 424.06033pt x 297.13062pt.
-
-<images/installs/installsxhora.png, id=217, 734.745pt x 516.93124pt>
+<images/installs/installsxhora.png, id=223, 734.745pt x 516.93124pt>
 File: images/installs/installsxhora.png Graphic file (type png)
-
 <use images/installs/installsxhora.png>
-Package pdftex.def Info: images/installs/installsxhora.png used on input line 6
-47.
+Package pdftex.def Info: images/installs/installsxhora.png  used on input line 
+655.
 (pdftex.def)             Requested size: 424.06033pt x 298.35321pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[41
+[43
 
  <./images/installs/installspordia.png>]
-<images/installs/heatmapfecha.png, id=222, 996.72375pt x 516.93124pt>
+<images/installs/heatmapfecha.png, id=229, 996.72375pt x 516.93124pt>
 File: images/installs/heatmapfecha.png Graphic file (type png)
-
 <use images/installs/heatmapfecha.png>
-Package pdftex.def Info: images/installs/heatmapfecha.png used on input line 65
-9.
+Package pdftex.def Info: images/installs/heatmapfecha.png  used on input line 6
+67.
 (pdftex.def)             Requested size: 424.06033pt x 219.92555pt.
- [42 <./images/installs/installsxhora.png> <./images/installs/heatmapfecha.png>
+ [44 <./images/installs/installsxhora.png> <./images/installs/heatmapfecha.png>
 ]
-<images/installs/aplicacionesvc.png, id=228, 1084.05pt x 644.4075pt>
+<images/installs/aplicacionesvc.png, id=235, 1084.05pt x 644.4075pt>
 File: images/installs/aplicacionesvc.png Graphic file (type png)
-
 <use images/installs/aplicacionesvc.png>
-Package pdftex.def Info: images/installs/aplicacionesvc.png used on input line 
-672.
+Package pdftex.def Info: images/installs/aplicacionesvc.png  used on input line
+ 680.
 (pdftex.def)             Requested size: 424.06033pt x 252.07504pt.
-
-<images/installs/appsxdiaarea.png, id=229, 1019.81pt x 516.93124pt>
+<images/installs/appsxdiaarea.png, id=236, 1019.81pt x 516.93124pt>
 File: images/installs/appsxdiaarea.png Graphic file (type png)
-
 <use images/installs/appsxdiaarea.png>
-Package pdftex.def Info: images/installs/appsxdiaarea.png used on input line 68
-5.
+Package pdftex.def Info: images/installs/appsxdiaarea.png  used on input line 6
+93.
 (pdftex.def)             Requested size: 424.06033pt x 214.95628pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[43 <./images/installs/aplicacionesvc.png>]
-<images/installs/appsxhora.png, id=235, 1249.66875pt x 639.38875pt>
+[45 <./images/installs/aplicacionesvc.png>]
+<images/installs/appsxhora.png, id=241, 1249.66875pt x 639.38875pt>
 File: images/installs/appsxhora.png Graphic file (type png)
-
 <use images/installs/appsxhora.png>
-Package pdftex.def Info: images/installs/appsxhora.png used on input line 695.
-(pdftex.def)             Requested size: 424.06033pt x 216.96977pt.
- [44 <./images/installs/appsxdiaarea.png> <./images/installs/appsxhora.png>]
-<images/installs/piechartpaises.png, id=241, 457.71pt x 484.81125pt>
-File: images/installs/piechartpaises.png Graphic file (type png)
+Package pdftex.def Info: images/installs/appsxhora.png  used on input line 703.
 
+(pdftex.def)             Requested size: 424.06033pt x 216.96977pt.
+ [46 <./images/installs/appsxdiaarea.png> <./images/installs/appsxhora.png>]
+<images/installs/piechartpaises.png, id=247, 457.71pt x 484.81125pt>
+File: images/installs/piechartpaises.png Graphic file (type png)
 <use images/installs/piechartpaises.png>
-Package pdftex.def Info: images/installs/piechartpaises.png used on input line 
-708.
+Package pdftex.def Info: images/installs/piechartpaises.png  used on input line
+ 716.
 (pdftex.def)             Requested size: 200.0pt x 211.83807pt.
 
-Overfull \hbox (29.40707pt too wide) in paragraph at lines 713--714
+Overfull \hbox (29.40707pt too wide) in paragraph at lines 721--722
 []\OT1/cmr/m/n/12 La pro-porci^^Son es bas-tante pareja, con leve mayor^^S^^Pa 
 para el pa^^S^^Ps \OT1/cmtt/m/n/12 6333597102633388268\OT1/cmr/m/n/12 . 
  []
 
-<images/installs/ref_type.png, id=242, 457.71pt x 482.80376pt>
+<images/installs/ref_type.png, id=248, 457.71pt x 482.80376pt>
 File: images/installs/ref_type.png Graphic file (type png)
-
 <use images/installs/ref_type.png>
-Package pdftex.def Info: images/installs/ref_type.png used on input line 721.
+Package pdftex.def Info: images/installs/ref_type.png  used on input line 729.
 (pdftex.def)             Requested size: 200.0pt x 210.9609pt.
-
-<images/installs/appsxpais.png, id=243, 953.5625pt x 516.93124pt>
+<images/installs/appsxpais.png, id=249, 953.5625pt x 516.93124pt>
 File: images/installs/appsxpais.png Graphic file (type png)
-
 <use images/installs/appsxpais.png>
-Package pdftex.def Info: images/installs/appsxpais.png used on input line 735.
+Package pdftex.def Info: images/installs/appsxpais.png  used on input line 743.
+
 (pdftex.def)             Requested size: 424.06033pt x 229.88776pt.
- [45 <./images/installs/piechartpaises.png> <./images/installs/ref_type.png>]
-<images/installs/paisref.png, id=249, 953.5625pt x 516.93124pt>
+[47 <./images/installs/piechartpaises.png> <./images/installs/ref_type.png>]
+<images/installs/paisref.png, id=255, 953.5625pt x 516.93124pt>
 File: images/installs/paisref.png Graphic file (type png)
-
 <use images/installs/paisref.png>
-Package pdftex.def Info: images/installs/paisref.png used on input line 745.
+Package pdftex.def Info: images/installs/paisref.png  used on input line 753.
 (pdftex.def)             Requested size: 424.06033pt x 229.88776pt.
- [46 <./images/installs/appsxpais.png> <./images/installs/paisref.png>]
-<images/installs/idiomas.png, id=255, 1094.0875pt x 831.105pt>
+
+[48 <./images/installs/appsxpais.png> <./images/installs/paisref.png>]
+<images/installs/idiomas.png, id=261, 1094.0875pt x 831.105pt>
 File: images/installs/idiomas.png Graphic file (type png)
-
 <use images/installs/idiomas.png>
-Package pdftex.def Info: images/installs/idiomas.png used on input line 758.
+Package pdftex.def Info: images/installs/idiomas.png  used on input line 766.
 (pdftex.def)             Requested size: 424.06033pt x 322.12595pt.
-
-<images/installs/idiomasapps.png, id=256, 1145.27875pt x 519.9425pt>
+<images/installs/idiomasapps.png, id=262, 1145.27875pt x 519.9425pt>
 File: images/installs/idiomasapps.png Graphic file (type png)
-
 <use images/installs/idiomasapps.png>
-Package pdftex.def Info: images/installs/idiomasapps.png used on input line 771
-.
+Package pdftex.def Info: images/installs/idiomasapps.png  used on input line 77
+9.
 (pdftex.def)             Requested size: 424.06033pt x 192.51852pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[47 <./images/installs/idiomas.png>]
-<images/installs/marcas.png, id=261, 1071.00125pt x 640.3925pt>
+[49 <./images/installs/idiomas.png>]
+<images/installs/marcas.png, id=268, 1071.00125pt x 640.3925pt>
 File: images/installs/marcas.png Graphic file (type png)
-
 <use images/installs/marcas.png>
-Package pdftex.def Info: images/installs/marcas.png used on input line 785.
+Package pdftex.def Info: images/installs/marcas.png  used on input line 793.
 (pdftex.def)             Requested size: 424.06033pt x 253.56299pt.
- [48 <./images/installs/idiomasapps.png> <./images/installs/marcas.png>]
-<images/installs/Wifi.png, id=267, 550.055pt x 484.81125pt>
+ [50 <./images/installs/idiomasapps.png> <./images/installs/marcas.png>]
+<images/installs/Wifi.png, id=275, 550.055pt x 484.81125pt>
 File: images/installs/Wifi.png Graphic file (type png)
-
 <use images/installs/Wifi.png>
-Package pdftex.def Info: images/installs/Wifi.png used on input line 805.
+Package pdftex.def Info: images/installs/Wifi.png  used on input line 813.
 (pdftex.def)             Requested size: 200.0pt x 176.27774pt.
-
-<images/installs/appswifi.png, id=268, 734.745pt x 520.94624pt>
+<images/installs/appswifi.png, id=276, 734.745pt x 520.94624pt>
 File: images/installs/appswifi.png Graphic file (type png)
-
 <use images/installs/appswifi.png>
-Package pdftex.def Info: images/installs/appswifi.png used on input line 817.
+Package pdftex.def Info: images/installs/appswifi.png  used on input line 825.
 (pdftex.def)             Requested size: 424.06033pt x 300.67052pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[49 <./images/installs/Wifi.png>]
-
-LaTeX Warning: Reference `aplicaciones' on page 50 undefined on input line 827.
-
-
-<images/installs/useragents.png, id=274, 789.95125pt x 406.51875pt>
+[51 <./images/installs/Wifi.png>]
+<images/installs/useragents.png, id=281, 789.95125pt x 406.51875pt>
 File: images/installs/useragents.png Graphic file (type png)
-
 <use images/installs/useragents.png>
-Package pdftex.def Info: images/installs/useragents.png used on input line 832.
-
+Package pdftex.def Info: images/installs/useragents.png  used on input line 840
+.
 (pdftex.def)             Requested size: 424.06033pt x 218.22662pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[50 <./images/installs/appswifi.png>]
-<images/installs/implicit.png, id=280, 571.13374pt x 482.80376pt>
+[52 <./images/installs/appswifi.png>]
+<images/installs/implicit.png, id=286, 571.13374pt x 482.80376pt>
 File: images/installs/implicit.png Graphic file (type png)
-
 <use images/installs/implicit.png>
-Package pdftex.def Info: images/installs/implicit.png used on input line 854.
+Package pdftex.def Info: images/installs/implicit.png  used on input line 862.
 (pdftex.def)             Requested size: 300.0pt x 253.60101pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[51 <./images/installs/useragents.png>]
-<images/installs/incidenciacomp.png, id=285, 1058.95625pt x 519.9425pt>
+[53 <./images/installs/useragents.png>]
+<images/installs/incidenciacomp.png, id=291, 1058.95625pt x 519.9425pt>
 File: images/installs/incidenciacomp.png Graphic file (type png)
-
 <use images/installs/incidenciacomp.png>
-Package pdftex.def Info: images/installs/incidenciacomp.png used on input line 
-866.
+Package pdftex.def Info: images/installs/incidenciacomp.png  used on input line
+ 874.
 (pdftex.def)             Requested size: 424.06033pt x 208.21132pt.
-
-
-LaTeX Warning: Reference `aplicaciones' on page 52 undefined on input line 871.
-
-
-[52 <./images/installs/implicit.png> <./images/installs/incidenciacomp.png>]
-<images/auctions-clicks/subastasterminadasenclicks.png, id=291, 425.59pt x 287.
+ [54 <./images/installs/implicit.png> <./images/installs/incidenciacomp.png>]
+<images/auctions-clicks/subastasterminadasenclicks.png, id=297, 425.59pt x 287.
 0725pt>
 File: images/auctions-clicks/subastasterminadasenclicks.png Graphic file (type 
 png)
- <use images/auctions-clicks/subastasterminadasenclicks.png>
+<use images/auctions-clicks/subastasterminadasenclicks.png>
 Package pdftex.def Info: images/auctions-clicks/subastasterminadasenclicks.png 
-used on input line 887.
+ used on input line 895.
 (pdftex.def)             Requested size: 350.0pt x 236.09744pt.
-
-<images/auctions-clicks/subyclickspordia.png, id=292, 645.41125pt x 497.86pt>
+<images/auctions-clicks/subyclickspordia.png, id=298, 645.41125pt x 497.86pt>
 File: images/auctions-clicks/subyclickspordia.png Graphic file (type png)
-
 <use images/auctions-clicks/subyclickspordia.png>
-Package pdftex.def Info: images/auctions-clicks/subyclickspordia.png used on in
-put line 894.
+Package pdftex.def Info: images/auctions-clicks/subyclickspordia.png  used on i
+nput line 902.
 (pdftex.def)             Requested size: 350.0pt x 269.9799pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-<images/auctions-clicks/relauctionsclickspordia.png, id=293, 421.575pt x 279.04
+<images/auctions-clicks/relauctionsclickspordia.png, id=299, 421.575pt x 279.04
 25pt>
 File: images/auctions-clicks/relauctionsclickspordia.png Graphic file (type png
 )
- <use images/auctions-clicks/relauctionsclickspordia.png>
-Package pdftex.def Info: images/auctions-clicks/relauctionsclickspordia.png use
-d on input line 901.
+<use images/auctions-clicks/relauctionsclickspordia.png>
+Package pdftex.def Info: images/auctions-clicks/relauctionsclickspordia.png  us
+ed on input line 909.
 (pdftex.def)             Requested size: 350.0pt x 231.66907pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[53
-
- <./images/auctions-clicks/subastasterminadasenclicks.png>] [54 <./images/aucti
-ons-clicks/subyclickspordia.png> <./images/auctions-clicks/relauctionsclickspor
-dia.png>]
-
-LaTeX Warning: Reference `subastasterminadasenclicks' on page 55 undefined on i
-nput line 909.
-
-
-LaTeX Warning: Reference `clicksysubastaspordia' on page 55 undefined on input 
-line 910.
-
-
-LaTeX Warning: Reference `relclickssubastas' on page 55 undefined on input line
- 911.
-
-<images/auctions-clicks/advporSO.png, id=303, 406.51875pt x 277.035pt>
-File: images/auctions-clicks/advporSO.png Graphic file (type png)
-
-<use images/auctions-clicks/advporSO.png>
-Package pdftex.def Info: images/auctions-clicks/advporSO.png used on input line
- 919.
-(pdftex.def)             Requested size: 350.0pt x 238.52867pt.
-
-<images/auctions-clicks/advporSO2.png, id=304, 393.47pt x 277.035pt>
-File: images/auctions-clicks/advporSO2.png Graphic file (type png)
-
-<use images/auctions-clicks/advporSO2.png>
-Package pdftex.def Info: images/auctions-clicks/advporSO2.png used on input lin
-e 926.
-(pdftex.def)             Requested size: 350.0pt x 246.4251pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [55
 
- <./images/auctions-clicks/advporSO.png>] [56 <./images/auctions-clicks/advporS
-O2.png>] (./datos-auctions.tex [57
+ <./images/auctions-clicks/subastasterminadasenclicks.png>] [56 <./images/aucti
+ons-clicks/subyclickspordia.png> <./images/auctions-clicks/relauctionsclickspor
+dia.png>]
+<images/auctions-clicks/advporSO.png, id=310, 406.51875pt x 277.035pt>
+File: images/auctions-clicks/advporSO.png Graphic file (type png)
+<use images/auctions-clicks/advporSO.png>
+Package pdftex.def Info: images/auctions-clicks/advporSO.png  used on input lin
+e 927.
+(pdftex.def)             Requested size: 350.0pt x 238.52867pt.
+<images/auctions-clicks/advporSO2.png, id=311, 393.47pt x 277.035pt>
+File: images/auctions-clicks/advporSO2.png Graphic file (type png)
+<use images/auctions-clicks/advporSO2.png>
+Package pdftex.def Info: images/auctions-clicks/advporSO2.png  used on input li
+ne 934.
+(pdftex.def)             Requested size: 350.0pt x 246.4251pt.
 
-] [58]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[57
+
+ <./images/auctions-clicks/advporSO.png>] [58 <./images/auctions-clicks/advporS
+O2.png>] (./datos-auctions.tex [59
+
+] [60]
 Overfull \vbox (30.84601pt too high) has occurred while \output is active []
 
 
-[59]
+[61]
 Overfull \hbox (34.94626pt too wide) in paragraph at lines 221--232
  [][] 
  []
 
-) (./datos-auctions-clicks.tex [60]) [61]
+) (./datos-auctions-clicks.tex [62]) [63]
 No file informe.bbl.
 (./informe.aux)
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 4096 strings out of 494953
- 66934 string characters out of 6180977
- 131812 words of memory out of 5000000
- 7265 multiletter control sequences out of 15000+600000
+ 4063 strings out of 494820
+ 66735 string characters out of 6177788
+ 129047 words of memory out of 5000000
+ 7276 multiletter control sequences out of 15000+600000
  9324 words of font info for 33 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 38i,7n,39p,748b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62 hyphenation exceptions out of 8191
+ 41i,7n,39p,748b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texli
@@ -1280,10 +1193,10 @@ fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmtt12.pfb>
-Output written on informe.pdf (61 pages, 3724443 bytes).
+Output written on informe.pdf (63 pages, 2507114 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
+ 371 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  321 words of extra memory for PDF output out of 10000 (max. 10000000)
 
