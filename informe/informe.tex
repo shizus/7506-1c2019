@@ -210,8 +210,11 @@
 \clearpage
 \subsection{Clicks}
 	\subsubsection{Análisis General}
+		
 		\tab En el archivo \texttt{clicks.csv} se nos muestran los clicks que se realizaron entre el 5 y el 13 de Marzo de este año. Este csv cuenta con 20 columnas y 26000 filas aproximadamente. En las columans tenemos datos como en que latitud y longitud se hizo el click, cuanto tardo el usuario en hacer el click, de que pais es el dispositivo, en que parte de la pantalla del celular se realizo click, entre otras cosas.
+		
 		\tab En primera medida sacamos las columnas que no nos aportaban nada. La columna action\_id tenia todos NaN así que fue removida. La columna que indicaba el país solo daba como resultado un país solo asi qeu nos parecio irrelevante y la quitamos. Así también eliminamos la columan de wifi\_connection ya que todas daban False, lo cual es un poco raro que ninguno haya estado conectado a wifi. Finalmente se sacó la columna trans\_id ya que era un identificador único para cada uno de los clicks y para analizar este archivo splamente no nos aportaba nada.
+		
 		\tab También, se tomó la desicion de cambiar los tipos de algunas columnas para ahorrar más espacio. Las columnas advertiser\_id y source\_id se las cambio a category ya que tenian pocos valores y siempre eran los mismos. Y a varias de las columnas se las paso de float64 a float32, ya que no nesecitaban tantos bits para representar sus datos.
 
 	\subsubsection{Clicks en los distintas publicidades}
@@ -220,7 +223,7 @@
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id.png}
+			\includegraphics[scale=0.5]{images/clicks/clicks_advertiser_id.png}
 			\caption{Clicks en los advertiser\_id}
 		\end{figure}
 		\FloatBarrier
@@ -261,7 +264,7 @@
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_minor_OS.png}
+			\includegraphics[scale = 0.37]{images/clicks/clicks_minor_OS.png}
 			\caption{Clicks en los os\_minor}
 		\end{figure}
 		\FloatBarrier
@@ -274,7 +277,7 @@
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_major_OS.png}
+			\includegraphics[scale = 0.5]{images/clicks/clicks_major_OS.png}
 			\caption{Clicks en los os\_major}
 		\end{figure}
 		\FloatBarrier
@@ -290,7 +293,7 @@
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_specs_brand.png}
+			\includegraphics[scale = 0.7]{images/clicks/clicks_specs_brand.png}
 			\caption{Clicks en los specs\_brand}
 		\end{figure}
 		\FloatBarrier
@@ -317,7 +320,7 @@
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_ref_type.png}
+			\includegraphics[scale = 0.6]{images/clicks/clicks_ref_type.png}
 			\caption{Clicks en las distintos sistemas operativos}
 		\end{figure}
 		\FloatBarrier
@@ -340,7 +343,7 @@
 		\FloatBarrier
 
 		\tab Se observa que la cantidad de clicks empieza a aumentar a partir del dia 8 y sube hasta alcanzar su máximo el dia 12 y luego baja.
-
+		\clearpage
 		\tab Ahora vamos a mostrar un gráfico que indica la cantidad de clicks distribuidos en las distintas horas del dia.
 
 		\FloatBarrier
@@ -352,46 +355,37 @@
 		\FloatBarrier
 		
 		\tab En este gráfico se ve claramente que la cantidad de clicks suben exageradamente cuando llega la noche, mas precisamente entre las 8pm y las 2am. Se podría decir que la gente utiliza mas el celular a estas horas.
-
-		\tab En estos graficos de areas se muestan la catidad de clicks por hora en el dia de los distintos advertiser\_id
-
-		\FloatBarrier
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id_hours.png}
-			\caption{Clicks en las horas del dia de los advertiser\_id}
-		\end{figure}
-		\FloatBarrier
+		\newline
+		\newline
+		\tab En este grafico de areas se muestan la catidad de clicks por hora en el dia de los distintos advertiser\_id
 	
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id_hours_persentage.png}
+			\includegraphics[scale=0.37]{images/clicks/clicks_advertiser_id_hours_persentage.png}
 			\caption{Clicks en las horas del dia de los advertiser\_id (Porcentaje)}
 		\end{figure}
 		\FloatBarrier
 
 
 
-		\tab Se puede ver, como se esperaba, que practicamente toda el area esta pintada del advertiser id 3 que es el que más abunda en este archivo
-
+		\tab Se puede ver, como se esperaba, que practicamente toda el area esta pintada del advertiser id 3 que es el que más abunda en este archivo.
+		\newline
+		\newline
 		\tab El siguiente gráfico muestra la cantidad de clicks en las distintas horas del dia de los source\_id que se encuentran en este archivo.
-
-		\begin{comment}
 
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_source_id_hours_percentage.png}
+			\includegraphics[width=\textwidth]{images/clicks/clicks_source_id_hours.png}
 			\caption{Clicks en las horas del dia de los source\_id}
 		\end{figure}
 		\FloatBarrier
-		\end{comment}
 
 	
-		\tab No se ve diferencia en como evoluciona la cantidad de clicks de los distintos source\_id dependiendo la hora del dia. No obstante, se puede observar que la mayoria de lso clicks son de los source\_id 0, 1, 5, 6.
+		\tab No se ve diferencia en como evoluciona la cantidad de clicks de los distintos source\_id dependiendo la hora del dia. No obstante, se puede observar que la mayoria de los clicks son de los source\_id 0, 1, 5, 6.
 
-		
+		\clearpage
 		\tab Este nuevo gráfico nos mostrará los clicks en las horas del dia distribuidos en los distintos specs\_brand existentes.
 
 		\FloatBarrier
@@ -403,7 +397,8 @@
 		\FloatBarrier
 
 		\tab La cantidad de clicks se consentra en los specs\_brands 392184377613098015 y 2733035977666442898 que son los que predominan en el csv.
-
+	
+	\clearpage
 	\subsubsection{Posición geográfica del click}
 		
 		\tab En estos gráficos mostraremos las latitudes y longitudes de los clicks efectuados.
@@ -411,7 +406,7 @@
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_lat_long_scatter.png}
+			\includegraphics[scale=0.48]{images/clicks/clicks_lat_long_scatter.png}
 			\caption{Latitud y longitud del click}
 		\end{figure}
 		\FloatBarrier
@@ -419,15 +414,18 @@
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_lat_long_heat.png}
+			\includegraphics[scale=0.48]{images/clicks/clicks_lat_long_heat.png}
 			\caption{Latitud y longitud del click}
 		\end{figure}
 		\FloatBarrier
 
 
 		\tab Se ve que se consentran muchos clicks entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Posiblemente sea una ciudad mas poblada.
-
-		
+		\newline
+		\newline
+		\newline
+		\newline
+		\newline
 		\tab En este gráfico se vuelve a mostrar la latitud y la longitud de los clicks pero en este caso identificaremos los clicks con la mayor version de sistema operativo que tiene el dispositivo
 		
 		\FloatBarrier
@@ -447,7 +445,7 @@
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_touch_scatter.png}
+			\includegraphics[scale=0.2]{images/clicks/clicks_touch_scatter.png}
 			\caption{Posicion del click en pantalla}
 		\end{figure}
 		\FloatBarrier
@@ -455,7 +453,7 @@
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_touch_heat.png}
+			\includegraphics[scale=0.4]{images/clicks/clicks_touch_heat.png}
 			\caption{Posicion del click en pantalla}
 		\end{figure}
 		\FloatBarrier
@@ -478,16 +476,10 @@
 		\end{figure}
 		\FloatBarrier
 
-		\FloatBarrier
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id_timeToTouch2.png}
-			\caption{Clicks en el tiempo de los advertiser\_id}
-		\end{figure}
-		\FloatBarrier
 
 		\tab Se observa que la mayoria de clicks se realizan en los primeros segundos y practicamente todos por el advertiser\_id 3. Esto es algo totalmente esperable debido a lo que se analizó previamente.
-
+		\newline
+		\newline
 		\tab En el siguiete gráfico se mostrará la distribución en el tiempo que tardan los distintos specs\_brand en hacer click.
 
 		\FloatBarrier
@@ -509,6 +501,7 @@
 		\FloatBarrier
 
 		\tab Se observa lo normal, en ambos sistemas operativos los clicks se consentran en los prmeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que mas clicks tiene, tiene clicks que tardaron bastante en tocarse.
+
 
 
 
