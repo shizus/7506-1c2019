@@ -7,9 +7,9 @@
 \usepackage{graphicx}
 \usepackage{placeins}
 \usepackage{caption}
-\newcommand\tab[1][1cm]{\hspace*{#1}}
 \geometry{top = 1in}
 \setlength{\textfloatsep}{1\baselineskip plus 0.2\baselineskip minus 0.5\baselineskip}
+\setlength{\parindent}{2em}
 \renewcommand\textfraction{.1}
 
 \title{Análisis Exploratorio de Datos \\ Trabajo Práctico 1 - Organización de Datos}
@@ -44,26 +44,26 @@
 
 \newpage
 
-\tableofcontents
+leofcontents
 \newpage
 \section{Introducción}
-	\tab En el trabajo se hace un análisis exploratorio de un set de datos provistos por la empresa Jampp. En el mismo se encuentra información de subastas, instalaciones, clicks, entre otros.\\
-	\tab Primero se hará una visión general de los archivos installs.csv, clicks.csv, auctions.csv y events.csv para entender la distribución y la cantidad de datos, el significado de las columnas, reconocer las columnas que no aportan información, por ejemplo, las que tienen todos sus valores nulos, y reconocer el tipo de datos en cada columna, seguido de un análisis más profundo para obtener más información de los datos. Luego se hará un análisis global, buscando información relativa a los archivos en conjunto, permitiendo obtener otro tipo de información.
+	 En el trabajo se hace un análisis exploratorio de un set de datos provistos por la empresa Jampp. En el mismo se encuentra información de subastas, instalaciones, clicks, entre otros.\\
+	 Primero se hará una visión general de los archivos installs.csv, clicks.csv, auctions.csv y events.csv para entender la distribución y la cantidad de datos, el significado de las columnas, reconocer las columnas que no aportan información, por ejemplo, las que tienen todos sus valores nulos, y reconocer el tipo de datos en cada columna, seguido de un análisis más profundo para obtener más información de los datos. Luego se hará un análisis global, buscando información relativa a los archivos en conjunto, permitiendo obtener otro tipo de información.
 
 \section{Análisis individual de archivos}
 \subsection{Subastas}
 	\subsubsection{Análisis general} \label{analisis general}
-	 \tab El archivo 'auctions.csv' contiene información acerca de subastas.
+	  El archivo 'auctions.csv' contiene información acerca de subastas.
 	Hay dos columnas que no nos aportan información significante. 'auction\_type\_id' tiene todos sus valores 		nulos, por lo que no fue tomada en cuenta para el análisis. 'country' informa un solo valor posible.
 
-	\tab La columna platforms tiene dos valores posibles (1 y 2) que se supone son Android e iOS. Va a ser importante para el análisis que hagamos más adelante. De ahora en más, platform y sistema operativo serán sinónimos en este informe.
+	 La columna platforms tiene dos valores posibles (1 y 2) que se supone son Android e iOS. Va a ser importante para el análisis que hagamos más adelante. De ahora en más, platform y sistema operativo serán sinónimos en este informe.
 
-	\tab Por último, 'source' nos da información acerca del exchange de donde surge la subasta.
+	 Por último, 'source' nos da información acerca del exchange de donde surge la subasta.
 
-	\tab Además vemos que ningún valor de este archivo, excluyendo la columna 'auction\_type\_id', es nulo, por lo que no es necesario tomar ninguna decisión respecto a eso.
+	 Además vemos que ningún valor de este archivo, excluyendo la columna 'auction\_type\_id', es nulo, por lo que no es necesario tomar ninguna decisión respecto a eso.
 
 	\subsubsection{Análisis de los dispositivos en las subastas}
-	\tab Un punto muy importante para analizar son los dispositivos. Esto trajo un problema al analizar los datos y puede cambiar la forma en la que se entienden los mismos.
+	 Un punto muy importante para analizar son los dispositivos. Esto trajo un problema al analizar los datos y puede cambiar la forma en la que se entienden los mismos.
 	Podemos, por ejemplo, ver el top diez de dispositivos de los cuales se generan más subastas.
 	\FloatBarrier
 		\begin{figure}
@@ -74,8 +74,8 @@
 		\end{figure}
 	\FloatBarrier
 
-	\tab Ahora el problema.\newline
-	\tab En total, en las 19571319 subastas, aparecen 206171 dispositivos. Algo interesante sería conocer cuántos tienen cada plataforma. Por lo que hacemos un gráfico.
+	 Ahora el problema.\newline
+	 En total, en las 19571319 subastas, aparecen 206171 dispositivos. Algo interesante sería conocer cuántos tienen cada plataforma. Por lo que hacemos un gráfico.
 
 	\FloatBarrier
 		\begin{figure}
@@ -86,22 +86,22 @@
 		\end{figure}
 	\FloatBarrier
 
-	\tab Al obtener los datos del gráfico, observamos que la suma de las cantidades de dispositivos para cada plataforma es 206453. ¡Esto es mayor a la cantidad total de dispositivos (206171)!\newline
-	\tab La causa de este problema se entiende al conocer cómo se obtuvieron las cantidades. Primero se contó la cantidad de dispositivos total. Luego se separaron los que tuvieran plataforma '1' de los que tuvieran plataforma '2' (tener en cuenta que como hay una fila por subasta, cada dispositivo puede aparecer en filas distintas). Al sumar ambas cantidades obtenemos un número mayor que el total, por lo que es evidente que hay dispositivos que tienen ambas plataformas, es decir, en algúnas filas aparecen con un valor de la columna 'platform' y en otras filas con otro.
+	 Al obtener los datos del gráfico, observamos que la suma de las cantidades de dispositivos para cada plataforma es 206453. ¡Esto es mayor a la cantidad total de dispositivos (206171)!\newline
+	 La causa de este problema se entiende al conocer cómo se obtuvieron las cantidades. Primero se contó la cantidad de dispositivos total. Luego se separaron los que tuvieran plataforma '1' de los que tuvieran plataforma '2' (tener en cuenta que como hay una fila por subasta, cada dispositivo puede aparecer en filas distintas). Al sumar ambas cantidades obtenemos un número mayor que el total, por lo que es evidente que hay dispositivos que tienen ambas plataformas, es decir, en algúnas filas aparecen con un valor de la columna 'platform' y en otras filas con otro.
 
-	\tab Haciendo una simple resta, se puede ver que la cantidad de dispositivos que aparecen con plataformas distintas es 282, y que en total participan en 47862 subastas. De hecho hay un dispositivo (5.292967062497395e+18) que aparece en el top 300 de cantidad de subastas.
+	 Haciendo una simple resta, se puede ver que la cantidad de dispositivos que aparecen con plataformas distintas es 282, y que en total participan en 47862 subastas. De hecho hay un dispositivo (5.292967062497395e+18) que aparece en el top 300 de cantidad de subastas.
 
-	\tab Esto puede alterar los análisis que incluyen división en plataformas. Sin embargo, no es trivial que haya que borrar estos datos, porque se estarían borrando casi 50000 subastas. Además, dejar los datos como están no altera a los estudios que se hagan sin dividir el problea por sistemas operativos. Por lo tanto se decidió trabajar de la siguiente manera.
+	 Esto puede alterar los análisis que incluyen división en plataformas. Sin embargo, no es trivial que haya que borrar estos datos, porque se estarían borrando casi 50000 subastas. Además, dejar los datos como están no altera a los estudios que se hagan sin dividir el problea por sistemas operativos. Por lo tanto se decidió trabajar de la siguiente manera.
 	\begin{itemize}
 		\item En aquellos análisis que, a priori, no parezcan ser afectados por estos errores en las plataformas de los dispositivos usaran el dataset entero.
 		\item En los restantes, se usará un dataframe filtrado, en el que no están los dispositivos conflictivos.
 	\end{itemize}
 	
-	\tab Igualmente, se compararon los gráficos conflictivos para el dataframe original y el filtrado, y no había diferencias substanciales cualitativas ni cuantitativas.
+	 Igualmente, se compararon los gráficos conflictivos para el dataframe original y el filtrado, y no había diferencias substanciales cualitativas ni cuantitativas.
 	
 	
 	\subsubsection{Subastas por día de Marzo}
-	\tab Como primer acercamiento a este set de datos, es interesante ver cómo se distribuye la cantidad de subastas en los días que incluye el archivo (05/03/19 al 13/03/19). El gráfico \ref{subastasmarzo} representa dicha distribución. En él se pueden observar varias cosas:
+	 Como primer acercamiento a este set de datos, es interesante ver cómo se distribuye la cantidad de subastas en los días que incluye el archivo (05/03/19 al 13/03/19). El gráfico \ref{subastasmarzo} representa dicha distribución. En él se pueden observar varias cosas:
 	\begin{itemize}
 		\item La cantidad de subastas parece, en general, aumentar con el paso de los dias.
 		\item El valor del último día es más del doble del valor del primer día.
@@ -119,9 +119,9 @@
 	\FloatBarrier
 
 	\subsubsection{Subastas por día de Marzo por sistema operativo}
-	\tab Otro punto interesante es dividir el problema. Obtener la distribución de subastas en los días con datos disponibles para cada plataforma (Android e iOS). En la imagen \ref{subastasmarzoSO} se pueden observar las cantidades. Observese que llamamos '1' y '2' a las plataformas, ya que no sabemos cuál es Android y cuál es iOS.
+	 Otro punto interesante es dividir el problema. Obtener la distribución de subastas en los días con datos disponibles para cada plataforma (Android e iOS). En la imagen \ref{subastasmarzoSO} se pueden observar las cantidades. Observese que llamamos '1' y '2' a las plataformas, ya que no sabemos cuál es Android y cuál es iOS.
 
-	\tab Puntos interesantes a reconocer:
+	 Puntos interesantes a reconocer:
 
 	\begin{itemize}
 		\item Para este análisis se usaron los datos filtrados, ya que los devices que tienen ambas plataformas pueden generar ruido.
@@ -140,8 +140,8 @@
 	\FloatBarrier
 
 	\subsubsection{Subastas por hora del día}
-	\tab Ahora vamos a analizar cómo se distribuyen las subastas a lo largo del día. Para esto hacemos un gráfico de hora del día contra cantidad de subastas (Gráfico \ref{subastashora}).\newline
-	\tab Desde un análisis cualitativo se pueden observar algúnos puntos:
+	 Ahora vamos a analizar cómo se distribuyen las subastas a lo largo del día. Para esto hacemos un gráfico de hora del día contra cantidad de subastas (Gráfico \ref{subastashora}).\newline
+	 Desde un análisis cualitativo se pueden observar algúnos puntos:
 	\begin{itemize}
 		\item Parece ser que la mayor cantidad de subastas se distribuyen por la noche y la madrugada.
 		\item La cantidad de subastas es poca en horas de la mañana y el mediodía. En el gráfico se puede ver un gran valle en esa parte del día.
@@ -156,7 +156,7 @@
 		\end{figure}
 	\FloatBarrier
 	\subsubsection{Subastas por hora del día por sistema operativo}
-	\tab Al igual que se hizo antes podemos dividir el gráfico para ambas plataformas. Vemos que pasa algo muy parecido que lo que pasaba para la cantidad de subastas por día. El gráfico de la plataforma '1', al tener una cantidad mucho mayor de subastas, es la que predomina en el gráfico de la sección "Subastas por hora del día", y por eso sus gráficos son tan parecidos. El gráfico de la plataforma '2' es bastante más chato, y con cantidades de subastas mucho más chicas.
+	 Al igual que se hizo antes podemos dividir el gráfico para ambas plataformas. Vemos que pasa algo muy parecido que lo que pasaba para la cantidad de subastas por día. El gráfico de la plataforma '1', al tener una cantidad mucho mayor de subastas, es la que predomina en el gráfico de la sección "Subastas por hora del día", y por eso sus gráficos son tan parecidos. El gráfico de la plataforma '2' es bastante más chato, y con cantidades de subastas mucho más chicas.
 	En esta subsección y en la siguiente usaremos los datos filtrados.
 	\FloatBarrier
 		\begin{figure}
@@ -168,9 +168,9 @@
 	\FloatBarrier
 
 	\subsubsection{Subastas por sistema operativo}
-	\tab Resulta interesante conocer cuál es el sistema operativo para el cual se generan más subastas. Es algo que ya se venía viendo en la forma y nivel (cantidad de subastas) de los gráficos anteriores. Sin embargo, los gráficos vistos hasta ahora no dan un conocimiento directo de la relación de las cantidades de subastas de ambas plataformas.
+	 Resulta interesante conocer cuál es el sistema operativo para el cual se generan más subastas. Es algo que ya se venía viendo en la forma y nivel (cantidad de subastas) de los gráficos anteriores. Sin embargo, los gráficos vistos hasta ahora no dan un conocimiento directo de la relación de las cantidades de subastas de ambas plataformas.
 
-	\tab En las figuras que se ven a continuación podemos confirmar que lo que indicabamos en los gráficos anteriores era cierto. La cantidad de subastas es mucho mayor para la plataforma '1'. Además, ahora tenemos una visión más cuantitativa de esta relación, en la imagen \ref{subastasSOporcentajes} vemos una relación porcentual, mientras que la imagen \ref{subastasSOcantidades} nos da más idea de las cantidades.
+	 En las figuras que se ven a continuación podemos confirmar que lo que indicabamos en los gráficos anteriores era cierto. La cantidad de subastas es mucho mayor para la plataforma '1'. Además, ahora tenemos una visión más cuantitativa de esta relación, en la imagen \ref{subastasSOporcentajes} vemos una relación porcentual, mientras que la imagen \ref{subastasSOcantidades} nos da más idea de las cantidades.
 
 	\FloatBarrier
 		\begin{figure}
@@ -191,9 +191,9 @@
 	\FloatBarrier
 
 	\subsubsection{Subastas por source}
-	\tab Como indica la introducción a esta sección (vease \ref{analisis general}), source nos indica el exchange que generó la subasta. Se puede obtener, a partir de los datos, cuáles son los exchanges principales, y cuántas subastas generan.
+	 Como indica la introducción a esta sección (vease \ref{analisis general}), source nos indica el exchange que generó la subasta. Se puede obtener, a partir de los datos, cuáles son los exchanges principales, y cuántas subastas generan.
 
-	\tab A tener en cuenta:
+	 A tener en cuenta:
 	\begin{itemize}
 		\item Los que se muestran son todos los exchanges que aparecen en el archivo.
 		\item Al igual que en las plataformas, los exchanges se toman por un id, y no por su nombre.
@@ -218,13 +218,13 @@
 \subsection{Clicks}
 	\subsubsection{Análisis General}
 		
-		\tab En el archivo \texttt{clicks.csv} se nos muestran los clicks que se realizaron entre el 5 y el 13 de Marzo de este año. Este csv cuenta con 20 columnas y 26000 filas aproximadamente. En las columnas tenemos datos como en qué latitud y longitud se hizo el click, cuánto tardó el usuario en hacer el click, de qué país es el dispositivo, en qué parte de la pantalla del celular se realizó click, entre otras cosas.
+		 En el archivo \texttt{clicks.csv} se nos muestran los clicks que se realizaron entre el 5 y el 13 de Marzo de este año. Este csv cuenta con 20 columnas y 26000 filas aproximadamente. En las columnas tenemos datos como en qué latitud y longitud se hizo el click, cuánto tardó el usuario en hacer el click, de qué país es el dispositivo, en qué parte de la pantalla del celular se realizó click, entre otras cosas.
 		
-		\tab En primera medida sacamos las columnas que no nos aportaban nada. La columna action\_id tenía todos NaN así que fue removida. La columna que indicaba el país solo daba como resultado un país unicamente así que nos pareció irrelevante y la quitamos. Así también eliminamos la columna de wifi\_connection ya que todas daban False, lo cual es un poco raro, porque esto indicaría ninguno estaba conectado a wifi. Finalmente se sacó la columna trans\_id ya que era un identificador único para cada uno de los clicks y para analizar este archivo solo no nos aportaba nada.
+		 En primera medida sacamos las columnas que no nos aportaban nada. La columna action\_id tenía todos NaN así que fue removida. La columna que indicaba el país solo daba como resultado un país unicamente así que nos pareció irrelevante y la quitamos. Así también eliminamos la columna de wifi\_connection ya que todas daban False, lo cual es un poco raro, porque esto indicaría ninguno estaba conectado a wifi. Finalmente se sacó la columna trans\_id ya que era un identificador único para cada uno de los clicks y para analizar este archivo solo no nos aportaba nada.
 		
-		\tab También, se tomó la decisión de cambiar los tipos de algúnas columnas para ahorrar más espacio. Las columnas advertiser\_id y source\_id se las cambió a category ya que tenían pocos valores y siempre eran los mismos. Y a varias de las columnas se las pasó de float64 a float32, ya que no necseitaban tantos bits para representar sus datos.
+		 También, se tomó la decisión de cambiar los tipos de algúnas columnas para ahorrar más espacio. Las columnas advertiser\_id y source\_id se las cambió a category ya que tenían pocos valores y siempre eran los mismos. Y a varias de las columnas se las pasó de float64 a float32, ya que no necseitaban tantos bits para representar sus datos.
 	\subsubsection{Clicks en los distintas publicidades}
-		\tab Se van a observar la cantidad de clicks en las distintas publicidades
+		 Se van a observar la cantidad de clicks en las distintas publicidades
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -234,10 +234,10 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Se puede observar que prácticamente todos son clicks en la publicidad con el id 3. El porcentaje de clicks en este id es de 99.7. Al parecer, le sirve mucho más a Jampp mostrar las publicidades del id 3 o es una publicidad de una app que es más común que todos usen.
+		 Se puede observar que prácticamente todos son clicks en la publicidad con el id 3. El porcentaje de clicks en este id es de 99.7. Al parecer, le sirve mucho más a Jampp mostrar las publicidades del id 3 o es una publicidad de una app que es más común que todos usen.
 
 	\subsubsection{Clicks en los source\_id}
-		\tab En este gráfico vamos a mostrar la cantidad de clicks que se hacen en los distintos source\_id que hay en el archivo
+		 En este gráfico vamos a mostrar la cantidad de clicks que se hacen en los distintos source\_id que hay en el archivo
 		
 		
 		\FloatBarrier
@@ -248,11 +248,11 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Como se puede observar la mayoría de los clicks estan distribuidos entre los id 0, 1, 6 y 5 siendo el source\_id 1 el que más cantidad de clicks tiene.
+		 Como se puede observar la mayoría de los clicks estan distribuidos entre los id 0, 1, 6 y 5 siendo el source\_id 1 el que más cantidad de clicks tiene.
 
 
 	\subsubsection{Clicks en los carrier\_id}
-		\tab En el siguiente gráfico se mostrará la cantidad de clicks que tiene cada carrier\_id
+		 En el siguiente gráfico se mostrará la cantidad de clicks que tiene cada carrier\_id
 		
 		\FloatBarrier
 		\begin{figure}[h]
@@ -262,10 +262,10 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Por más que hay varios carrier\_id se ve que la mayoría de clicks se distribuyen en aproximadamente 20 carriers\_id. El carrier\_id que más realiza clicks es el 4.0.
+		 Por más que hay varios carrier\_id se ve que la mayoría de clicks se distribuyen en aproximadamente 20 carriers\_id. El carrier\_id que más realiza clicks es el 4.0.
 
 	\subsubsection{Clicks en los os\_minor}
-		\tab Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas mínimas versiones de sus sistemas operativos.
+		 Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas mínimas versiones de sus sistemas operativos.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -275,10 +275,10 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Vemos que la cantidad de clicks es liderada por los dispositivos con un os\_minor 3.378640e+18.
+		 Vemos que la cantidad de clicks es liderada por los dispositivos con un os\_minor 3.378640e+18.
 
 	\subsubsection{Clicks en los os\_major}
-		\tab Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas máximas
+		 Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas máximas
 		versiones de sus sistemas operativos.
 
 		\FloatBarrier
@@ -289,18 +289,18 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab En este casos se reparte bastante equitativamente la cantidad de clicks en cuatro distintos os\_major.
+		 En este casos se reparte bastante equitativamente la cantidad de clicks en cuatro distintos os\_major.
 		No podemos saber cuanto es la cantidad total de los os\_major debido a que una categoría es ``others'' y no sabemos
 		cuántos distintos sistemas operativos tiene encerrado ese término.
 
 	\subsubsection{Clicks en los agent\_device}
-		\tab En este caso notamos que la cantidad de agent\_device es mucha. Hay un total de 190 diferentes agent\_device
+		 En este caso notamos que la cantidad de agent\_device es mucha. Hay un total de 190 diferentes agent\_device
 		y la mayoría de sus datos son NaN. Solamente posee alrededor de 3000 datos. Por lo tanto, llegamos a la conclusión
 		de que no aporta ningún dato importante ni tampoco es confiable la información que dé ya que la cantidad de datos
 		que tiene es muy poca.
 
 	\subsubsection{Clicks en los spec\_brands}
-		\tab A continuación mostraremos un gráfico donde podemos ver la cantidad de clicks que tienen los distintos spec\_brands.
+		 A continuación mostraremos un gráfico donde podemos ver la cantidad de clicks que tienen los distintos spec\_brands.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -310,12 +310,12 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Por más que hay 5 spec\_brands, se ve claramente que los clicks se realiazan practimacmente dos spec\_brands.
+		 Por más que hay 5 spec\_brands, se ve claramente que los clicks se realiazan practimacmente dos spec\_brands.
 		Estos son 392184377613098015 y 2733035977666442898.
 		
 
 	\subsubsection{Clicks en las distintas marcas}
-		\tab Este gráfico nos muestra la cantidad de clicks en las distintas marcas de celular.
+		 Este gráfico nos muestra la cantidad de clicks en las distintas marcas de celular.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -325,11 +325,11 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Como se puede observar, hay un total de 13 marcas distintas de teléfonos y la mayoría de clicks la realizan
+		 Como se puede observar, hay un total de 13 marcas distintas de teléfonos y la mayoría de clicks la realizan
 		celulares de la marca 2.0, 0.0 y 1.0.
 
 	\subsubsection{Clicks en Android e IOS}
-		\tab En el siguiente gráfico se muestra la cantidad de clicks que tienen los celulares con Android o IOS.
+		 En el siguiente gráfico se muestra la cantidad de clicks que tienen los celulares con Android o IOS.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -339,13 +339,13 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Algo raro que se observa es que hay un total de cuatro sistemas operativos. Esto esta mal debido aque solo
+		 Algo raro que se observa es que hay un total de cuatro sistemas operativos. Esto esta mal debido aque solo
 		debería haber Android o IOS. Por lo tanto, se puede concluir que los dos valores que menos clicks tienen son datos
 		erróneos. Es decir, solo hay que tener en cuanta los que clicks que tienen como sistema operativo los dos que más
 		clicks concentran en este gráfico.
 
 	\subsubsection{Clicks en ref\_hash}
-		\tab El ref\_hash nos muestra un id único de cada dispositivo que realiza click. Encontramos que hay ciertos ref\_hash que se
+		 El ref\_hash nos muestra un id único de cada dispositivo que realiza click. Encontramos que hay ciertos ref\_hash que se
 		repiten varias veces. Por ejemplo, el que más veces lo hace, realiza un total de 41 clicks. La verdad es que es
 		muy raro que una persona toque click 41 veces en 9 días. Por lo tanto, no podemos descartar que esos casos con
 		muchos clicks sea un fraude. Hay muchísimos que tienen más de 10 clicks. Es información que hay que manejar con
@@ -364,9 +364,9 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Se observa que la cantidad de clicks empieza a aumentar a partir del día 8 y sube hasta alcanzar su máximo el día 12 y luego baja.
+		 Se observa que la cantidad de clicks empieza a aumentar a partir del día 8 y sube hasta alcanzar su máximo el día 12 y luego baja.
 		\clearpage
-		\tab Ahora vamos a mostrar un gráfico que indica la cantidad de clicks distribuidos en las distintas horas del día.
+		 Ahora vamos a mostrar un gráfico que indica la cantidad de clicks distribuidos en las distintas horas del día.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -376,10 +376,10 @@
 		\end{figure}
 		\FloatBarrier
 		
-		\tab En este gráfico se ve claramente que la cantidad de clicks suben exageradamente cuando llega la noche, más precisamente entre las 8pm y las 2am. Se podría decir que la gente utiliza más el celular a estas horas.
+		 En este gráfico se ve claramente que la cantidad de clicks suben exageradamente cuando llega la noche, más precisamente entre las 8pm y las 2am. Se podría decir que la gente utiliza más el celular a estas horas.
 		\newline
 		\newline
-		\tab En este gráfico de áreas se muestan la cantidad de clicks por hora en el día de los distintos advertiser\_id
+		 En este gráfico de áreas se muestan la cantidad de clicks por hora en el día de los distintos advertiser\_id
 	
 		\FloatBarrier
 		\begin{figure}[h]
@@ -391,10 +391,10 @@
 
 
 
-		\tab Se puede ver, como se esperaba, que prácticamente toda el área esta pintada del advertiser id 3 que es el que más abunda en este archivo.
+		 Se puede ver, como se esperaba, que prácticamente toda el área esta pintada del advertiser id 3 que es el que más abunda en este archivo.
 		\newline
 		\newline
-		\tab El siguiente gráfico muestra la cantidad de clicks en las distintas horas del día de los source\_id que se encuentran en este archivo.
+		 El siguiente gráfico muestra la cantidad de clicks en las distintas horas del día de los source\_id que se encuentran en este archivo.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -405,10 +405,10 @@
 		\FloatBarrier
 
 	
-		\tab No se ve diferencia en cómo evoluciona la cantidad de clicks de los distintos source\_id dependiendo la hora del día. No obstante, se puede observar que la mayoría de los clicks son de los source\_id 0, 1, 5, 6.
+		 No se ve diferencia en cómo evoluciona la cantidad de clicks de los distintos source\_id dependiendo la hora del día. No obstante, se puede observar que la mayoría de los clicks son de los source\_id 0, 1, 5, 6.
 
 		\clearpage
-		\tab Este nuevo gráfico nos mostrará los clicks en las horas del día distribuidos en los distintos specs\_brand existentes.
+		 Este nuevo gráfico nos mostrará los clicks en las horas del día distribuidos en los distintos specs\_brand existentes.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -418,12 +418,12 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab La cantidad de clicks se concentra en los specs\_brand 392184377613098015 y 2733035977666442898 que son los que predominan en el csv.
+		 La cantidad de clicks se concentra en los specs\_brand 392184377613098015 y 2733035977666442898 que son los que predominan en el csv.
 	
 	\clearpage
 	\subsubsection{Posición geográfica del click}
 		
-		\tab En estos gráficos mostraremos las latitudes y longitudes de los clicks efectuados.
+		 En estos gráficos mostraremos las latitudes y longitudes de los clicks efectuados.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -434,13 +434,13 @@
 		\FloatBarrier
 
 
-		\tab Se ve que se concentran muchos clicks entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Posiblemente sea una ciudad más poblada.
+		 Se ve que se concentran muchos clicks entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Posiblemente sea una ciudad más poblada.
 		\newline
 		\newline
 		\newline
 		\newline
 		\newline
-		\tab En este gráfico se vuelve a mostrar la latitud y la longitud de los clicks pero en este caso identificaremos los clicks con la mayor version de sistema operativo que tiene el dispositivo
+		 En este gráfico se vuelve a mostrar la latitud y la longitud de los clicks pero en este caso identificaremos los clicks con la mayor version de sistema operativo que tiene el dispositivo
 		
 		\FloatBarrier
 		\begin{figure}[h]
@@ -450,11 +450,11 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab No se observa que haya una concentracion de algún tipo de dispositivo con la mayor versión de sistema operativo en ningun lugar. De hecho, estan bastantes repartidos.
+		 No se observa que haya una concentracion de algún tipo de dispositivo con la mayor versión de sistema operativo en ningun lugar. De hecho, estan bastantes repartidos.
 
 	\subsubsection{Clicks en la pantalla del dispositivo}
 
-		\tab Los siguientes gráficos muestran en que posición del celular se realiza el click
+		 Los siguientes gráficos muestran en que posición del celular se realiza el click
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -472,15 +472,15 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Se puede ver claramente que la mayor cantidad de clicks se concentra en la parte inferior del teléfono y mayormente se concentran en la parte inferior derecha.
+		 Se puede ver claramente que la mayor cantidad de clicks se concentra en la parte inferior del teléfono y mayormente se concentran en la parte inferior derecha.
 
 
 	\subsubsection{Tiempo en realizar el click}
  
-		\tab Se nos ocurrió analzar el promedio de tiempo que tarda una persona en realizar click. Primero decidimos filtrar los clicks en el que la persona tardaba más de 10 minutos en hacer click. Esto lo hicimos debido a que habia clicks que tardaban más de un año en realizarse y supucimos que es un error en los datos. Llegamos a que una persona tarda 55.5921630859375 segundos en promedio en tocar click.
+		 Se nos ocurrió analzar el promedio de tiempo que tarda una persona en realizar click. Primero decidimos filtrar los clicks en el que la persona tardaba más de 10 minutos en hacer click. Esto lo hicimos debido a que habia clicks que tardaban más de un año en realizarse y supucimos que es un error en los datos. Llegamos a que una persona tarda 55.5921630859375 segundos en promedio en tocar click.
 
 	
-		\tab En los siguietes gráficos se mostrará la distribución en el tiempo que tardan los distintos advertiser\_id en hacer click.
+		 En los siguietes gráficos se mostrará la distribución en el tiempo que tardan los distintos advertiser\_id en hacer click.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -491,10 +491,10 @@
 		\FloatBarrier
 
 
-		\tab Se observa que la mayoría de clicks se realizan en los primeros segundos y practicamente todos por el advertiser\_id 3. Esto es algo totalmente esperable debido a lo que se analizó previamente.
+		 Se observa que la mayoría de clicks se realizan en los primeros segundos y practicamente todos por el advertiser\_id 3. Esto es algo totalmente esperable debido a lo que se analizó previamente.
 		\newline
 		\newline
-		\tab En el siguiete gráfico se mostrará la distribución en el tiempo que tardan los distintos spec\_brands en hacer click.
+		 En el siguiete gráfico se mostrará la distribución en el tiempo que tardan los distintos spec\_brands en hacer click.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -504,7 +504,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab El siguiete gráfico nos muestra la distribución en el tiempo que tardan los distitos sistemas operativos en hacer click
+		 El siguiete gráfico nos muestra la distribución en el tiempo que tardan los distitos sistemas operativos en hacer click
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -514,7 +514,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Se observa lo normal, en ambos sistemas operativos los clicks se concentran en los primeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que más clicks tiene, tiene clicks que tardaron bastante en tocarse.
+		 Se observa lo normal, en ambos sistemas operativos los clicks se concentran en los primeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que más clicks tiene, tiene clicks que tardaron bastante en tocarse.
 
 
 
@@ -700,7 +700,7 @@
 		La mayoría usa Cellular mientras que el carrier líder utiliza mayormente Cable/DSL.
 		
 		\subsubsection*{Eventos más frecuentes para cada tipo de conexión}
-		
+			El tipo de conexión con el que se cuenta es un aspecto importante a tener en cuenta a la hora de buscar que los usuarios adopten un comportamiento determinado, por ello analizaremos qué eventos tienden a generarse con los siguientes dos tipos de conexiones.
 			\begin{itemize}
 				\item \textbf{Wifi}
 				\FloatBarrier
@@ -718,10 +718,33 @@
 					\caption{Tipos de evento más frecuentes para conexiones móviles por carrier}
 				\end{figure}
 				\FloatBarrier
-				
 			\end{itemize}
+			
+			Se puede apreciar que cada tipo de conexión genera eventos distintos, por lo que si se quisiera lograr que los usuarios generen el evento \texttt{5.500848327478996e+18}, será importante verificar que cuenten con conexión wifi, mientras que si el que se buscara generar fuera el \texttt{9.066787919123544e+18}, la mejor opción será verificar que estén usando datos móviles y preferiblemete con el carrier \texttt{2.2481569642543155e+17}.
+			
 	\subsubsection{Marcas, modelos y eventos}
-	
+		Otra cuestión interesante de analizar es el comportamiento de los usuarios de las diferentes marcas de dispositivos. Si bien no contamos con los datos de la marca para todos los eventos, contamos con suficientes datos para evaluar. En ellos encontramos 250 marcas distintas, aunque muchas de ellas de muy bajo impacto. Observemos primero cuáles son las marcas más populares, se muestran las primeras diez, ya que concentran el 94\% de los eventos.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/marcas.png}
+			\caption{Marcas que más eventos generan}
+		\end{figure}
+		\FloatBarrier
+		
+		Se aprecia una notable diferencia entre la marca \texttt{3.083058605577787e+17} y sus competidoras
+		
+		Analicemos ahora cómo se relacionan con las aplicaciones.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/brandapps.png}
+			\caption{Distribución de aplicaciones por marcas}
+		\end{figure}
+		\FloatBarrier
+		
 	\subsubsection{Ciudades y eventos}
 	
 	\subsubsection{Eventos atribuidos a Jampp}
@@ -978,13 +1001,13 @@
 \section{Análisis de archivos en conjunto}
 \subsection{Clicks y subastas}
 	\subsubsection{Análisis general}
-	\tab Hay dos temas que se van a analizar en estos dos archivos en conjunto:
+	 Hay dos temas que se van a analizar en estos dos archivos en conjunto:
 	\begin{enumerate}
 		\item Relación entre cantidades de clicks y de subastas.
 		\item Advertisers
 	\end{enumerate}
 
-	\tab Empezamos mostrando gráficos representativos de los datos.
+	 Empezamos mostrando gráficos representativos de los datos.
 	\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -1008,14 +1031,14 @@
 		\end{figure}
 	\FloatBarrier
 
-	\tab Podemos obtener conclusiones importantes en base a estos gráficos, teniendo en cuenta que cuando se habla de relación clicks/subastas o de subastas que terminan en clicks no se hace referencia a subastas, o clicks, individuales sino a una relación en conjunto, ya que no podemos identificar qupe subasta termino en cada click. Por lo tanto cuando digamos relación clicks/subastas estaremos hablando de $\frac{n_{clicks}}{n_{subastas}}$, siendo $n_{clicks}$ la cantidad de clicks y $n_{subastas}$ la cantidad de subastas.
+	 Podemos obtener conclusiones importantes en base a estos gráficos, teniendo en cuenta que cuando se habla de relación clicks/subastas o de subastas que terminan en clicks no se hace referencia a subastas, o clicks, individuales sino a una relación en conjunto, ya que no podemos identificar qupe subasta termino en cada click. Por lo tanto cuando digamos relación clicks/subastas estaremos hablando de $\frac{n_{clicks}}{n_{subastas}}$, siendo $n_{clicks}$ la cantidad de clicks y $n_{subastas}$ la cantidad de subastas.
 	\begin{itemize}
 		\item La cantidad de clicks es ínfima en relación a la cantidad de subastas. Se pueden perder cantidades en dos partes del proceso (pocas subastas se ganan  y/o poca gente hace clicks una vez que se gana la subasta y se muestra un anuncio). Gráfico \ref{subastasterminadasenclicks}.
 		\item No tiene mucho sentido el gráfico \ref{clicksysubastaspordia} ya que la cantidad de subastas es tan grande en comparación con la cantidad de clicks que la figura de clicks se achata cercana a cero.
 		\item El gráfico \ref{relclickssubastas} nos permite ver mejor lo confirmado en el ítem anterior. Día a día la relación $\frac{n_{clicks}}{n_{subastas}}$ es menor al 0,005%.
 	\end{itemize}
 
-	\tab Por otra parte, vimos en la sección "Subastas" que cada device\_id tenía asociado una plataforma. Los datos obtenidos nos permiten saber quién es el advertiser predominante en cada plataforma. Para ello vemos dos gráficos (uno para la plataforma '1' y otro para la plataforma '2').
+	 Por otra parte, vimos en la sección "Subastas" que cada device\_id tenía asociado una plataforma. Los datos obtenidos nos permiten saber quién es el advertiser predominante en cada plataforma. Para ello vemos dos gráficos (uno para la plataforma '1' y otro para la plataforma '2').
 
 	\FloatBarrier
 		\begin{figure}[h]
@@ -1033,7 +1056,7 @@
 		\end{figure}
 	\FloatBarrier
 
-	\tab Se puede ver, claramente, que el advertiser '3' es predominante para ambas plataformas. Pero además, un dato interesante es la diferencia en la cantidad de clicks entre las plataformas. Cerca de 25000 para la plataforma '1' y cerca de 700 para la plataforma '2' (en el anexo 'tablas de datos' se podrán comprobar los numeros exactos). Esta diferencia entre los sistemas operativos ya la habíamso visto en la seccion "Subastas".
+	 Se puede ver, claramente, que el advertiser '3' es predominante para ambas plataformas. Pero además, un dato interesante es la diferencia en la cantidad de clicks entre las plataformas. Cerca de 25000 para la plataforma '1' y cerca de 700 para la plataforma '2' (en el anexo 'tablas de datos' se podrán comprobar los numeros exactos). Esta diferencia entre los sistemas operativos ya la habíamso visto en la seccion "Subastas".
 
 
 
