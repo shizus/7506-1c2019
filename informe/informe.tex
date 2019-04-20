@@ -44,7 +44,7 @@
 
 \newpage
 
-leofcontents
+\tableofcontents
 \newpage
 \section{Introducción}
 	 En el trabajo se hace un análisis exploratorio de un set de datos provistos por la empresa Jampp. En el mismo se encuentra información de subastas, instalaciones, clicks, entre otros.\\
@@ -745,8 +745,20 @@ leofcontents
 		\end{figure}
 		\FloatBarrier
 		
+		La marca líder tiene fuerte presencia en las aplicaciones 66, 63, 57 y 121, aunque en esta última también influye la marca \texttt{2.5232459822329236e+18}.
+		
 	\subsubsection{Ciudades y eventos}
-	
+		El lugar de origen de los usuarios de cada evento también será provechoso de analizar para poder distinguir los intereses de los diversos lugares. Si bien en este caso contamos con datos parciales. Lo primero que salta a la vista es que la ciudad \texttt{3.8000799488967747e+18} tiene mucha preponderancia, concentrando el 91,41\% de los eventos. Utilicemos esto para contrastar los eventos más populares y las aplicaciones que más eventos generaron en los distintos lugares, haciendo la distinción entre la ciudad líder y el resto.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/citiapp.png}
+			\caption{Distribución de aplicaciones por ciudad}
+		\end{figure}
+		\FloatBarrier
+		
+		Notamos que aplicaciones como la 64 y la 103 son mucho más preponderantes en la ciudad \texttt{3.8000799488967747e+18}, mientras que en el resto de lugares, si bien la 64 sigue siendo la más usada, el segundo lugar es mucho más parejo. Esto resulta útil ya que si se quisiera lograr que los usuarios del resto del país generen un evento, será provechoso mostrarles los ads mediante las aplicaciones 64, 8, 7, 248 o 103, cuando si se tratase de la ciudad anterior mencionada la mejor elección sería o la 64 o la 103.
 	\subsubsection{Eventos atribuidos a Jampp}
 		
 \clearpage
