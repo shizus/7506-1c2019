@@ -3,5 +3,5 @@
 
 ## Grupo 37
 
-El análisis completo se encuentra en analisis-exploratorio.ipynb.
+El análisis completo se encuentra en informe.pdf
 
