@@ -2,3 +2,7 @@ data
 .ipynb_checkpoints/
 .idea
 *.gzip
+informe.aux
+informe.dvi
+informe.toc
+informe.log

@@ -87,7 +87,7 @@
 	\FloatBarrier
 
 	\tab Al obtener los datos del gráfico, observamos que la suma de las cantidades de dispositivos para cada plataforma es 206453. ¡Esto es mayor a la cantidad total de dispositivos (206171)!\newline
-	\tab La causa de este problema se entiende al conocer cómo se obtuvieron las cantidades. Primero se contó la cantidad de dispositivos total. Luego se separaron los que tuvieran plataforma '1' de los que tuvieran plataforma '2' (tener en cuenta que como hay una fila por subasta, cada dispositivo puede aparecer en filas distintas). Al sumar ambas cantidades obtenemos un número mayor que el total, por lo que es evidente que hay dispositivos que tienen ambas plataformas, es decir, en algunas filas aparecen con un valor de la columna 'platform' y en otras filas con otro.
+	\tab La causa de este problema se entiende al conocer cómo se obtuvieron las cantidades. Primero se contó la cantidad de dispositivos total. Luego se separaron los que tuvieran plataforma '1' de los que tuvieran plataforma '2' (tener en cuenta que como hay una fila por subasta, cada dispositivo puede aparecer en filas distintas). Al sumar ambas cantidades obtenemos un número mayor que el total, por lo que es evidente que hay dispositivos que tienen ambas plataformas, es decir, en algúnas filas aparecen con un valor de la columna 'platform' y en otras filas con otro.
 
 	\tab Haciendo una simple resta, se puede ver que la cantidad de dispositivos que aparecen con plataformas distintas es 282, y que en total participan en 47862 subastas. De hecho hay un dispositivo (5.292967062497395e+18) que aparece en el top 300 de cantidad de subastas.
 
@@ -141,7 +141,7 @@
 
 	\subsubsection{Subastas por hora del día}
 	\tab Ahora vamos a analizar cómo se distribuyen las subastas a lo largo del día. Para esto hacemos un gráfico de hora del día contra cantidad de subastas (Gráfico \ref{subastashora}).\newline
-	\tab Desde un análisis cualitativo se pueden observar algunos puntos:
+	\tab Desde un análisis cualitativo se pueden observar algúnos puntos:
 	\begin{itemize}
 		\item Parece ser que la mayor cantidad de subastas se distribuyen por la noche y la madrugada.
 		\item La cantidad de subastas es poca en horas de la mañana y el mediodía. En el gráfico se puede ver un gran valle en esa parte del día.
@@ -222,7 +222,7 @@
 		
 		\tab En primera medida sacamos las columnas que no nos aportaban nada. La columna action\_id tenía todos NaN así que fue removida. La columna que indicaba el país solo daba como resultado un país unicamente así que nos pareció irrelevante y la quitamos. Así también eliminamos la columna de wifi\_connection ya que todas daban False, lo cual es un poco raro, porque esto indicaría ninguno estaba conectado a wifi. Finalmente se sacó la columna trans\_id ya que era un identificador único para cada uno de los clicks y para analizar este archivo solo no nos aportaba nada.
 		
-		\tab También, se tomó la decisión de cambiar los tipos de algunas columnas para ahorrar más espacio. Las columnas advertiser\_id y source\_id se las cambió a category ya que tenían pocos valores y siempre eran los mismos. Y a varias de las columnas se las pasó de float64 a float32, ya que no necseitaban tantos bits para representar sus datos.
+		\tab También, se tomó la decisión de cambiar los tipos de algúnas columnas para ahorrar más espacio. Las columnas advertiser\_id y source\_id se las cambió a category ya que tenían pocos valores y siempre eran los mismos. Y a varias de las columnas se las pasó de float64 a float32, ya que no necseitaban tantos bits para representar sus datos.
 	\subsubsection{Clicks en los distintas publicidades}
 		\tab Se van a observar la cantidad de clicks en las distintas publicidades
 
@@ -248,7 +248,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Como se puede observar la mayoria de los clicks estan distribuidos entre los id 0, 1, 6 y 5 siendo el source\_id 1 el que más cantidad de clicks tiene.
+		\tab Como se puede observar la mayoría de los clicks estan distribuidos entre los id 0, 1, 6 y 5 siendo el source\_id 1 el que más cantidad de clicks tiene.
 
 
 	\subsubsection{Clicks en los carrier\_id}
@@ -262,10 +262,10 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Por más que hay varios carrier\_id se ve que la mayoria de clicks se distribuyen en aproximadamente 20 carriers\_id. El carrier\_id que más realiza clicks es el 4.0.
+		\tab Por más que hay varios carrier\_id se ve que la mayoría de clicks se distribuyen en aproximadamente 20 carriers\_id. El carrier\_id que más realiza clicks es el 4.0.
 
 	\subsubsection{Clicks en los os\_minor}
-		\tab Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas minimas versiones de sus sistemas operativos.
+		\tab Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas mínimas versiones de sus sistemas operativos.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -275,10 +275,11 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Vemos que la cantidad de clicks es lidearada por los dispositivos con un os\_minor 3.378640e+18.
+		\tab Vemos que la cantidad de clicks es liderada por los dispositivos con un os\_minor 3.378640e+18.
 
 	\subsubsection{Clicks en los os\_major}
-		\tab Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas maximas versiones de sus sistemas operativos.
+		\tab Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas máximas
+		versiones de sus sistemas operativos.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -288,39 +289,46 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab En este casos se reparte bastante equitativamente la cantidad de clicks en cuatro distintos os\_major. No podemos saber cuanto es la cantidad total de los os\_major debido a que una categoria es "others" y no sabemos cuantos distintos sistemas operativos tiene encerrado ese término.
+		\tab En este casos se reparte bastante equitativamente la cantidad de clicks en cuatro distintos os\_major.
+		No podemos saber cuanto es la cantidad total de los os\_major debido a que una categoría es ``others'' y no sabemos
+		cuántos distintos sistemas operativos tiene encerrado ese término.
 
 	\subsubsection{Clicks en los agent\_device}
-		\tab En este caso notamos que la cantidad de agent\_device es mucha. Hay un total de 190 diferentes agent\_device y la mayoria de sus datos son NaN. Solamente posee alrededor de 3000 datos. Por lo tanto, llegamos a la conclusión de que no aporta ningún dato importante ni tampoco es confiable la información que dé ya que la cantidad de datos que tiene es muy poca.
+		\tab En este caso notamos que la cantidad de agent\_device es mucha. Hay un total de 190 diferentes agent\_device
+		y la mayoría de sus datos son NaN. Solamente posee alrededor de 3000 datos. Por lo tanto, llegamos a la conclusión
+		de que no aporta ningún dato importante ni tampoco es confiable la información que dé ya que la cantidad de datos
+		que tiene es muy poca.
 
-	\subsubsection{Clicks en los specs\_brand}
-		\tab A continuación mostraremos un gráfico donde podemos ver la cantidad de clicks que tienen los distintos specs\_brand.
+	\subsubsection{Clicks en los spec\_brands}
+		\tab A continuación mostraremos un gráfico donde podemos ver la cantidad de clicks que tienen los distintos spec\_brands.
 
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
 			\includegraphics[scale = 0.7]{images/clicks/clicks_specs_brand.png}
-			\caption{Clicks en los specs\_brand}
+			\caption{Clicks en los spec\_brands}
 		\end{figure}
 		\FloatBarrier
 
-		\tab Por más que hay 5 specs\_brand, se ve claramente que los clicks se realiazan practimacmente dos specs\_brand. Estos son 392184377613098015 y 2733035977666442898.
+		\tab Por más que hay 5 spec\_brands, se ve claramente que los clicks se realiazan practimacmente dos spec\_brands.
+		Estos son 392184377613098015 y 2733035977666442898.
 		
 
 	\subsubsection{Clicks en las distintas marcas}
-		\tab Este grafico nos muestra la cantidad de clicks en las distintas marcas de celular.
+		\tab Este gráfico nos muestra la cantidad de clicks en las distintas marcas de celular.
 
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_brand.png}
-			\caption{Clicks en las distintas marcas de telefono}
+			\caption{Clicks en las distintas marcas de teléfono}
 		\end{figure}
 		\FloatBarrier
 
-		\tab Como se puede observar, hay un total de 13 marcas distintas de teléfonos y la mayoria de clicks la relizan celulares de la marca 2.0, 0.0y 1.0. Podemos suponer que estas tres son marcas de celulares que más se venden, como por ejemplo Samsung.
+		\tab Como se puede observar, hay un total de 13 marcas distintas de teléfonos y la mayoría de clicks la realizan
+		celulares de la marca 2.0, 0.0 y 1.0.
 
-	\subsubsection{Clicks en Android y IOS}
+	\subsubsection{Clicks en Android e IOS}
 		\tab En el siguiente gráfico se muestra la cantidad de clicks que tienen los celulares con Android o IOS.
 
 		\FloatBarrier
@@ -331,14 +339,22 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Algo raro que se observa es que hay un total de cuatro sistemas operativos. Esto esta mal debido aque solo debería haber Android o IOS. Por lo tanto, se puede concluir que los dos valores que menos clicks tienen son datos erroneos. Es decir, solo hay que tener en cuanta los que clicks que tienen como sistema operativo los dos que más clicks consentran en este gráfico. Se podria suponer que el que más clicks tiene es Android y el que le sigue es IOS debido a que la mayoria de las personas que viven en donde se analizan estos datos tiene celular con Android.
+		\tab Algo raro que se observa es que hay un total de cuatro sistemas operativos. Esto esta mal debido aque solo
+		debería haber Android o IOS. Por lo tanto, se puede concluir que los dos valores que menos clicks tienen son datos
+		erróneos. Es decir, solo hay que tener en cuanta los que clicks que tienen como sistema operativo los dos que más
+		clicks concentran en este gráfico.
 
 	\subsubsection{Clicks en ref\_hash}
-		\tab El ref\_hash nos muestra un id unico de cada dsipositivo que realiza click. Encontramos que hay ciertos ref\_hash que se repiten varias veces. Por ejemplo, el que más veces lo hace, realiza un total de 41 clicks. La verdad es que es muy raro que una persona toque click 41 veces en 9 días. Por lo tanto, no podemos descartar que esos casos con muchos clicks sea un fraude. Hay muchisimos que tienen más de 10 clicks. Es información que hayq ue manejar con cuidado ya que uno no sabe si es verdad. Son numeros difíciles de creer pero no imposibles de que pasen.
+		\tab El ref\_hash nos muestra un id único de cada dispositivo que realiza click. Encontramos que hay ciertos ref\_hash que se
+		repiten varias veces. Por ejemplo, el que más veces lo hace, realiza un total de 41 clicks. La verdad es que es
+		muy raro que una persona toque click 41 veces en 9 días. Por lo tanto, no podemos descartar que esos casos con
+		muchos clicks sea un fraude. Hay muchísimos que tienen más de 10 clicks. Es información que hay que manejar con
+		cuidado ya que uno no sabe si son usuarios de verdad. Son números difíciles de creer a priori, basándonos en la
+		experiencia personal y la intuición, pero, aunque improbables, no son imposibles.
 
 
 	\subsubsection{Clicks en los dias y horas}
-		En este primer gráfico se puede ver la evolución de la cantidad de clicks que si hicieron entre los dias 5 y 13 de Marzo
+		En este primer gráfico se puede ver la evolución de la cantidad de clicks que se hicieron entre los dias 5 y 13 de Marzo
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -348,61 +364,61 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Se observa que la cantidad de clicks empieza a aumentar a partir del dia 8 y sube hasta alcanzar su máximo el dia 12 y luego baja.
+		\tab Se observa que la cantidad de clicks empieza a aumentar a partir del día 8 y sube hasta alcanzar su máximo el día 12 y luego baja.
 		\clearpage
-		\tab Ahora vamos a mostrar un gráfico que indica la cantidad de clicks distribuidos en las distintas horas del dia.
+		\tab Ahora vamos a mostrar un gráfico que indica la cantidad de clicks distribuidos en las distintas horas del día.
 
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_hours.png}
-			\caption{Clicks en las horas del dia}
+			\caption{Clicks en las horas del día}
 		\end{figure}
 		\FloatBarrier
 		
 		\tab En este gráfico se ve claramente que la cantidad de clicks suben exageradamente cuando llega la noche, más precisamente entre las 8pm y las 2am. Se podría decir que la gente utiliza más el celular a estas horas.
 		\newline
 		\newline
-		\tab En este grafico de areas se muestan la catidad de clicks por hora en el dia de los distintos advertiser\_id
+		\tab En este gráfico de áreas se muestan la cantidad de clicks por hora en el día de los distintos advertiser\_id
 	
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
 			\includegraphics[scale=0.37]{images/clicks/clicks_advertiser_id_hours_persentage.png}
-			\caption{Clicks en las horas del dia de los advertiser\_id (Porcentaje)}
+			\caption{Clicks en las horas del día de los advertiser\_id (Porcentaje)}
 		\end{figure}
 		\FloatBarrier
 
 
 
-		\tab Se puede ver, como se esperaba, que practicamente toda el area esta pintada del advertiser id 3 que es el que más abunda en este archivo.
+		\tab Se puede ver, como se esperaba, que prácticamente toda el área esta pintada del advertiser id 3 que es el que más abunda en este archivo.
 		\newline
 		\newline
-		\tab El siguiente gráfico muestra la cantidad de clicks en las distintas horas del dia de los source\_id que se encuentran en este archivo.
+		\tab El siguiente gráfico muestra la cantidad de clicks en las distintas horas del día de los source\_id que se encuentran en este archivo.
 
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_source_id_hours.png}
-			\caption{Clicks en las horas del dia de los source\_id}
+			\caption{Clicks en las horas del día de los source\_id}
 		\end{figure}
 		\FloatBarrier
 
 	
-		\tab No se ve diferencia en como evoluciona la cantidad de clicks de los distintos source\_id dependiendo la hora del dia. No obstante, se puede observar que la mayoria de los clicks son de los source\_id 0, 1, 5, 6.
+		\tab No se ve diferencia en cómo evoluciona la cantidad de clicks de los distintos source\_id dependiendo la hora del día. No obstante, se puede observar que la mayoría de los clicks son de los source\_id 0, 1, 5, 6.
 
 		\clearpage
-		\tab Este nuevo gráfico nos mostrará los clicks en las horas del dia distribuidos en los distintos specs\_brand existentes.
+		\tab Este nuevo gráfico nos mostrará los clicks en las horas del día distribuidos en los distintos specs\_brand existentes.
 
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_specs_brand_hours.png}
-			\caption{Clicks en las horas del dia de los specs\_brand}
+			\caption{Clicks en las horas del día de los specs\_brand}
 		\end{figure}
 		\FloatBarrier
 
-		\tab La cantidad de clicks se consentra en los specs\_brands 392184377613098015 y 2733035977666442898 que son los que predominan en el csv.
+		\tab La cantidad de clicks se concentra en los specs\_brand 392184377613098015 y 2733035977666442898 que son los que predominan en el csv.
 	
 	\clearpage
 	\subsubsection{Posición geográfica del click}
@@ -417,16 +433,8 @@
 		\end{figure}
 		\FloatBarrier
 
-		\FloatBarrier
-		\begin{figure}[h]
-			\centering
-			\includegraphics[scale=0.48]{images/clicks/clicks_lat_long_heat.png}
-			\caption{Latitud y longitud del click}
-		\end{figure}
-		\FloatBarrier
 
-
-		\tab Se ve que se consentran muchos clicks entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Posiblemente sea una ciudad más poblada.
+		\tab Se ve que se concentran muchos clicks entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Posiblemente sea una ciudad más poblada.
 		\newline
 		\newline
 		\newline
@@ -442,7 +450,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab No se observa que haya una consentracion de algun tipo de dispositivo con la mayor version de sistema operativo en ningun lugar. De hecho, estan bastantes repartidos.
+		\tab No se observa que haya una concentracion de algún tipo de dispositivo con la mayor versión de sistema operativo en ningun lugar. De hecho, estan bastantes repartidos.
 
 	\subsubsection{Clicks en la pantalla del dispositivo}
 
@@ -464,7 +472,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Se puede ver claramente que la mayor cantidad de clicks se consentra en la parte inferior del teléfono y mayormente se consentran en la parte inferior derecha.
+		\tab Se puede ver claramente que la mayor cantidad de clicks se concentra en la parte inferior del teléfono y mayormente se concentran en la parte inferior derecha.
 
 
 	\subsubsection{Tiempo en realizar el click}
@@ -483,16 +491,16 @@
 		\FloatBarrier
 
 
-		\tab Se observa que la mayoria de clicks se realizan en los primeros segundos y practicamente todos por el advertiser\_id 3. Esto es algo totalmente esperable debido a lo que se analizó previamente.
+		\tab Se observa que la mayoría de clicks se realizan en los primeros segundos y practicamente todos por el advertiser\_id 3. Esto es algo totalmente esperable debido a lo que se analizó previamente.
 		\newline
 		\newline
-		\tab En el siguiete gráfico se mostrará la distribución en el tiempo que tardan los distintos specs\_brand en hacer click.
+		\tab En el siguiete gráfico se mostrará la distribución en el tiempo que tardan los distintos spec\_brands en hacer click.
 
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_specs_brand_timeToTouch.png}
-			\caption{Clicks en el tiempo de los specs\_brand}
+			\caption{Clicks en el tiempo de los spec\_brands}
 		\end{figure}
 		\FloatBarrier
 
@@ -506,7 +514,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Se observa lo normal, en ambos sistemas operativos los clicks se consentran en los prmeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que más clicks tiene, tiene clicks que tardaron bastante en tocarse.
+		\tab Se observa lo normal, en ambos sistemas operativos los clicks se concentran en los primeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que más clicks tiene, tiene clicks que tardaron bastante en tocarse.
 
 
 
@@ -785,7 +793,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		En cuanto a la hora cabe destacar que la segunda aplicación en instalaciones no tiene presencia alguna a las 8 a.m., que es a su vez el momento del día donde más incidencia tiene una aplicación de poca presencia como la 2. La tendencia sigue mostrando a la número 7 como dominadora absoluta en todos los horarios.
+		En cuanto a la hora cabe destacar que la segunda aplicación en instalaciones no tiene presencia algúna a las 8 a.m., que es a su vez el momento del día donde más incidencia tiene una aplicación de poca presencia como la 2. La tendencia sigue mostrando a la número 7 como dominadora absoluta en todos los horarios.
 
 	\subsubsection{Instalaciones por país}
 		El país de origen es un aspecto a considerar a la hora de decidir qué advertisers priorizar para cada situación. En este caso Jampp nos provee información de instalaciones en dos países distintos.
@@ -883,7 +891,7 @@
 
 	\subsubsection{Instalaciones wifi y user agents}
 
-		Otro aspecto a considerar es la conexión con la que cuentan los usuarios al momento de decidir si hacer caso o no a alguna publicidad. Los datos que nos proporciona Jampp nos indican si las instalaciones fueron hechas vía conexión wifi.
+		Otro aspecto a considerar es la conexión con la que cuentan los usuarios al momento de decidir si hacer caso o no a algúna publicidad. Los datos que nos proporciona Jampp nos indican si las instalaciones fueron hechas vía conexión wifi.
 
 		Inicialmente se esperaría que sea mayor el número de instalaciones vía wifi, ya que los datos móviles suelen tener un límite de uso bastante bajo.
 
