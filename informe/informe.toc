@@ -1,4 +1,5 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}
 \contentsline {section}{\numberline {2}An\IeC {\'a}lisis individual de archivos}{3}
 \contentsline {subsection}{\numberline {2.1}Subastas}{3}
 \contentsline {subsubsection}{\numberline {2.1.1}An\IeC {\'a}lisis general}{3}
@@ -31,25 +32,25 @@
 \contentsline {subsubsection}{\numberline {2.3.3}Eventos por aplicaci\IeC {\'o}n y detalles de los dispositivos}{33}
 \contentsline {subsubsection}{\numberline {2.3.4}Eventos m\IeC {\'a}s frecuentes por tipo}{35}
 \contentsline {subsubsection}{\numberline {2.3.5}Eventos por tipo de conexi\IeC {\'o}n}{38}
-\contentsline {subsubsection}{\numberline {2.3.6}Marcas, modelos y eventos}{40}
-\contentsline {subsubsection}{\numberline {2.3.7}Ciudades y eventos}{40}
-\contentsline {subsubsection}{\numberline {2.3.8}Eventos atribuidos a Jampp}{40}
-\contentsline {subsection}{\numberline {2.4}Instalaciones}{41}
-\contentsline {subsubsection}{\numberline {2.4.1}Introducci\IeC {\'o}n}{41}
-\contentsline {subsubsection}{\numberline {2.4.2}Instalaciones por d\IeC {\'\i }a y hora}{41}
-\contentsline {subsubsection}{\numberline {2.4.3}Instalaciones por aplicaci\IeC {\'o}n}{43}
-\contentsline {subsubsection}{\numberline {2.4.4}Instalaciones por fecha seg\IeC {\'u}n la aplicaci\IeC {\'o}n}{43}
-\contentsline {subsubsection}{\numberline {2.4.5}Instalaciones por pa\IeC {\'\i }s}{45}
-\contentsline {subsubsection}{\numberline {2.4.6}Instalaciones por tipo}{45}
-\contentsline {subsubsection}{\numberline {2.4.7}Aplicaciones por pa\IeC {\'\i }s y tipo}{46}
-\contentsline {subsubsection}{\numberline {2.4.8}Idiomas y aplicaciones}{47}
-\contentsline {subsubsection}{\numberline {2.4.9}Instalaciones por marca}{48}
-\contentsline {subsubsection}{\numberline {2.4.10}Instalaciones wifi y user agents}{49}
-\contentsline {subsubsection}{\numberline {2.4.11}Instalaciones atribuidas a Jampp}{51}
-\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{53}
-\contentsline {subsection}{\numberline {3.1}Clicks y subastas}{53}
-\contentsline {subsubsection}{\numberline {3.1.1}An\IeC {\'a}lisis general}{53}
-\contentsline {section}{\numberline {4}Conclusion}{56}
-\contentsline {section}{\numberline {A}Tablas de datos}{57}
-\contentsline {subsection}{\numberline {A.1}Subastas}{57}
-\contentsline {subsection}{\numberline {A.2}Clicks y Subastas}{60}
+\contentsline {subsubsection}{\numberline {2.3.6}Marcas, modelos y eventos}{41}
+\contentsline {subsubsection}{\numberline {2.3.7}Ciudades y eventos}{41}
+\contentsline {subsubsection}{\numberline {2.3.8}Eventos atribuidos a Jampp}{41}
+\contentsline {subsection}{\numberline {2.4}Instalaciones}{42}
+\contentsline {subsubsection}{\numberline {2.4.1}Introducci\IeC {\'o}n}{42}
+\contentsline {subsubsection}{\numberline {2.4.2}Instalaciones por d\IeC {\'\i }a y hora}{42}
+\contentsline {subsubsection}{\numberline {2.4.3}Instalaciones por aplicaci\IeC {\'o}n}{44}
+\contentsline {subsubsection}{\numberline {2.4.4}Instalaciones por fecha seg\IeC {\'u}n la aplicaci\IeC {\'o}n}{44}
+\contentsline {subsubsection}{\numberline {2.4.5}Instalaciones por pa\IeC {\'\i }s}{46}
+\contentsline {subsubsection}{\numberline {2.4.6}Instalaciones por tipo}{46}
+\contentsline {subsubsection}{\numberline {2.4.7}Aplicaciones por pa\IeC {\'\i }s y tipo}{47}
+\contentsline {subsubsection}{\numberline {2.4.8}Idiomas y aplicaciones}{48}
+\contentsline {subsubsection}{\numberline {2.4.9}Instalaciones por marca}{49}
+\contentsline {subsubsection}{\numberline {2.4.10}Instalaciones wifi y user agents}{50}
+\contentsline {subsubsection}{\numberline {2.4.11}Instalaciones atribuidas a Jampp}{52}
+\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{54}
+\contentsline {subsection}{\numberline {3.1}Clicks y subastas}{54}
+\contentsline {subsubsection}{\numberline {3.1.1}An\IeC {\'a}lisis general}{54}
+\contentsline {section}{\numberline {4}Conclusi\IeC {\'o}n}{57}
+\contentsline {section}{\numberline {A}Tablas de datos}{58}
+\contentsline {subsection}{\numberline {A.1}Subastas}{58}
+\contentsline {subsection}{\numberline {A.2}Clicks y Subastas}{61}
