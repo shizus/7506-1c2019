@@ -1,56 +1,56 @@
-\select@language {spanish}
-\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}
-\contentsline {section}{\numberline {2}An\IeC {\'a}lisis individual de archivos}{3}
-\contentsline {subsection}{\numberline {2.1}Subastas}{3}
-\contentsline {subsubsection}{\numberline {2.1.1}An\IeC {\'a}lisis general}{3}
-\contentsline {subsubsection}{\numberline {2.1.2}An\IeC {\'a}lisis de los dispositivos en las subastas}{3}
-\contentsline {subsubsection}{\numberline {2.1.3}Subastas por d\IeC {\'\i }a de Marzo}{7}
-\contentsline {subsubsection}{\numberline {2.1.4}Subastas por d\IeC {\'\i }a de Marzo por sistema operativo}{8}
-\contentsline {subsubsection}{\numberline {2.1.5}Subastas por hora del d\IeC {\'\i }a}{9}
-\contentsline {subsubsection}{\numberline {2.1.6}Subastas por hora del d\IeC {\'\i }a por sistema operativo}{10}
-\contentsline {subsubsection}{\numberline {2.1.7}Subastas por sistema operativo}{11}
-\contentsline {subsubsection}{\numberline {2.1.8}Subastas por source}{13}
-\contentsline {subsection}{\numberline {2.2}Clicks}{15}
-\contentsline {subsubsection}{\numberline {2.2.1}An\IeC {\'a}lisis General}{15}
-\contentsline {subsubsection}{\numberline {2.2.2}Clicks en los distintas publicidades}{15}
-\contentsline {subsubsection}{\numberline {2.2.3}Clicks en los source\_id}{16}
-\contentsline {subsubsection}{\numberline {2.2.4}Clicks en los carrier\_id}{16}
-\contentsline {subsubsection}{\numberline {2.2.5}Clicks en los os\_minor}{17}
-\contentsline {subsubsection}{\numberline {2.2.6}Clicks en los os\_major}{18}
-\contentsline {subsubsection}{\numberline {2.2.7}Clicks en los agent\_device}{18}
-\contentsline {subsubsection}{\numberline {2.2.8}Clicks en los specs\_brand}{19}
-\contentsline {subsubsection}{\numberline {2.2.9}Clicks en las distintas marcas}{19}
-\contentsline {subsubsection}{\numberline {2.2.10}Clicks en Android y IOS}{20}
-\contentsline {subsubsection}{\numberline {2.2.11}Clicks en ref\_hash}{21}
-\contentsline {subsubsection}{\numberline {2.2.12}Clicks en los dias y horas}{22}
-\contentsline {subsubsection}{\numberline {2.2.13}Posici\IeC {\'o}n geogr\IeC {\'a}fica del click}{26}
-\contentsline {subsubsection}{\numberline {2.2.14}Clicks en la pantalla del dispositivo}{27}
-\contentsline {subsubsection}{\numberline {2.2.15}Tiempo en realizar el click}{29}
-\contentsline {subsection}{\numberline {2.3}Eventos}{31}
-\contentsline {subsubsection}{\numberline {2.3.1}Introducci\IeC {\'o}n}{31}
-\contentsline {subsubsection}{\numberline {2.3.2}Eventos por fecha y hora}{31}
-\contentsline {subsubsection}{\numberline {2.3.3}Eventos por aplicaci\IeC {\'o}n y detalles de los dispositivos}{33}
-\contentsline {subsubsection}{\numberline {2.3.4}Eventos m\IeC {\'a}s frecuentes por tipo}{35}
-\contentsline {subsubsection}{\numberline {2.3.5}Eventos por tipo de conexi\IeC {\'o}n}{38}
-\contentsline {subsubsection}{\numberline {2.3.6}Marcas, modelos y eventos}{40}
-\contentsline {subsubsection}{\numberline {2.3.7}Ciudades y eventos}{40}
-\contentsline {subsubsection}{\numberline {2.3.8}Eventos atribuidos a Jampp}{40}
-\contentsline {subsection}{\numberline {2.4}Instalaciones}{41}
-\contentsline {subsubsection}{\numberline {2.4.1}Introducci\IeC {\'o}n}{41}
-\contentsline {subsubsection}{\numberline {2.4.2}Instalaciones por d\IeC {\'\i }a y hora}{41}
-\contentsline {subsubsection}{\numberline {2.4.3}Instalaciones por aplicaci\IeC {\'o}n}{43}
-\contentsline {subsubsection}{\numberline {2.4.4}Instalaciones por fecha seg\IeC {\'u}n la aplicaci\IeC {\'o}n}{43}
-\contentsline {subsubsection}{\numberline {2.4.5}Instalaciones por pa\IeC {\'\i }s}{45}
-\contentsline {subsubsection}{\numberline {2.4.6}Instalaciones por tipo}{45}
-\contentsline {subsubsection}{\numberline {2.4.7}Aplicaciones por pa\IeC {\'\i }s y tipo}{46}
-\contentsline {subsubsection}{\numberline {2.4.8}Idiomas y aplicaciones}{47}
-\contentsline {subsubsection}{\numberline {2.4.9}Instalaciones por marca}{48}
-\contentsline {subsubsection}{\numberline {2.4.10}Instalaciones wifi y user agents}{49}
-\contentsline {subsubsection}{\numberline {2.4.11}Instalaciones atribuidas a Jampp}{51}
-\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{53}
-\contentsline {subsection}{\numberline {3.1}Clicks y subastas}{53}
-\contentsline {subsubsection}{\numberline {3.1.1}An\IeC {\'a}lisis general}{53}
-\contentsline {section}{\numberline {4}Conclusi\IeC {\'o}n}{56}
-\contentsline {section}{\numberline {A}Tablas de datos}{57}
-\contentsline {subsection}{\numberline {A.1}Subastas}{57}
-\contentsline {subsection}{\numberline {A.2}Clicks y Subastas}{60}
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{4}
+\contentsline {section}{\numberline {2}An\IeC {\'a}lisis individual de archivos}{4}
+\contentsline {subsection}{\numberline {2.1}Subastas}{4}
+\contentsline {subsubsection}{\numberline {2.1.1}An\IeC {\'a}lisis general}{4}
+\contentsline {subsubsection}{\numberline {2.1.2}An\IeC {\'a}lisis de los dispositivos en las subastas}{4}
+\contentsline {subsubsection}{\numberline {2.1.3}Subastas por d\IeC {\'\i }a de Marzo}{8}
+\contentsline {subsubsection}{\numberline {2.1.4}Subastas por d\IeC {\'\i }a de Marzo por sistema operativo}{9}
+\contentsline {subsubsection}{\numberline {2.1.5}Subastas por hora del d\IeC {\'\i }a}{10}
+\contentsline {subsubsection}{\numberline {2.1.6}Subastas por hora del d\IeC {\'\i }a por sistema operativo}{11}
+\contentsline {subsubsection}{\numberline {2.1.7}Subastas por sistema operativo}{12}
+\contentsline {subsubsection}{\numberline {2.1.8}Subastas por source}{14}
+\contentsline {subsection}{\numberline {2.2}Clicks}{16}
+\contentsline {subsubsection}{\numberline {2.2.1}An\IeC {\'a}lisis General}{16}
+\contentsline {subsubsection}{\numberline {2.2.2}Clicks en los distintas publicidades}{16}
+\contentsline {subsubsection}{\numberline {2.2.3}Clicks en los source\_id}{17}
+\contentsline {subsubsection}{\numberline {2.2.4}Clicks en los carrier\_id}{17}
+\contentsline {subsubsection}{\numberline {2.2.5}Clicks en los os\_minor}{18}
+\contentsline {subsubsection}{\numberline {2.2.6}Clicks en los os\_major}{19}
+\contentsline {subsubsection}{\numberline {2.2.7}Clicks en los agent\_device}{19}
+\contentsline {subsubsection}{\numberline {2.2.8}Clicks en los specs\_brand}{20}
+\contentsline {subsubsection}{\numberline {2.2.9}Clicks en las distintas marcas}{20}
+\contentsline {subsubsection}{\numberline {2.2.10}Clicks en Android y IOS}{21}
+\contentsline {subsubsection}{\numberline {2.2.11}Clicks en ref\_hash}{22}
+\contentsline {subsubsection}{\numberline {2.2.12}Clicks en los dias y horas}{23}
+\contentsline {subsubsection}{\numberline {2.2.13}Posici\IeC {\'o}n geogr\IeC {\'a}fica del click}{27}
+\contentsline {subsubsection}{\numberline {2.2.14}Clicks en la pantalla del dispositivo}{28}
+\contentsline {subsubsection}{\numberline {2.2.15}Tiempo en realizar el click}{30}
+\contentsline {subsection}{\numberline {2.3}Eventos}{32}
+\contentsline {subsubsection}{\numberline {2.3.1}Introducci\IeC {\'o}n}{32}
+\contentsline {subsubsection}{\numberline {2.3.2}Eventos por fecha y hora}{32}
+\contentsline {subsubsection}{\numberline {2.3.3}Eventos por aplicaci\IeC {\'o}n y detalles de los dispositivos}{34}
+\contentsline {subsubsection}{\numberline {2.3.4}Eventos m\IeC {\'a}s frecuentes por tipo}{36}
+\contentsline {subsubsection}{\numberline {2.3.5}Eventos por tipo de conexi\IeC {\'o}n}{39}
+\contentsline {subsubsection}{\numberline {2.3.6}Marcas, modelos y eventos}{42}
+\contentsline {subsubsection}{\numberline {2.3.7}Ciudades y eventos}{42}
+\contentsline {subsubsection}{\numberline {2.3.8}Eventos atribuidos a Jampp}{42}
+\contentsline {subsection}{\numberline {2.4}Instalaciones}{43}
+\contentsline {subsubsection}{\numberline {2.4.1}Introducci\IeC {\'o}n}{43}
+\contentsline {subsubsection}{\numberline {2.4.2}Instalaciones por d\IeC {\'\i }a y hora}{43}
+\contentsline {subsubsection}{\numberline {2.4.3}Instalaciones por aplicaci\IeC {\'o}n}{45}
+\contentsline {subsubsection}{\numberline {2.4.4}Instalaciones por fecha seg\IeC {\'u}n la aplicaci\IeC {\'o}n}{45}
+\contentsline {subsubsection}{\numberline {2.4.5}Instalaciones por pa\IeC {\'\i }s}{47}
+\contentsline {subsubsection}{\numberline {2.4.6}Instalaciones por tipo}{47}
+\contentsline {subsubsection}{\numberline {2.4.7}Aplicaciones por pa\IeC {\'\i }s y tipo}{48}
+\contentsline {subsubsection}{\numberline {2.4.8}Idiomas y aplicaciones}{49}
+\contentsline {subsubsection}{\numberline {2.4.9}Instalaciones por marca}{50}
+\contentsline {subsubsection}{\numberline {2.4.10}Instalaciones wifi y user agents}{51}
+\contentsline {subsubsection}{\numberline {2.4.11}Instalaciones atribuidas a Jampp}{53}
+\contentsline {section}{\numberline {3}An\IeC {\'a}lisis de archivos en conjunto}{55}
+\contentsline {subsection}{\numberline {3.1}Clicks y subastas}{55}
+\contentsline {subsubsection}{\numberline {3.1.1}An\IeC {\'a}lisis general}{55}
+\contentsline {section}{\numberline {4}Conclusi\IeC {\'o}n}{58}
+\contentsline {section}{\numberline {A}Tablas de datos}{59}
+\contentsline {subsection}{\numberline {A.1}Subastas}{59}
+\contentsline {subsection}{\numberline {A.2}Clicks y Subastas}{62}
