@@ -464,20 +464,14 @@
 		\end{figure}
 		\FloatBarrier
 
-		\FloatBarrier
-		\begin{figure}[h]
-			\centering
-			\includegraphics[scale=0.4]{images/clicks/clicks_touch_heat.png}
-			\caption{Posicion del click en pantalla}
-		\end{figure}
-		\FloatBarrier
 
-		\tab Se puede ver claramente que la mayor cantidad de clicks se concentra en la parte inferior del teléfono y mayormente se concentran en la parte inferior derecha.
+		\tab Se puede ver claramente que la mayor cantidad de clicks se concentra en la parte inferior del teléfono y
+		mayormente, en la parte inferior derecha.
 
 
 	\subsubsection{Tiempo en realizar el click}
  
-		\tab Se nos ocurrió analzar el promedio de tiempo que tarda una persona en realizar click. Primero decidimos filtrar los clicks en el que la persona tardaba más de 10 minutos en hacer click. Esto lo hicimos debido a que habia clicks que tardaban más de un año en realizarse y supucimos que es un error en los datos. Llegamos a que una persona tarda 55.5921630859375 segundos en promedio en tocar click.
+		\tab Se nos ocurrió analizar el promedio de tiempo que tarda una persona en realizar click. Primero decidimos filtrar los clicks en el que la persona tardaba más de 10 minutos en hacer click. Esto lo hicimos debido a que había clicks que tardaban más de un año en realizarse y supusimos que es un error en los datos. Llegamos a que una persona tarda 55.5921630859375 segundos en promedio en tocar el anuncio.
 
 	
 		\tab En los siguietes gráficos se mostrará la distribución en el tiempo que tardan los distintos advertiser\_id en hacer click.
@@ -504,7 +498,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab El siguiete gráfico nos muestra la distribución en el tiempo que tardan los distitos sistemas operativos en hacer click
+		\tab El siguiete gráfico nos muestra la distribución en el tiempo que tardan los distitos sistemas operativos en hacer click.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -514,7 +508,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		\tab Se observa lo normal, en ambos sistemas operativos los clicks se concentran en los primeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que más clicks tiene, tiene clicks que tardaron bastante en tocarse.
+		\tab Se observa lo normal, en ambos sistemas operativos los clicks se concentran en los primeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que más clicks tiene, tiene clicks que tardaron bastante en hacerse.
 
 
 
@@ -552,6 +546,11 @@
 		En la figura se puede apreciar claramente el valle de las horas de la mañana, pero además se ve que el día con más eventos fue el 13, con un llamativo pico a las 11 a.m., mientras que el día 5 fue el de menos ocurrencias. El máximo número de eventos, sin embargo, se registró a comienzos del día 8 y el gráfico muestra un notorio corrimiento de la franja para el 9 y 10 de Marzo, lo que tiene sentido ya que son los días del fin de semana.
 		
 		Si quisiéramos ver la distribución por días de la semana, primero debemos tener en cuenta que contamos con días repetidos, por lo que será necesario utilizar el promedio.
+
+		\textbf{Aclaración:} Para calcular el promedio, identificamos aquellos días que se repiten, como sabemos que se repiten solo dos veces cada día repetido,
+		y que estos días también coinciden con ser los únicos que tienen más de 40.000 filas, calculamos el promedio dividiendo
+		por 2 aquellos días que cumplen esta condición. Sin este análisis previo, calcular el promedio hubiese requerido un poco
+		 más de trabajo.
 		
 		\FloatBarrier
 		\begin{figure}[h]
@@ -565,7 +564,9 @@
 		
 	\subsubsection{Eventos por aplicación y detalles de los dispositivos}
 	
-		Al evaluar la cantidad de eventos por aplicación, se debe tener en cuenta primero que se tienen eventos registrados en 269 aplicaciones distintas, por lo que se hace imposible graficarlas todas. Para ello, se decició tomar las diez que mayor cantidad de eventos generaron.
+		Al evaluar la cantidad de eventos por aplicación, se debe tener en cuenta primero que se tienen eventos registrados
+		en 269 aplicaciones distintas, por lo que se hace imposible graficarlas todas. Para ello, se decidió tomar las
+		diez que mayor cantidad de eventos generaron.
 		
 		\FloatBarrier
 		\begin{figure}[h]
@@ -613,7 +614,7 @@
 		
 	\subsubsection{Eventos más frecuentes por tipo}
 	
-		Otro aspecto interesante a analizar será el tipo de los evento s registrados, el cual nos permite saber cual era el objetivo del usuario en ese momento. Como se registraron en total 589 tipos distintos de eventos, y como la cantidad de eventos de cada tipo sigue una distribución bastante acorde a la ley de Zipf, se tomarán los primeros diez para este análisis.
+		Otro aspecto interesante a analizar será el tipo de los eventos registrados, el cual nos permite saber cuál era el objetivo del usuario en ese momento. Como se registraron en total 589 tipos distintos de eventos, y como la cantidad de eventos de cada tipo sigue una distribución bastante acorde a la ley de Zipf, se tomarán los primeros diez para este análisis.
 		
 		\FloatBarrier
 		\begin{figure}[h]
