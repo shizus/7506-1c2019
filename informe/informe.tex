@@ -724,8 +724,11 @@
 
 			Se puede apreciar que cada tipo de conexión genera eventos distintos, por lo que si se quisiera lograr que los usuarios generen el evento \texttt{5.500848327478996e+18}, será importante verificar que cuenten con conexión wifi, mientras que si el que se buscara generar fuera el \texttt{9.066787919123544e+18}, la mejor opción será verificar que estén usando datos móviles y preferiblemete con el carrier \texttt{2.2481569642543155e+17}.
 
-	\subsubsection{Marcas, modelos y eventos}
-		Otra cuestión interesante de analizar es el comportamiento de los usuarios de las diferentes marcas de dispositivos. Si bien no contamos con los datos de la marca para todos los eventos, contamos con suficientes datos para evaluar. En ellos encontramos 250 marcas distintas, aunque muchas de ellas de muy bajo impacto. Observemos primero cuáles son las marcas más populares, se muestran las primeras diez, ya que concentran el 94\% de los eventos.
+	\subsubsection{Marcas y eventos}
+		Otra cuestión interesante de analizar es el comportamiento de los usuarios de las diferentes marcas de dispositivos.
+		Si bien no contamos con los datos de la marca para todos los eventos, contamos con suficientes datos para evaluar.
+		En ellos encontramos 250 marcas distintas, aunque muchas de ellas de muy bajo impacto.
+		Observemos primero cuáles son las marcas más populares, se muestran las primeras diez, ya que concentran el 94\% de los eventos.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -735,19 +738,26 @@
 		\end{figure}
 		\FloatBarrier
 
-		Se aprecia una notable diferencia entre la marca \texttt{3.083058605577787e+17} y sus competidoras
+		Se aprecia una notable diferencia entre la marca \texttt{3.083058605577787e+17} y sus competidoras.
 
-		Analicemos ahora cómo se relacionan con las aplicaciones.
+		Analizando los datos, vemos que tenemos un 53% de datos donde la marca del celular figura en NaN, pero vemos que hay
+		otras filas donde el mismo modelo de celular figura y tenemos su marca. Intentaremos reparar el set de datos con esta información
+		para posteriormente volver a graficar y ver qué cambió.
 
-		\FloatBarrier
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=\textwidth]{images/events/brandapps.png}
-			\caption{Distribución de aplicaciones por marcas}
-		\end{figure}
-		\FloatBarrier
+	\subsubsection{Modelos y eventos}
+	En la sección anterior analizamos las diferentes marcas y su asociación con los eventos que se producen en los ads. Veamos como se distribuye
+	la relación en los modelos.
 
-		La marca líder tiene fuerte presencia en las aplicaciones 66, 63, 57 y 121, aunque en esta última también influye la marca \texttt{2.5232459822329236e+18}.
+	\FloatBarrier
+    		\begin{figure}[h]
+    			\centering
+    			\includegraphics[width=\textwidth]{images/events/eventsbymodel.png}
+    			\caption{Distribución de eventos por modelos}
+    		\end{figure}
+    		\FloatBarrier
+
+    Es interesante analiar a qué marcas pertenecen los modelos que más eventos crean. Quizás al momento de decidir ofertar
+    en una subasta, conviene enfocarse en alguna marca de celular determinada en lugar de diversificarse.
 
 	\subsubsection{Ciudades y eventos}
 		El lugar de origen de los usuarios de cada evento también será provechoso de analizar para poder distinguir los intereses de los diversos lugares. Si bien en este caso contamos con datos parciales. Lo primero que salta a la vista es que la ciudad \texttt{3.8000799488967747e+18} tiene mucha preponderancia, concentrando el 91,41\% de los eventos. Utilicemos esto para contrastar los eventos más populares y las aplicaciones que más eventos generaron en los distintos lugares, haciendo la distinción entre la ciudad líder y el resto.
