@@ -6,14 +6,23 @@
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{placeins}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
 \usepackage{caption}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
 \geometry{top = 1in}
 \setlength{\textfloatsep}{1\baselineskip plus 0.2\baselineskip minus 0.5\baselineskip}
 \setlength{\parindent}{2em}
 \renewcommand\textfraction{.1}
+\usepackage{float}
 
 \title{Análisis Exploratorio de Datos \\ Trabajo Práctico 1 - Organización de Datos}
-\author{Grupo Back to the Data}
+\author{Grupo "Back to the Data"}
 \date{22/04/2019}
 
 \begin{document}
@@ -45,15 +54,22 @@
 \newpage
 
 \tableofcontents
+
 \newpage
 \section{Introducción}
-	 En el trabajo se hace un análisis exploratorio de un set de datos provistos por la empresa Jampp. En el mismo se encuentra información de subastas, instalaciones, clicks, entre otros.\\
-	 Primero se hará una visión general de los archivos installs.csv, clicks.csv, auctions.csv y events.csv para entender la distribución y la cantidad de datos, el significado de las columnas, reconocer las columnas que no aportan información, por ejemplo, las que tienen todos sus valores nulos, y reconocer el tipo de datos en cada columna, seguido de un análisis más profundo para obtener más información de los datos. Luego se hará un análisis global, buscando información relativa a los archivos en conjunto, permitiendo obtener otro tipo de información.
-
+	 En el trabajo se hace un análisis exploratorio de un set de datos provistos por la empresa Jampp. En el mismo se encuentra información de subastas, instalaciones, clicks, entre otros.
+	 
+	 Primero se hará una visión general de los archivos installs.csv, clicks.csv, auctions.csv y events.csv para entender la distribución y la cantidad de datos, el significado de las columnas, reconocer las columnas que no aportan información, por ejemplo, las que tienen todos sus valores nulos, y reconocer el tipo de datos en cada columna, seguido de un análisis más profundo para obtener más información de los datos.
+	 
+	 Luego se hará un análisis global, buscando información relativa a los archivos en conjunto, permitiendo obtener otro tipo de información.
+     \subsection{Repositorio}
+     El análisis exploratorio realizado con pandas se puede visualizar en el siguiente link de github: \href{https://github.com/shizus/7506-1c2019}{https://github.com/shizus/7506-1c2019}.
+     
 \section{Análisis individual de archivos}
 \subsection{Subastas}
 	\subsubsection{Análisis general} \label{analisis general}
-	  El archivo 'auctions.csv' contiene información acerca de subastas.
+	El archivo 'auctions.csv' contiene información acerca de subastas.
+	
 	Hay dos columnas que no nos aportan información significante. 'auction\_type\_id' tiene todos sus valores 		nulos, por lo que no fue tomada en cuenta para el análisis. 'country' informa un solo valor posible.
 
 	 La columna platforms tiene dos valores posibles (1 y 2) que se supone son Android e iOS. Va a ser importante para el análisis que hagamos más adelante. De ahora en más, platform y sistema operativo serán sinónimos en este informe.
@@ -63,35 +79,40 @@
 	 Además vemos que ningún valor de este archivo, excluyendo la columna 'auction\_type\_id', es nulo, por lo que no es necesario tomar ninguna decisión respecto a eso.
 
 	\subsubsection{Análisis de los dispositivos en las subastas}
-	 Un punto muy importante para analizar son los dispositivos. Esto trajo un problema al analizar los datos y puede cambiar la forma en la que se entienden los mismos.
+	Un punto muy importante para analizar son los dispositivos. Esto trajo un problema al analizar los datos y puede cambiar la forma en la que se entienden los mismos.
+	
 	Podemos, por ejemplo, ver el top diez de dispositivos de los cuales se generan más subastas.
-	\FloatBarrier
-		\begin{figure}
+	
+		\begin{figure}[H]
 			\centering
 			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/top10devicessubastas.png}}
 		   	\caption{Top 10 de dispositivos con mayor cantidad de subastas}
 			\label{top10devicessubastas}
 		\end{figure}
-	\FloatBarrier
 
-	 Ahora el problema.\newline
-	 En total, en las 19571319 subastas, aparecen 206171 dispositivos. Algo interesante sería conocer cuántos tienen cada plataforma. Por lo que hacemos un gráfico.
 
-	\FloatBarrier
-		\begin{figure}
+	Ahora el problema.
+	
+	En total, en las 19571319 subastas, aparecen 206171 dispositivos. Algo interesante sería conocer cuántos tienen cada plataforma. Por lo que hacemos un gráfico.
+	 
+
+		\begin{figure}[H]
 			\centering
-			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/devicesporSO.png}}
+			\makebox[\textwidth]{\includegraphics[width=0.8\textwidth,height=80mm]{images/auctions/devicesporSO.png}}
 		   	\caption{Cantidad de dispositivos para cada plataforma}
 			\label{devicesporSO}
 		\end{figure}
-	\FloatBarrier
 
-	 Al obtener los datos del gráfico, observamos que la suma de las cantidades de dispositivos para cada plataforma es 206453. ¡Esto es mayor a la cantidad total de dispositivos (206171)!\newline
+
+	 Al obtener los datos del gráfico, observamos que la suma de las cantidades de dispositivos para cada plataforma es 206453. ¡Esto es mayor a la cantidad total de dispositivos (206171)!
+	 
+	 
 	 La causa de este problema se entiende al conocer cómo se obtuvieron las cantidades. Primero se contó la cantidad de dispositivos total. Luego se separaron los que tuvieran plataforma '1' de los que tuvieran plataforma '2' (tener en cuenta que como hay una fila por subasta, cada dispositivo puede aparecer en filas distintas). Al sumar ambas cantidades obtenemos un número mayor que el total, por lo que es evidente que hay dispositivos que tienen ambas plataformas, es decir, en algúnas filas aparecen con un valor de la columna 'platform' y en otras filas con otro.
 
 	 Haciendo una simple resta, se puede ver que la cantidad de dispositivos que aparecen con plataformas distintas es 282, y que en total participan en 47862 subastas. De hecho hay un dispositivo (5.292967062497395e+18) que aparece en el top 300 de cantidad de subastas.
 
 	 Esto puede alterar los análisis que incluyen división en plataformas. Sin embargo, no es trivial que haya que borrar estos datos, porque se estarían borrando casi 50000 subastas. Además, dejar los datos como están no altera a los estudios que se hagan sin dividir el problea por sistemas operativos. Por lo tanto se decidió trabajar de la siguiente manera.
+	 
 	\begin{itemize}
 		\item En aquellos análisis que, a priori, no parezcan ser afectados por estos errores en las plataformas de los dispositivos usaran el dataset entero.
 		\item En los restantes, se usará un dataframe filtrado, en el que no están los dispositivos conflictivos.
@@ -101,25 +122,25 @@
 	
 	
 	\subsubsection{Subastas por día de Marzo}
-	 Como primer acercamiento a este set de datos, es interesante ver cómo se distribuye la cantidad de subastas en los días que incluye el archivo (05/03/19 al 13/03/19). El gráfico \ref{subastasmarzo} representa dicha distribución. En él se pueden observar varias cosas:
+	 Como primer acercamiento a este set de datos, es interesante ver cómo se distribuye la cantidad de subastas en los días que incluye el archivo (05/03/19 al 13/03/19).
+	 El gráfico~\ref{subastasmarzo} representa dicha distribución. En él se pueden observar varias cosas:
+
 	\begin{itemize}
-		\item La cantidad de subastas parece, en general, aumentar con el paso de los dias.
+		\item La cantidad de subastas parece, en general, aumentar con el paso de los días.
 		\item El valor del último día es más del doble del valor del primer día.
 		\item El mayor aumento se da del sexto al septimo día.
-		\item La cantidad de subastas varía entre unos valores extremos, aproximados, de un millón y 3 millónes.
+		\item La cantidad de subastas varía entre unos valores extremos, aproximados, de un millón y 3 millones.
 	\end{itemize}
 
-	\FloatBarrier
-		\begin{figure}
+		\begin{figure}[H]
 			\centering
 			   	\makebox[\textwidth]{\includegraphics[width=300pt]{images/auctions/subastaspordia.png}}
 		   		\caption{Cantidad de subastas por día de Marzo}
 			   	\label{subastasmarzo}
 		\end{figure}
-	\FloatBarrier
 
 	\subsubsection{Subastas por día de Marzo por sistema operativo}
-	 Otro punto interesante es dividir el problema. Obtener la distribución de subastas en los días con datos disponibles para cada plataforma (Android e iOS). En la imagen \ref{subastasmarzoSO} se pueden observar las cantidades. Observese que llamamos '1' y '2' a las plataformas, ya que no sabemos cuál es Android y cuál es iOS.
+	 Otro punto interesante es dividir el problema. Obtener la distribución de subastas en los días con datos disponibles para cada plataforma (Android e iOS). En la imagen~\ref{subastasmarzoSO} se pueden observar las cantidades. Observese que llamamos '1' y '2' a las plataformas, ya que no sabemos cuál es Android y cuál es iOS.
 
 	 Puntos interesantes a reconocer:
 
@@ -127,71 +148,75 @@
 		\item Para este análisis se usaron los datos filtrados, ya que los devices que tienen ambas plataformas pueden generar ruido.
 		\item La cantidad de subastas para la plataforma '1' es, salvo en el cuarto y el quinto día, considerablemente mayor a la cantidad para la plataforma '2'.
 		\item La figura de la plataforma '2' es mucho más ``chata'' que la de la plataforma '1', la cual representa más picos y saltos.
-		\item La figura de la plataforma '1' es muy parecida a la del gráfico \ref{subastasmarzo}, mientras que la de la plataforma '2' no lo es. Esto es resultado, principalmente, de lo indicado en el primer ítem. Este análisis puede llegar a ser muy útil para reconocer partes de los datos que son representativas del total.
+		\item La figura de la plataforma '1' es muy parecida a la del gráfico~\ref{subastasmarzo}, mientras que la de la plataforma '2' no lo es. Esto es resultado, principalmente, de lo indicado en el primer ítem. Este análisis puede llegar a ser muy útil para reconocer partes de los datos que son representativas del total.
 	\end{itemize}
 
-	\FloatBarrier
-	\begin{figure}
+
+	\begin{figure}[H]
 			\centering
 	   		\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastaspordiaporSO_corregido.png}}
 		   	\caption{Cantidad de subastas por día de Marzo y por sistema operativo}
 		   	\label{subastasmarzoSO}
-		\end{figure}
-	\FloatBarrier
+	\end{figure}
 
 	\subsubsection{Subastas por hora del día}
-	 Ahora vamos a analizar cómo se distribuyen las subastas a lo largo del día. Para esto hacemos un gráfico de hora del día contra cantidad de subastas (Gráfico \ref{subastashora}).\newline
+	 Ahora vamos a analizar cómo se distribuyen las subastas a lo largo del día. Para esto hacemos un gráfico de hora del día contra cantidad de subastas (Gráfico~\ref{subastashora}).
+	 
 	 Desde un análisis cualitativo se pueden observar algúnos puntos:
+	 
+	 
 	\begin{itemize}
 		\item Parece ser que la mayor cantidad de subastas se distribuyen por la noche y la madrugada.
 		\item La cantidad de subastas es poca en horas de la mañana y el mediodía. En el gráfico se puede ver un gran valle en esa parte del día.
 	\end{itemize}
 
-	\FloatBarrier
-		\begin{figure}
+
+		\begin{figure}[H]
 			\centering
 			\makebox[\textwidth]{\includegraphics[width=350pt, bb=0 0 640 480]{images/auctions/subastasporhora.png}}
 		   	\caption{Cantidad de subastas por hora del día}
 			\label{subastashora}
 		\end{figure}
-	\FloatBarrier
+
+
 	\subsubsection{Subastas por hora del día por sistema operativo}
 	 Al igual que se hizo antes podemos dividir el gráfico para ambas plataformas. Vemos que pasa algo muy parecido que lo que pasaba para la cantidad de subastas por día. El gráfico de la plataforma '1', al tener una cantidad mucho mayor de subastas, es la que predomina en el gráfico de la sección "Subastas por hora del día", y por eso sus gráficos son tan parecidos. El gráfico de la plataforma '2' es bastante más chato, y con cantidades de subastas mucho más chicas.
+	 
+	
 	En esta subsección y en la siguiente usaremos los datos filtrados.
-	\FloatBarrier
-		\begin{figure}
+
+		\begin{figure}[H]
 			\centering
 			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastasporhoraSO_corregido.png}}
 		   	\caption{Cantidad de subastas por hora del día por sistema operativo}
 			\label{subastashoraSO}
 		\end{figure}
-	\FloatBarrier
 
 	\subsubsection{Subastas por sistema operativo}
 	 Resulta interesante conocer cuál es el sistema operativo para el cual se generan más subastas. Es algo que ya se venía viendo en la forma y nivel (cantidad de subastas) de los gráficos anteriores. Sin embargo, los gráficos vistos hasta ahora no dan un conocimiento directo de la relación de las cantidades de subastas de ambas plataformas.
 
-	 En las figuras que se ven a continuación podemos confirmar que lo que indicabamos en los gráficos anteriores era cierto. La cantidad de subastas es mucho mayor para la plataforma '1'. Además, ahora tenemos una visión más cuantitativa de esta relación, en la imagen \ref{subastasSOporcentajes} vemos una relación porcentual, mientras que la imagen \ref{subastasSOcantidades} nos da más idea de las cantidades.
+	 En las figuras que se ven a continuación podemos confirmar que lo que indicabamos en los gráficos anteriores era cierto. La cantidad de subastas es mucho mayor para la plataforma '1'. Además, ahora tenemos una visión más cuantitativa de esta relación, en la imagen~\ref{subastasSOporcentajes} vemos una relación porcentual, mientras que la imagen~\ref{subastasSOcantidades} nos da más idea de las cantidades.
 
-	\FloatBarrier
-		\begin{figure}
+	
+		\begin{figure}[H]
 			\centering
-			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastasporSO_corregido.png}}
+			\makebox[\textwidth]{\includegraphics[width=0.7\textwidth,height=60mm]{images/auctions/subastasporSO_corregido.png}}
 		   	\caption{Porcentaje de subastas para cada plataforma}
 			\label{subastasSOporcentajes}
 		\end{figure}
-	\FloatBarrier
 
-	\FloatBarrier
-		\begin{figure}
+
+
+		\begin{figure}[H]
 			\centering
 			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastasporSOcantidad_corregido.png}}
 		   	\caption{Porcentaje de subastas para cada plataforma}
 			\label{subastasSOcantidades}
 		\end{figure}
-	\FloatBarrier
+
 
 	\subsubsection{Subastas por source}
-	 Como indica la introducción a esta sección (vease \ref{analisis general}), source nos indica el exchange que generó la subasta. Se puede obtener, a partir de los datos, cuáles son los exchanges principales, y cuántas subastas generan.
+	 Como indica la introducción a esta sección (vease~\ref{analisis general}), source nos indica el exchange que generó la subasta. Se puede obtener, a partir de los datos, cuáles son los exchanges principales, y cuántas subastas generan.
 
 	 A tener en cuenta:
 	\begin{itemize}
@@ -205,14 +230,12 @@
 		\end{itemize}
 	\end{itemize}
 
-	\FloatBarrier
-		\begin{figure}
+		\begin{figure}[H]
 			\centering
-			\makebox[\textwidth]{\includegraphics[width=\textwidth]{images/auctions/subastasporsource.png}}
+			\makebox[\textwidth]{\includegraphics[width=350pt]{images/auctions/subastasporsource.png}}
 		   	\caption{Cantidad de subastas para cada source}
 			\label{subastassource}
 		\end{figure}
-	\FloatBarrier
 
 \clearpage
 \subsection{Clicks}
@@ -226,13 +249,13 @@
 	\subsubsection{Clicks en los distintas publicidades}
 		 Se van a observar la cantidad de clicks en las distintas publicidades
 
-		\FloatBarrier
-		\begin{figure}[h]
+		
+		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.5]{images/clicks/clicks_advertiser_id.png}
 			\caption{Clicks en los advertiser\_id}
 		\end{figure}
-		\FloatBarrier
+		
 
 		 Se puede observar que prácticamente todos son clicks en la publicidad con el id 3. El porcentaje de clicks en este id es de 99.7. Al parecer, le sirve mucho más a Jampp mostrar las publicidades del id 3 o es una publicidad de una app que es más común que todos usen.
 
@@ -240,13 +263,13 @@
 		 En este gráfico vamos a mostrar la cantidad de clicks que se hacen en los distintos source\_id que hay en el archivo
 		
 		
-		\FloatBarrier
-		\begin{figure}[h]
+		
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_source_id.png}
 			\caption{Clicks en los source\_id}
 		\end{figure}
-		\FloatBarrier
+		
 
 		 Como se puede observar la mayoría de los clicks estan distribuidos entre los id 0, 1, 6 y 5 siendo el source\_id 1 el que más cantidad de clicks tiene.
 
@@ -254,26 +277,26 @@
 	\subsubsection{Clicks en los carrier\_id}
 		 En el siguiente gráfico se mostrará la cantidad de clicks que tiene cada carrier\_id
 		
-		\FloatBarrier
-		\begin{figure}[h]
+		
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_carrier_id.png}
 			\caption{Clicks en los carrier\_id}
 		\end{figure}
-		\FloatBarrier
+		
 
 		 Por más que hay varios carrier\_id se ve que la mayoría de clicks se distribuyen en aproximadamente 20 carriers\_id. El carrier\_id que más realiza clicks es el 4.0.
 
 	\subsubsection{Clicks en los os\_minor}
 		 Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas mínimas versiones de sus sistemas operativos.
 
-		\FloatBarrier
-		\begin{figure}[h]
+		
+		\begin{figure}[H]
 			\centering
 			\includegraphics[scale = 0.37]{images/clicks/clicks_minor_OS.png}
 			\caption{Clicks en los os\_minor}
 		\end{figure}
-		\FloatBarrier
+		
 
 		 Vemos que la cantidad de clicks es liderada por los dispositivos con un os\_minor 3.378640e+18.
 
@@ -281,13 +304,13 @@
 		 Se mostrará en este gráfico la cantidad de clicks que realizan los dispositivos que tienen ciertas máximas
 		versiones de sus sistemas operativos.
 
-		\FloatBarrier
-		\begin{figure}[h]
+		
+		\begin{figure}[H]
 			\centering
 			\includegraphics[scale = 0.5]{images/clicks/clicks_major_OS.png}
 			\caption{Clicks en los os\_major}
 		\end{figure}
-		\FloatBarrier
+		
 
 		 En este casos se reparte bastante equitativamente la cantidad de clicks en cuatro distintos os\_major.
 		No podemos saber cuanto es la cantidad total de los os\_major debido a que una categoría es ``others'' y no sabemos
@@ -302,13 +325,13 @@
 	\subsubsection{Clicks en los spec\_brands}
 		 A continuación mostraremos un gráfico donde podemos ver la cantidad de clicks que tienen los distintos spec\_brands.
 
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[scale = 0.7]{images/clicks/clicks_specs_brand.png}
 			\caption{Clicks en los spec\_brands}
 		\end{figure}
-		\FloatBarrier
+
 
 		 Por más que hay 5 spec\_brands, se ve claramente que los clicks se realiazan practimacmente dos spec\_brands.
 		Estos son 392184377613098015 y 2733035977666442898.
@@ -317,13 +340,13 @@
 	\subsubsection{Clicks en las distintas marcas}
 		 Este gráfico nos muestra la cantidad de clicks en las distintas marcas de celular.
 
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_brand.png}
 			\caption{Clicks en las distintas marcas de teléfono}
 		\end{figure}
-		\FloatBarrier
+
 
 		 Como se puede observar, hay un total de 13 marcas distintas de teléfonos y la mayoría de clicks la realizan
 		celulares de la marca 2.0, 0.0 y 1.0.
@@ -331,13 +354,13 @@
 	\subsubsection{Clicks en Android e IOS}
 		 En el siguiente gráfico se muestra la cantidad de clicks que tienen los celulares con Android o IOS.
 
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[scale = 0.6]{images/clicks/clicks_ref_type.png}
 			\caption{Clicks en las distintos sistemas operativos}
 		\end{figure}
-		\FloatBarrier
+
 
 		 Algo raro que se observa es que hay un total de cuatro sistemas operativos. Esto esta mal debido aque solo
 		debería haber Android o IOS. Por lo tanto, se puede concluir que los dos valores que menos clicks tienen son datos
@@ -353,41 +376,41 @@
 		experiencia personal y la intuición, pero, aunque improbables, no son imposibles.
 
 
-	\subsubsection{Clicks en los dias y horas}
-		En este primer gráfico se puede ver la evolución de la cantidad de clicks que se hicieron entre los dias 5 y 13 de Marzo
+	\subsubsection{Clicks en los días y horas}
+		En este primer gráfico se puede ver la evolución de la cantidad de clicks que se hicieron entre los días 5 y 13 de Marzo
 
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_days.png}
 			\caption{Clicks entre 5 y 13 de Marzo}
 		\end{figure}
-		\FloatBarrier
+
 
 		 Se observa que la cantidad de clicks empieza a aumentar a partir del día 8 y sube hasta alcanzar su máximo el día 12 y luego baja.
 		\clearpage
 		 Ahora vamos a mostrar un gráfico que indica la cantidad de clicks distribuidos en las distintas horas del día.
 
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_hours.png}
 			\caption{Clicks en las horas del día}
 		\end{figure}
-		\FloatBarrier
+
 		
 		 En este gráfico se ve claramente que la cantidad de clicks suben exageradamente cuando llega la noche, más precisamente entre las 8pm y las 2am. Se podría decir que la gente utiliza más el celular a estas horas.
 		\newline
 		\newline
 		 En este gráfico de áreas se muestan la cantidad de clicks por hora en el día de los distintos advertiser\_id
 	
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.37]{images/clicks/clicks_advertiser_id_hours_persentage.png}
 			\caption{Clicks en las horas del día de los advertiser\_id (Porcentaje)}
 		\end{figure}
-		\FloatBarrier
+
 
 
 
@@ -396,13 +419,13 @@
 		\newline
 		 El siguiente gráfico muestra la cantidad de clicks en las distintas horas del día de los source\_id que se encuentran en este archivo.
 
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_source_id_hours.png}
 			\caption{Clicks en las horas del día de los source\_id}
 		\end{figure}
-		\FloatBarrier
+
 
 	
 		 No se ve diferencia en cómo evoluciona la cantidad de clicks de los distintos source\_id dependiendo la hora del día. No obstante, se puede observar que la mayoría de los clicks son de los source\_id 0, 1, 5, 6.
@@ -410,13 +433,13 @@
 		\clearpage
 		 Este nuevo gráfico nos mostrará los clicks en las horas del día distribuidos en los distintos specs\_brand existentes.
 
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_specs_brand_hours.png}
 			\caption{Clicks en las horas del día de los specs\_brand}
 		\end{figure}
-		\FloatBarrier
+
 
 		 La cantidad de clicks se concentra en los specs\_brand 392184377613098015 y 2733035977666442898 que son los que predominan en el csv.
 	
@@ -425,13 +448,13 @@
 		
 		 En estos gráficos mostraremos las latitudes y longitudes de los clicks efectuados.
 
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.48]{images/clicks/clicks_lat_long_scatter.png}
 			\caption{Latitud y longitud del click}
 		\end{figure}
-		\FloatBarrier
+
 
 
 		 Se ve que se concentran muchos clicks entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Posiblemente sea una ciudad más poblada.
@@ -442,13 +465,13 @@
 		\newline
 		 En este gráfico se vuelve a mostrar la latitud y la longitud de los clicks pero en este caso identificaremos los clicks con la mayor version de sistema operativo que tiene el dispositivo
 		
-		\FloatBarrier
-		\begin{figure}[h]
+
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_lat_long_major_OS.png}
 			\caption{Latitud y longitud del click de los dispositivos con distintos os\_major}
 		\end{figure}
-		\FloatBarrier
+
 
 		 No se observa que haya una concentracion de algún tipo de dispositivo con la mayor versión de sistema operativo en ningun lugar. De hecho, estan bastantes repartidos.
 
@@ -456,39 +479,33 @@
 
 		 Los siguientes gráficos muestran en que posición del celular se realiza el click
 
-		\FloatBarrier
+
 		\begin{figure}[h]
 			\centering
 			\includegraphics[scale=0.2]{images/clicks/clicks_touch_scatter.png}
 			\caption{Posicion del click en pantalla}
 		\end{figure}
-		\FloatBarrier
 
-		\FloatBarrier
-		\begin{figure}[h]
-			\centering
-			\includegraphics[scale=0.4]{images/clicks/clicks_touch_heat.png}
-			\caption{Posicion del click en pantalla}
-		\end{figure}
-		\FloatBarrier
 
-		 Se puede ver claramente que la mayor cantidad de clicks se concentra en la parte inferior del teléfono y mayormente se concentran en la parte inferior derecha.
+
+		 Se puede ver claramente que la mayor cantidad de clicks se concentra en la parte inferior del teléfono y
+		mayormente, en la parte inferior derecha.
 
 
 	\subsubsection{Tiempo en realizar el click}
  
-		 Se nos ocurrió analzar el promedio de tiempo que tarda una persona en realizar click. Primero decidimos filtrar los clicks en el que la persona tardaba más de 10 minutos en hacer click. Esto lo hicimos debido a que habia clicks que tardaban más de un año en realizarse y supucimos que es un error en los datos. Llegamos a que una persona tarda 55.5921630859375 segundos en promedio en tocar click.
+		 Se nos ocurrió analizar el promedio de tiempo que tarda una persona en realizar click. Primero decidimos filtrar los clicks en el que la persona tardaba más de 10 minutos en hacer click. Esto lo hicimos debido a que había clicks que tardaban más de un año en realizarse y supusimos que es un error en los datos. Llegamos a que una persona tarda 55.5921630859375 segundos en promedio en tocar el anuncio.
 
 	
 		 En los siguietes gráficos se mostrará la distribución en el tiempo que tardan los distintos advertiser\_id en hacer click.
 
-		\FloatBarrier
-		\begin{figure}[h]
+		
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_advertiser_id_timeToTouch.png}
 			\caption{Clicks en el tiempo de los advertiser\_id}
 		\end{figure}
-		\FloatBarrier
+		
 
 
 		 Se observa que la mayoría de clicks se realizan en los primeros segundos y practicamente todos por el advertiser\_id 3. Esto es algo totalmente esperable debido a lo que se analizó previamente.
@@ -496,25 +513,25 @@
 		\newline
 		 En el siguiete gráfico se mostrará la distribución en el tiempo que tardan los distintos spec\_brands en hacer click.
 
-		\FloatBarrier
-		\begin{figure}[h]
+		
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_specs_brand_timeToTouch.png}
 			\caption{Clicks en el tiempo de los spec\_brands}
 		\end{figure}
-		\FloatBarrier
+		
 
-		 El siguiete gráfico nos muestra la distribución en el tiempo que tardan los distitos sistemas operativos en hacer click
+		 El siguiete gráfico nos muestra la distribución en el tiempo que tardan los distitos sistemas operativos en hacer click.
 
-		\FloatBarrier
-		\begin{figure}[h]
+		
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{images/clicks/clicks_ref_type_timeToTouch.png}
 			\caption{Clicks en el tiempo de los sistemas opertativos}
 		\end{figure}
-		\FloatBarrier
+		
 
-		 Se observa lo normal, en ambos sistemas operativos los clicks se concentran en los primeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que más clicks tiene, tiene clicks que tardaron bastante en tocarse.
+		 Se observa lo normal, en ambos sistemas operativos los clicks se concentran en los primeros segundos y luego se van diluyendo con el tiempo. Igualmente se puede notar que el sistema operativo que más clicks tiene, tiene clicks que tardaron bastante en hacerse.
 
 
 
@@ -552,7 +569,12 @@
 		En la figura se puede apreciar claramente el valle de las horas de la mañana, pero además se ve que el día con más eventos fue el 13, con un llamativo pico a las 11 a.m., mientras que el día 5 fue el de menos ocurrencias. El máximo número de eventos, sin embargo, se registró a comienzos del día 8 y el gráfico muestra un notorio corrimiento de la franja para el 9 y 10 de Marzo, lo que tiene sentido ya que son los días del fin de semana.
 		
 		Si quisiéramos ver la distribución por días de la semana, primero debemos tener en cuenta que contamos con días repetidos, por lo que será necesario utilizar el promedio.
-		
+
+		\textbf{Aclaración:} Para calcular el promedio, identificamos aquellos días que se repiten, como sabemos que se repiten solo dos veces cada día repetido,
+		y que estos días también coinciden con ser los únicos que tienen más de 40.000 filas, calculamos el promedio dividiendo
+		por 2 aquellos días que cumplen esta condición. Sin este análisis previo, calcular el promedio hubiese requerido un poco
+		 más de trabajo.
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -565,7 +587,9 @@
 		
 	\subsubsection{Eventos por aplicación y detalles de los dispositivos}
 	
-		Al evaluar la cantidad de eventos por aplicación, se debe tener en cuenta primero que se tienen eventos registrados en 269 aplicaciones distintas, por lo que se hace imposible graficarlas todas. Para ello, se decició tomar las diez que mayor cantidad de eventos generaron.
+		Al evaluar la cantidad de eventos por aplicación, se debe tener en cuenta primero que se tienen eventos registrados
+		en 269 aplicaciones distintas, por lo que se hace imposible graficarlas todas. Para ello, se decidió tomar las
+		diez que mayor cantidad de eventos generaron.
 		
 		\FloatBarrier
 		\begin{figure}[h]
@@ -613,7 +637,7 @@
 		
 	\subsubsection{Eventos más frecuentes por tipo}
 	
-		Otro aspecto interesante a analizar será el tipo de los evento s registrados, el cual nos permite saber cual era el objetivo del usuario en ese momento. Como se registraron en total 589 tipos distintos de eventos, y como la cantidad de eventos de cada tipo sigue una distribución bastante acorde a la ley de Zipf, se tomarán los primeros diez para este análisis.
+		Otro aspecto interesante a analizar será el tipo de los eventos registrados, el cual nos permite saber cuál era el objetivo del usuario en ese momento. Como se registraron en total 589 tipos distintos de eventos, y como la cantidad de eventos de cada tipo sigue una distribución bastante acorde a la ley de Zipf, se tomarán los primeros diez para este análisis.
 		
 		\FloatBarrier
 		\begin{figure}[h]
@@ -649,7 +673,7 @@
 		
 	\subsubsection{Eventos por tipo de conexión}
 	
-		El archivo nos provee con información acerca de la conexión con la que contaban los usuarios a la hora de generar cada evento, ya sea wifi o datos móviles, y en caso de los datos, el tipo de conexión.
+		El archivo nos provee información acerca de la conexión con la que contaban los usuarios a la hora de generar cada evento, ya sea wifi o datos móviles, y en caso de los datos, el tipo de conexión.
 	
 		En el caso del wifi, vemos que la distribución es la siguiente.
 	
@@ -719,12 +743,15 @@
 				\end{figure}
 				\FloatBarrier
 			\end{itemize}
-			
+
 			Se puede apreciar que cada tipo de conexión genera eventos distintos, por lo que si se quisiera lograr que los usuarios generen el evento \texttt{5.500848327478996e+18}, será importante verificar que cuenten con conexión wifi, mientras que si el que se buscara generar fuera el \texttt{9.066787919123544e+18}, la mejor opción será verificar que estén usando datos móviles y preferiblemete con el carrier \texttt{2.2481569642543155e+17}.
-			
-	\subsubsection{Marcas, modelos y eventos}
-		Otra cuestión interesante de analizar es el comportamiento de los usuarios de las diferentes marcas de dispositivos. Si bien no contamos con los datos de la marca para todos los eventos, contamos con suficientes datos para evaluar. En ellos encontramos 250 marcas distintas, aunque muchas de ellas de muy bajo impacto. Observemos primero cuáles son las marcas más populares, se muestran las primeras diez, ya que concentran el 94\% de los eventos.
-		
+
+	\subsubsection{Marcas y eventos}
+		Otra cuestión interesante de analizar es el comportamiento de los usuarios de las diferentes marcas de dispositivos.
+		Si bien no contamos con los datos de la marca para todos los eventos, contamos con suficientes datos para evaluar.
+		En ellos encontramos 250 marcas distintas, aunque muchas de ellas de muy bajo impacto.
+		Observemos primero cuáles son las marcas más populares, se muestran las primeras diez, ya que concentran el 94\% de los eventos.
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -732,24 +759,51 @@
 			\caption{Marcas que más eventos generan}
 		\end{figure}
 		\FloatBarrier
-		
-		Se aprecia una notable diferencia entre la marca \texttt{3.083058605577787e+17} y sus competidoras
-		
-		Analicemos ahora cómo se relacionan con las aplicaciones.
-		
+
+		Se aprecia una notable diferencia entre la marca \texttt{3.083058605577787e+17} y sus competidoras.
+
+		Analizando los datos, vemos que tenemos un 53\% de filas donde la marca del celular figura en NaN, pero vemos que hay
+		otras filas donde el mismo modelo de celular figura y tenemos su marca. Así que usaremos eso para reparar
+		el set de datos con esta información para posteriormente volver a graficar y ver qué cambió.
+
+		Lo primero que vemos es que recuperamos bastantes filas, ahora solo un 8,8\% no tiene datos sobre la marca del celular.
+		Descartamos esos valores y volvemos a graficar.
+
 		\FloatBarrier
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=\textwidth]{images/events/brandapps.png}
-			\caption{Distribución de aplicaciones por marcas}
-		\end{figure}
-		\FloatBarrier
-		
-		La marca líder tiene fuerte presencia en las aplicaciones 66, 63, 57 y 121, aunque en esta última también influye la marca \texttt{2.5232459822329236e+18}.
-		
+        		\begin{figure}[h]
+        			\centering
+        			\includegraphics[width=\textwidth]{images/events/event_per_brand_fixed.png}
+        			\caption{Marcas que más eventos generan con set de datos reparado}
+        		\end{figure}
+        \FloatBarrier
+
+        Vemos que la tendencia se inclina aún por la marca \texttt{3.083058605577787e+17} pero el segundo lugar ahora lo ocupa
+        \texttt{5.951324980112395e+18} y \texttt{2.208834667126999e+18}, el 3ro antes de la reparación ahora cayó a un 6to puesto.
+
+        Trabajar un poco con la información que teníamos cambió bastante la visualización y nos previno de sacar conclusiones
+        que podían ser erróneas.
+
+
+	\subsubsection{Modelos y eventos}
+	En la sección anterior analizamos las diferentes marcas y su asociación con los eventos que se producen en los ads. Veamos como se distribuye
+	la relación en los modelos.
+
+	\FloatBarrier
+    		\begin{figure}[h]
+    			\centering
+    			\includegraphics[width=\textwidth]{images/events/eventsbymodel.png}
+    			\caption{Distribución de eventos por modelos}
+    		\end{figure}
+    		\FloatBarrier
+
+    Es interesante analizar los modelos que más eventos provocan. Quizás al momento de decidir ofertar
+    en una subasta, conviene enfocarse en algún modelo de celular determinado en lugar de diversificarse. Lamentablemente,
+    no conocemos las características de los eventos, necesitaríamos saber qué tipos de eventos son positivos para la empresa a fin
+    de tomar una decisión que maximice la ocurrencia de ese tipo de eventos.
+
 	\subsubsection{Ciudades y eventos}
 		El lugar de origen de los usuarios de cada evento también será provechoso de analizar para poder distinguir los intereses de los diversos lugares. Si bien en este caso contamos con datos parciales. Lo primero que salta a la vista es que la ciudad \texttt{3.8000799488967747e+18} tiene mucha preponderancia, concentrando el 91,41\% de los eventos. Utilicemos esto para contrastar los eventos más populares y las aplicaciones que más eventos generaron en los distintos lugares, haciendo la distinción entre la ciudad líder y el resto.
-		
+
 		\FloatBarrier
 		\begin{figure}[h]
 			\centering
@@ -757,16 +811,67 @@
 			\caption{Distribución de aplicaciones por ciudad}
 		\end{figure}
 		\FloatBarrier
+
+		Notamos que aplicaciones como la 64 y la 103 son mucho más preponderantes en la ciudad \texttt{3.8000799488967747e+18},
+		mientras que en el resto de lugares, si bien la 64 sigue siendo la más usada, el segundo lugar es mucho más parejo. Esto resulta útil ya que si se quisiera lograr que los usuarios del resto del país generen un evento, será provechoso mostrarles los ads mediante las aplicaciones 64, 8, 7, 248 o 103, cuando si se tratase de la ciudad anterior mencionada la mejor elección sería o la 64 o la 103.
 		
-		Notamos que aplicaciones como la 64 y la 103 son mucho más preponderantes en la ciudad \texttt{3.8000799488967747e+18}, mientras que en el resto de lugares, si bien la 64 sigue siendo la más usada, el segundo lugar es mucho más parejo. Esto resulta útil ya que si se quisiera lograr que los usuarios del resto del país generen un evento, será provechoso mostrarles los ads mediante las aplicaciones 64, 8, 7, 248 o 103, cuando si se tratase de la ciudad anterior mencionada la mejor elección sería o la 64 o la 103.
 	\subsubsection{Eventos atribuidos a Jampp}
+		Será importante conocer la proporción de los eventos registrados que le fueron oficialmente atribuidos a Jampp, así como su composición.
 		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=200pt]{images/events/atribuidos.png}
+			\caption{Eventos atribuidos a Jampp}
+		\end{figure}
+		\FloatBarrier
+		
+		Como se aprecia, el porcentaje es muy bajo. Veamos ahora de dónde provienen dichos eventos.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/eventsattributed.png}
+			\caption{Eventos atribuidos a Jampp por aplicación}
+		\end{figure}
+		\FloatBarrier
+		
+		Las aplicaciones 63 y 16 son las que más eventos generaron para Jampp, con una amplia diferencia.
+		Si analizamos el ref type de estos obtenemos.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/events/atrreftype.png}
+			\caption{Eventos atribuidos a Jampp por aplicación y ref type}
+		\end{figure}
+		\FloatBarrier
+		
+		Donde se observa una predominancia marcada del tipo \texttt{1891515180541284343}.
+		
+		De los eventos atribuidos, la distribución según conexión wifi es la siguiente.
+		
+		\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=200pt]{images/events/atribuidos.png}
+			\caption{Porcentaje de eventos atribuidos a Jampp generados con conexión wifi}
+		\end{figure}
+		\FloatBarrier
+		
+		Como era de esperarse, la mayoría fueron generados vía wifi
+
 \clearpage
 \subsection{Instalaciones}
 	\subsubsection{Introducción}
-		Los datos sobre instalaciones fueron provistos por Jampp en el archivo \texttt{installs.csv.gzip}, el cual contenía información acerca de todas las instalaciones registradas entre los días 5 y 13  Marzo del corriente año, indicando el tipo de aplicaciones descargadas, su fecha de descarga, país de origen, modelo, marca e idioma del dispositivo, entre otras cosas.
+		Los datos sobre instalaciones fueron provistos por Jampp en el archivo \texttt{installs.csv.gzip}, el cual contenía
+		información acerca de todas las instalaciones registradas entre los días 5 y 13  Marzo del corriente año,
+		indicando el tipo de aplicaciones descargadas, su fecha de descarga, país de origen, modelo, marca e idioma del dispositivo, entre otras cosas.
 
-		Cabe destacar que se descartaron datos como las direcciones ip y los varios id únicos generados para cada instalación, puesto que no aportaban información relevante al análisis que se pretende hacer en este trabajo, como también los datos del \textit{session user agent}, ya que la misma empresa informó que no los consideran de importancia y pudieron haberse visto modificados por los propios agentes que les proveyeron los datos.
+		Cabe destacar que se descartaron datos como las direcciones ip y los varios id únicos generados para cada instalación,
+		puesto que no aportaban información relevante al análisis que se pretende hacer en este trabajo, como también los datos
+		del \textit{session user agent}, ya que la misma empresa informó que no los consideran de importancia y pudieron haberse
+		visto modificados por los propios agentes que les proveyeron los datos.
 
 	\subsubsection{Instalaciones por día y hora}
 		Para comenzar, lo primero que haremos será ver cómo se distribuyen las instalaciones en el periodo dado.
@@ -916,7 +1021,7 @@
 
 	\subsubsection{Instalaciones por marca}
 
-		La información de marca y modelo de los dispositivos que instalaron ........
+		La información de marca y modelo de los dispositivos que instalaron.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -958,12 +1063,12 @@
 		\end{figure}
 		\FloatBarrier
 
-		Lo primero que observamos es que la cantidad de aplicaciones de las que se tienen datos de conexión es reducida en comparación al total, ya que , por ejemplo, la aplicación líder en instalaciones no especifica tipo de conexión en ninguna de sus installs. Sin embargo, de este gráfico puede tomarse el hecho de que, si bien la tendencia indica que la mayoría de las instalaciones de las que se tienen datos se realizaron vía wifi, hay aplicaciones como 21 ,donde la proporción es más pareja, o la 36, donde se invierte. Esto puede servir para determinar qué tipo de publicidad mostrar, puesto que en los casos donde no se cuenta con wifi hay que tener en cuenta el consumo, para no gastarle los datos al usuario.
+		Lo primero que observamos es que la cantidad de aplicaciones de las que se tienen datos de conexión es reducida en comparación al total, ya que, por ejemplo, la aplicación líder en instalaciones no especifica tipo de conexión en ninguna de sus installs. Sin embargo, de este gráfico puede tomarse el hecho de que, si bien la tendencia indica que la mayoría de las instalaciones de las que se tienen datos se realizaron vía wifi, hay aplicaciones como 21, donde la proporción es más pareja, o la 36, donde se invierte. Esto puede servir para determinar qué tipo de publicidad mostrar, puesto que en los casos donde no se cuenta con wifi hay que tener en cuenta el consumo, para no gastarle los datos al usuario.
 
 
 		Por otra parte, el hecho de que un install se haya realizado por wifi nos permite conocer otro dato importante, el \textit{user agent} relacionado a la acción.
 
-		Análogamente a lo hecho al comienzo de la sección \ref{aplicaciones}, se analizaron los user agents.
+		Análogamente a lo hecho al comienzo de la sección~\ref{aplicaciones}, se analizaron los user agents.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -1007,7 +1112,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		Como podemos ver, los resultados van acorde a lo mostrado en la figura anterior, con casos como el de la aplicación 10, donde casi el 40\% de las instalaciones son externas. Sin embargo, cabe destacar que en la aplicación líder en descargas, la cual supera a su perseguidora por más de 200 instalaciones (véase sección \ref{aplicaciones}), es donde estos métodos tienen menos presencia.
+		Como podemos ver, los resultados van acorde a lo mostrado en la figura anterior, con casos como el de la aplicación 10, donde casi el 40\% de las instalaciones son externas. Sin embargo, cabe destacar que en la aplicación líder en descargas, la cual supera a su perseguidora por más de 200 instalaciones (véase sección~\ref{aplicaciones}), es donde estos métodos tienen menos presencia.
 
 \clearpage
 \section{Análisis de archivos en conjunto}
@@ -1043,11 +1148,11 @@
 		\end{figure}
 	\FloatBarrier
 
-	 Podemos obtener conclusiones importantes en base a estos gráficos, teniendo en cuenta que cuando se habla de relación clicks/subastas o de subastas que terminan en clicks no se hace referencia a subastas, o clicks, individuales sino a una relación en conjunto, ya que no podemos identificar qupe subasta termino en cada click. Por lo tanto cuando digamos relación clicks/subastas estaremos hablando de $\frac{n_{clicks}}{n_{subastas}}$, siendo $n_{clicks}$ la cantidad de clicks y $n_{subastas}$ la cantidad de subastas.
+	 Podemos obtener conclusiones importantes en base a estos gráficos, teniendo en cuenta que cuando se habla de relación clicks/subastas o de subastas que terminan en clicks no se hace referencia a subastas, o clicks, individuales sino a una relación en conjunto, ya que no podemos identificar que subasta termino en cada click. Por lo tanto cuando digamos relación clicks/subastas estaremos hablando de $\frac{n_{clicks}}{n_{subastas}}$, siendo $n_{clicks}$ la cantidad de clicks y $n_{subastas}$ la cantidad de subastas.
 	\begin{itemize}
-		\item La cantidad de clicks es ínfima en relación a la cantidad de subastas. Se pueden perder cantidades en dos partes del proceso (pocas subastas se ganan  y/o poca gente hace clicks una vez que se gana la subasta y se muestra un anuncio). Gráfico \ref{subastasterminadasenclicks}.
-		\item No tiene mucho sentido el gráfico \ref{clicksysubastaspordia} ya que la cantidad de subastas es tan grande en comparación con la cantidad de clicks que la figura de clicks se achata cercana a cero.
-		\item El gráfico \ref{relclickssubastas} nos permite ver mejor lo confirmado en el ítem anterior. Día a día la relación $\frac{n_{clicks}}{n_{subastas}}$ es menor al 0,005%.
+		\item La cantidad de clicks es ínfima en relación a la cantidad de subastas. Se pueden perder cantidades en dos partes del proceso (pocas subastas se ganan  y/o poca gente hace clicks una vez que se gana la subasta y se muestra un anuncio). Gráfico~\ref{subastasterminadasenclicks}.
+		\item No tiene mucho sentido el gráfico~\ref{clicksysubastaspordia} ya que la cantidad de subastas es tan grande en comparación con la cantidad de clicks que la figura de clicks se achata cercana a cero.
+		\item El gráfico~\ref{relclickssubastas} nos permite ver mejor lo confirmado en el ítem anterior. Día a día la relación $\frac{n_{clicks}}{n_{subastas}}$ es menor al 0,005%.
 	\end{itemize}
 
 	 Por otra parte, vimos en la sección "Subastas" que cada device\_id tenía asociado una plataforma. Los datos obtenidos nos permiten saber quién es el advertiser predominante en cada plataforma. Para ello vemos dos gráficos (uno para la plataforma '1' y otro para la plataforma '2').
@@ -1068,21 +1173,339 @@
 		\end{figure}
 	\FloatBarrier
 
-	 Se puede ver, claramente, que el advertiser '3' es predominante para ambas plataformas. Pero además, un dato interesante es la diferencia en la cantidad de clicks entre las plataformas. Cerca de 25000 para la plataforma '1' y cerca de 700 para la plataforma '2' (en el anexo 'tablas de datos' se podrán comprobar los numeros exactos). Esta diferencia entre los sistemas operativos ya la habíamso visto en la seccion "Subastas".
+	 Se puede ver, claramente, que el advertiser '3' es predominante para ambas plataformas. Pero además, un dato interesante es la diferencia en la cantidad de clicks entre las plataformas. Cerca de 25000 para la plataforma '1' y cerca de 700 para la plataforma '2' (en el anexo 'tablas de datos' se podrán comprobar los numeros exactos). Esta diferencia entre los sistemas operativos ya la habíamos visto en la seccion "Subastas".
 
 
+\subsection{Clicks e instalaciones}
+	\subsubsection{Análisis general}
+	Decidimos hacer un join entre installs y clicks para poder saber de cuantas personas hacen click cauntas installan. Para poder hacer el join primero se nos ocurrió hacerlo por la fecha y hora. Pero nos dimos cuenta que si los uniamos por esta columna no necesariamente el click iba a ser correspondiente al install. Esto se debe a que cuando una persona hace click, no instala en ese mismo instante, sino, que pasan unos segundos o hasta minutos. Luego tuvimos la idea de unir los archivos por medio del transaction id ya que este era único para cada uno de los click e installs. Sin embargo, esta idea no funcionó debido a que en installs solo habian 4 trans\_id y el resto nulls y ninguno de esos 4 coincidia con algún transaction\_id de clicks. Finalmente, decidimos unirlos por el ref\_hash ya que este es un id unico de cada celular.
+	
+	Al juntarlos por ref\_hash, solamente obtuvimos, de los más de 26000 clicks que había, un csv con 11 filas. Cabe destacar que de estos 11 que quedaron el ref\_hash 582930240149217282 se repite un total de 4 veces y el ref\_hash 7759178785240189555 se repite 2 veces. Ambos tienen esa misma candidad de repeticiones en el archivo clicks mientras que solo estan una vez en el archivo installs. Es decir, que de los 4 clicks que hizo el teléfono 582930240149217282 solo uno fue una instalación y de los 2 clicks que hizo 7759178785240189555 solo uno fue una instalación. Por lo tanto, se podrai decir que de los ams de 26000 clicks solo se realizaron 7 installs. Este número es muy bajo.
+	
+	 Antes de realizar los gráficos se optó por sacar columnas que no tenian nin{un tipo de información útil ya que o tenian muchos nulls o no daban información rlevante. Algunas de esas columans fueron action\_id, agent\_device, brand, kind, entre varias otras. Los siguientes gráficos se van realizar a las 11 filas que quedaron del join entre clicks e installs.	 
 
-\section{Conclusión}
+	\subsubsection{Clicks e instalaciones en advertiser\_id}
+	Este gráfico no mostrará la cantidad de advertiser\_id que quedaron despues de quedarnos con los clicks que fueron installs.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/advertiser_id.png}
+			\caption{}
+		\end{figure}
+	
+		
+	Finalmente, como se esperaba, quedó solo el advertiser\_id 3 que era el que predominaba en el archivo de clicks.
+	
+	\subsubsection{Clicks e instalaciones en source\_id}
+	os siguientes gráficos se notará la cantidad y el porcentaje de clicks que terminaron en installs de los distintos source\_id.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/source_id.png}
+			\caption{}
+		\end{figure}
+	
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/source_id_bars.png}
+			\caption{}
+		\end{figure}
+	
+	
+	Quedaron simplemente tres source\_id que eran los que más abundaban en el csv de clicks.
+	
+	\subsubsection{Posicion geografica de clicks e instalaciones}
+	Este heatmap nos muestra la latitud y longitud de donde se realizó el click que terminó en instalación.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/lat_long_heat.png}
+			\caption{}
+		\end{figure}
+		
+	
+	Todas las instalaciones se realizaron entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Esto era de esperarse ya que la mayoría de clicks se habían consentrado en ese mismo sitio.
+	
+	\clearpage
+	\subsubsection{Clicks en la pantalla que terminan en instalaciones}
+	 El siguiente scatter plot nos indica en que lugar de la pantalla del te{efono celular se realizó el click que luego terminó en una instalación de la aplicación.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/touch_pos.png}
+			\caption{}
+		\end{figure}
+	
+	
+	Se puede observar que la mayoria de los clicks fueron en la parte inferior derecha de la pantalla. Esto era de esperarse por lo ya previamente analizado en el inciso de clicks.
+	
+	
+	\subsubsection{Tiempo en realizar el click}
+	Queríamos saber cual era el promedio de tiempo que tardaba una persona en hacer click que luego terminaá instalando la aplicación. Para esto primeros filtramos el dataframe y nos quedamos con los que tenían un tiempo menor a 10 minutos y, obviamente, con los que no eran nulls. Después procedimos a calcular el promedio que nos dio como resultado 19.230125 segundos.
+	
+	En esta oportunidad no nos pareció importante analizar la distribución en el tiempo de los clicks que termianron en instalaciónes de los disitintos application\_id o de los distintos source\_id como se hizo previamente en el archivo de clicks ya que hicimos los gráficos y estos, con tan poca cantidad de clicks que quedaron, no nos mostraban nada relevante.
+	
+	\clearpage
+	\subsubsection{Clicks e instalaciones en Android e IOS}
+	Vale aclarar, que tanto en clicks como en installs, se mostraba una columna con el sistema operativo del celular llamada ref\_type. Antes de realizar algún gráfico, nos fijamos que ambas columanas que quedaron después de hacer el join llamadas ref\_type\_x y ref\_type\_y tuvieran el mismo sistema operativo. Por suerte, así lo fue y no se encontró un error en ese aspecto y procedimos a ahcer el gráfico con una de estas dos columnas que nos mostraban exactamente lo mismo.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.7]{images/clicks-installs/ref_type.png}
+			\caption{}
+		\end{figure}
+	
+
+	Se puede apreciar que al igual que en clicks el sistema operativo que más aparece es el que comuienza con 18 y el que le sigue es el que comienza con 14.
+	
+	\subsubsection{Clicks e instalaciones en carreirs\_id}
+	Vamos a mostrar en el siguiente gráfico cuales son los carriers\_id que quedaron y en que cantidad después de elegir los clicks que terminaron en instalaciones.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.4]{images/clicks-installs/carrier_id.png}
+			\caption{}
+		\end{figure}
+	
+
+	Sorpresivamente, el carrier\_id predomiante es el 13.0 que no era mayoría en el archivo de clicks.
+	
+	\subsubsection{Clicks e instalaciones en os\_minor}
+	En el siguiente gráfico se enseña las menores versiones del sistema operativo de cada celular que hizo click e instalo la aplicación.
+	
+	 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/minor_os.png}
+			\caption{}
+		\end{figure}
+	
+	
+	En este caso, solo quetaron 3 tipos de os\_minor que no eran los que más predominaban en clicks.
+	
+	\subsubsection{Clicks e instalaciones en os\_minor}
+	En el siguiente gráfico se enseña las mayores versiones del sistema operativo de cada celular que hizo click e instalo la aplicación.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/major_os.png}
+			\caption{}
+		\end{figure}
+	
+
+	Solamente quedaron 3 os\_major y el más repetitivo es el que comienza con 7.452 que era el que menos aparecía en el archivo de clicks.
+	
+	\subsubsection{Clicks e instalaciones en specs\_brand}
+	Este gráfico nos muestran los specs\_brand que quedaron y en que cantidad teniendo en cuenta solo los clicks que instalaron la aplicación.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/specs_brand.png}
+			\caption{}
+		\end{figure}
+	
+
+	Como se esperaba, quedaron los dos specs\_brand que más aparecian en el archivo de clicks.
+	
+	\subsubsection{Clicks e instalaciones en país de origen}
+	En el archivo de clicks solo aparecía un solo país mientras que en el archivo de installs aparecían dos distintos. Luego de hacer el join solo quedó un país como se suponía.
+	
+	\subsubsection{Clicks e instalaciones en application\_id}
+	En el siguiente gráfico veremos las applicaciones\_id que quedaron luego de elegir los clicks que instalaron.
+	
+	 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/application_id.png}
+			\caption{}
+		\end{figure}
+	
+	
+	Casi todas las application\_id son del tipo 7 que era lo más lógico ya que esa era la application\_id que más abundaba en el archivo de installs.
+	
+	\subsubsection{Tipo de instalaciones}
+	Dentro de los tipos de instalaciones tenemos las atribuidas y las implícitas. Como ya se mencionó anterior mente las atribuidas son todas false, lo que es muy raro ya que estas serían las que se le darían a Jampp. 
+	\newline
+	\newline
+	\tab El siguiente gráfico nos muestra cuantas de las instalaciones fueron implícitas.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/implisit.png}
+			\caption{}
+		\end{figure}
+	
+
+	So observa que una de ellas es implicita. El resto de las instalaciones no se sabe con certeza a quien le corresponden.
+	
+	\subsubsection{Clicks e instalaciones en device\_model}
+	El gráfico mostrado a continuación nos enseñará que modelos de celular quedaron y en que cantidad luego de quedarnos con los installs que les hicieron click previamente.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/device_model.png}
+			\caption{}
+		\end{figure}
+	
+
+	Se puede notar que solamente quedaron 3 tipos de modelos de celular de los caules el más repetitivo es el comenzado con 6.88.
+	
+	\subsubsection{Clicks e instalaciones en device\_language}
+	En el siguiente gráfico mostraremos los lenguajes que tenían los celulares al momento de la instalación de la aplicación.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/device_language.png}
+			\caption{}
+		\end{figure}
+	
+
+	Solamente quedó un lenguaje.
+	
+	\subsubsection{Clicks e instalaciones en session\_user\_agent}
+	En este gráfico que se enseñará a continuación se notará los distintos session\_user\_agent.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/session_user_agent.png}
+			\caption{}
+		\end{figure}
+	
+	
+	Se puede observar que el único session\_user\_agent que quedó es adjust.com
+	
+	
+	\subsubsection{Clicks e instalaciones en ip\_address}
+	El siguiente gráfico nos mostrará los ip\_address de los clicks que terminarion en instalación.
+	
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/ip_address.png}
+			\caption{}
+		\end{figure}
+	
+
+	El ip\_address que predomina es el comanzado en 7140 con un total de 4 apariciones. Esto igual es de esperarse porque hay una ip\_address por cada celular y como en total tenemos 7 ya que uno se repite 4 veces y otro 2 veces. Por lo tanto se obtienen 7 dsitintas ip\_address.
+	
+	\subsubsection{Clicks e instalaciones en los días y horas}
+	Cabe destacar que cada uno de los csv tenia su fecha y hora. En estos dos siguientes gráficos vamos a mostrar los días en que hubo más clicks y los días que más se instaló.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/days_clicks.png}
+			\caption{}
+		\end{figure}
+	
+	
+	
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/days_installs.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	Viendo estos gráficos notámos algo muy raro. La instalación que se realizó luego de tocar click debería ser uno segundos o minutos después de hacer el click, no obstante, se puede ver que los clicks se realizaron entre el 9 y el 13 de Marzo y los isntalls entre el 6 y el 11 de Marzo. Eso no tienen ningún sentido. Se puede deber a algún error en los datos, ya sea en la fecha y el horario o en los ref\_hash por los que unimos los archivos clicks e installs.
+	
+	En los siguientes gáficos se enseñará los clicks y las instalaciones en las distintas horas del día.
+	
+	\FloatBarrier
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/hours_clicks.png}
+			\caption{}
+		\end{figure}
+	
+	
+	
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/hours_installs.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+
+	En este caso también pasa lo mismo. No se ve que haya coherencia entre ambos gráficos. Las horas del día en la que se hace click y las que se instala son muy diferentes. Como se mencionó previamnte esto puede ser un error en las fechas y horas o también en el ref\_hash.
+	
 
 \clearpage
-\appendix
-\section{Tablas de datos}
-	\subsection{Subastas}
-	\input{datos-auctions.tex}
+\section{Conclusiones}
 
-	\subsection{Clicks y Subastas}
-	\input{datos-auctions-clicks.tex}
-\clearpage
+Luego de realizar un análisis de todos los datos nos enfocamos en las conclusiones que generen valor para la empresa. Intentando
+encontrar patrones que nos acerquen a predecir instalaciones que sean asignadas en el futuro y detectar posibles clientes.
+
+\begin{itemize}
+    \item La mayoría de las subastas se ofrecen desde las 3 PM hasta la 1 AM. Esta tendencia se mantiene para ambos SO.
+    \item Hay un SO que ofrece hasta 5 veces más subastas.
+    \item La mayoría de las subastas provienen de una misma fuente, es necesario buscar más fuentes de subastas. Al parecer
+    esta fuente solo está funcionando para un solo ad, que de seguro solo lleva a una aplicación.
+    \item El carrier parece no ser una variable muy importante al momento de determinar el éxito de un ad. Puesto que la mayoría de
+    los clicks está distribuida entre 7 carriers que lideran. Aunque si podemos determinar que hay algunos carriers que implicarían
+    una certeza en que no vamos a recibir un click. Esto también es útil, evitará en el futuro que ofertemos en subastas donde éstos
+    se vean implicados.
+    \item Al no saber a qué versiones corresponden las variables os\_minor y os\_major es difícil sacar conclusiones, pero ciertamente
+    esta es una variable a la que hay que prestarle atención, no tiene sentido participar de subastas donde el sistema operativo
+    del celular en el que se mostrará la publicidad no se corresponde con los querimientos de la app que queremos publicar.
+    \item En cuanto a las marcas, hay 3 marcas que lideran los clicks. Enfocarse en ellas mejorará el rendimiento de las ofertas
+    al participar de las subastas. Aunque, otra vez, queda por encontrar formas de mejorar el rendimiento de los otros ads, porque
+    lo anterior dicho es cierto solo para 1 ad.
+    \item Hay un sistema operativo que destaca en la cantidad de clicks logrados. Quedará pendiente para la empresa
+    analizar si la publicidad que se está queriendo exponer debe mejorarse para el otro SO que queda resagado. O tal vez
+    es un problema de compatibilidad de las apps que se ofrecen y su disponibilidad en el otro SO.
+    \item La cantidad de clicks aumenta entre las 8 PM y las 2 AM. Pero hay que tener cuidado porque las subastas también se
+    ofrecen más en esos horarios. De todas formas es un dato muy útil, las subastas entre las 3 PM y las 8 PM, mencionadas
+    unos puntos atrás, no están rindiendo bien, conviene no ofertar en esos horarios.
+    \item La ubicación del dispositivo parece influenciar, hay posiciones donde claramente es más probable que recibamos un click,
+    entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Sería necesario cruzar esta información
+    con algún análisis de densidad de población de esa zona para estar seguros de si no se trata, simplemente, de que en esa zona
+    habita más gente y por ende hay más dispositivos.
+    \item La posición del click en la pantalla nos ofrece una muestra de gente haciendo click principalmente abajo, lo que
+    sugiere una llamada a la acción en ese sector de la publicidad. Debe haber un dibujo de un botón en la imagen o una flecha.
+    Esto puede ser especialmente útil para detectar diferencias de diseño entre la publicidad que está funcionando y las que no.
+    \item El problema con los eventos es que no sabemos si todos indican algo positivo para la empresa. Asumiremos en primera
+    medida que si. Con esto en mente, podemos analizar que se cumple nuevamente el patrón de interacción entre las 3 PM y las
+    2 AM.
+    \item No hay un día donde rindan mejor las publicidades según los eventos.
+    \item Los idiomas son bastante variados, esto puede indicarnos que necesitamos hacer los anuncios más específicos para
+    cada cliente, también nos habla un poco del público que tiene cada aplicación. Es imprescindible determinar si los ads
+    están en el idioma \texttt{3.3013777759776993e+18} que predomina en los eventos.
+    \item Si bien los eventos están bastante parejos entre el uso de Wifi o datos del celular, hay una ligera ventaja para
+    el uso de Wifi, para ver esto fue más fácil determinarlo por el tipo de conexión que por el campo wifi. A veces los campos
+    de detalle nos permiten analizar y completar información que por alguna razón llega de manera errónea.
+    \item Hay un carrier que destaca entre los demás. Investigar la estrategia de marketing de ese carrier nos puede ayudar
+    a conocer a nuestro público objetivo.
+    \item El wifi predomina en todos los tipos de evento. Es crucial determinar qué tipos de eventos son positivos para
+    favorecer la aparición de eventos beneficiosos.
+    \item Luego de reconstruir la data de marcas, vemos que tenemos nuevos líderes en el gráfico, \texttt{3.083058605577787e+17}
+    y, seguido de lejos, \texttt{5.951324980112395e+18}
+    \item Las instalaciones muestran un tendencia alcista. Nuevamente el horario de 3 PM a 2 AM es beneficioso, pero, otra vez,
+    también es la franja de más oferta.
+    \item Las aplicaciones 7 y 9 son las más exitosas en las campañas. Al parecer no influye demasiado de qué país es el
+    usuario, solo vemos 2 países en el set de datos y las instalaciones se reparten entre ellos.
+    \item Solo 25\% de las instalaciones son atribuidas a Jampp, si bien esto es un valor relativamente bajo, pareciera ser
+    aceptable. En realidad, deberíamos saber cuánto se está cobrando por cada atribución implícita para saber si es un buen
+    valor en la industria o necesita mejorarse, a priori, pareciera que es bastante bueno, considerando que las conversiones son
+    bastante bajas.
+    \item Vemos que un porcentaje muy bajo de las subastas terminan en click.
+\end{itemize}
+
 
 \bibliographystyle{plain}
 \bibliography{references}
