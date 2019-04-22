@@ -6,6 +6,13 @@
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{placeins}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
 \usepackage{caption}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 \geometry{top = 1in}
@@ -46,11 +53,17 @@
 \newpage
 
 \tableofcontents
+
 \newpage
 \section{Introducción}
 	 En el trabajo se hace un análisis exploratorio de un set de datos provistos por la empresa Jampp. En el mismo se encuentra información de subastas, instalaciones, clicks, entre otros.\\
-	 Primero se hará una visión general de los archivos installs.csv, clicks.csv, auctions.csv y events.csv para entender la distribución y la cantidad de datos, el significado de las columnas, reconocer las columnas que no aportan información, por ejemplo, las que tienen todos sus valores nulos, y reconocer el tipo de datos en cada columna, seguido de un análisis más profundo para obtener más información de los datos. Luego se hará un análisis global, buscando información relativa a los archivos en conjunto, permitiendo obtener otro tipo de información.
-
+	 Primero se hará una visión general de los archivos installs.csv, clicks.csv, auctions.csv y events.csv para entender la distribución y la cantidad de datos, el significado de las columnas,
+	 reconocer las columnas que no aportan información, por ejemplo, las que tienen todos sus valores nulos, y reconocer
+	 el tipo de datos en cada columna, seguido de un análisis más profundo para obtener más información de los datos.
+	 Luego se hará un análisis global, buscando información relativa a los archivos en conjunto, permitiendo obtener
+	 otro tipo de información.
+     \subsection{Repositorio}
+     El análisis exploratorio realizado con pandas se puede visualizar en el siguiente link de github: \href{https://github.com/shizus/7506-1c2019}{https://github.com/shizus/7506-1c2019}.
 \section{Análisis individual de archivos}
 \subsection{Subastas}
 	\subsubsection{Análisis general} \label{analisis general}
@@ -102,12 +115,14 @@
 	
 	
 	\subsubsection{Subastas por día de Marzo}
-	 Como primer acercamiento a este set de datos, es interesante ver cómo se distribuye la cantidad de subastas en los días que incluye el archivo (05/03/19 al 13/03/19). El gráfico \ref{subastasmarzo} representa dicha distribución. En él se pueden observar varias cosas:
+	 Como primer acercamiento a este set de datos, es interesante ver cómo se distribuye la cantidad de subastas en los días que incluye el archivo (05/03/19 al 13/03/19).
+	 El gráfico~\ref{subastasmarzo} representa dicha distribución. En él se pueden observar varias cosas:
+
 	\begin{itemize}
-		\item La cantidad de subastas parece, en general, aumentar con el paso de los dias.
+		\item La cantidad de subastas parece, en general, aumentar con el paso de los días.
 		\item El valor del último día es más del doble del valor del primer día.
 		\item El mayor aumento se da del sexto al septimo día.
-		\item La cantidad de subastas varía entre unos valores extremos, aproximados, de un millón y 3 millónes.
+		\item La cantidad de subastas varía entre unos valores extremos, aproximados, de un millón y 3 millones.
 	\end{itemize}
 
 	\FloatBarrier
@@ -120,7 +135,7 @@
 	\FloatBarrier
 
 	\subsubsection{Subastas por día de Marzo por sistema operativo}
-	 Otro punto interesante es dividir el problema. Obtener la distribución de subastas en los días con datos disponibles para cada plataforma (Android e iOS). En la imagen \ref{subastasmarzoSO} se pueden observar las cantidades. Observese que llamamos '1' y '2' a las plataformas, ya que no sabemos cuál es Android y cuál es iOS.
+	 Otro punto interesante es dividir el problema. Obtener la distribución de subastas en los días con datos disponibles para cada plataforma (Android e iOS). En la imagen~\ref{subastasmarzoSO} se pueden observar las cantidades. Observese que llamamos '1' y '2' a las plataformas, ya que no sabemos cuál es Android y cuál es iOS.
 
 	 Puntos interesantes a reconocer:
 
@@ -128,7 +143,7 @@
 		\item Para este análisis se usaron los datos filtrados, ya que los devices que tienen ambas plataformas pueden generar ruido.
 		\item La cantidad de subastas para la plataforma '1' es, salvo en el cuarto y el quinto día, considerablemente mayor a la cantidad para la plataforma '2'.
 		\item La figura de la plataforma '2' es mucho más ``chata'' que la de la plataforma '1', la cual representa más picos y saltos.
-		\item La figura de la plataforma '1' es muy parecida a la del gráfico \ref{subastasmarzo}, mientras que la de la plataforma '2' no lo es. Esto es resultado, principalmente, de lo indicado en el primer ítem. Este análisis puede llegar a ser muy útil para reconocer partes de los datos que son representativas del total.
+		\item La figura de la plataforma '1' es muy parecida a la del gráfico~\ref{subastasmarzo}, mientras que la de la plataforma '2' no lo es. Esto es resultado, principalmente, de lo indicado en el primer ítem. Este análisis puede llegar a ser muy útil para reconocer partes de los datos que son representativas del total.
 	\end{itemize}
 
 	\FloatBarrier
@@ -141,7 +156,7 @@
 	\FloatBarrier
 
 	\subsubsection{Subastas por hora del día}
-	 Ahora vamos a analizar cómo se distribuyen las subastas a lo largo del día. Para esto hacemos un gráfico de hora del día contra cantidad de subastas (Gráfico \ref{subastashora}).\newline
+	 Ahora vamos a analizar cómo se distribuyen las subastas a lo largo del día. Para esto hacemos un gráfico de hora del día contra cantidad de subastas (Gráfico~\ref{subastashora}).\newline
 	 Desde un análisis cualitativo se pueden observar algúnos puntos:
 	\begin{itemize}
 		\item Parece ser que la mayor cantidad de subastas se distribuyen por la noche y la madrugada.
@@ -171,7 +186,7 @@
 	\subsubsection{Subastas por sistema operativo}
 	 Resulta interesante conocer cuál es el sistema operativo para el cual se generan más subastas. Es algo que ya se venía viendo en la forma y nivel (cantidad de subastas) de los gráficos anteriores. Sin embargo, los gráficos vistos hasta ahora no dan un conocimiento directo de la relación de las cantidades de subastas de ambas plataformas.
 
-	 En las figuras que se ven a continuación podemos confirmar que lo que indicabamos en los gráficos anteriores era cierto. La cantidad de subastas es mucho mayor para la plataforma '1'. Además, ahora tenemos una visión más cuantitativa de esta relación, en la imagen \ref{subastasSOporcentajes} vemos una relación porcentual, mientras que la imagen \ref{subastasSOcantidades} nos da más idea de las cantidades.
+	 En las figuras que se ven a continuación podemos confirmar que lo que indicabamos en los gráficos anteriores era cierto. La cantidad de subastas es mucho mayor para la plataforma '1'. Además, ahora tenemos una visión más cuantitativa de esta relación, en la imagen~\ref{subastasSOporcentajes} vemos una relación porcentual, mientras que la imagen~\ref{subastasSOcantidades} nos da más idea de las cantidades.
 
 	\FloatBarrier
 		\begin{figure}
@@ -192,7 +207,7 @@
 	\FloatBarrier
 
 	\subsubsection{Subastas por source}
-	 Como indica la introducción a esta sección (vease \ref{analisis general}), source nos indica el exchange que generó la subasta. Se puede obtener, a partir de los datos, cuáles son los exchanges principales, y cuántas subastas generan.
+	 Como indica la introducción a esta sección (vease~\ref{analisis general}), source nos indica el exchange que generó la subasta. Se puede obtener, a partir de los datos, cuáles son los exchanges principales, y cuántas subastas generan.
 
 	 A tener en cuenta:
 	\begin{itemize}
@@ -354,8 +369,8 @@
 		experiencia personal y la intuición, pero, aunque improbables, no son imposibles.
 
 
-	\subsubsection{Clicks en los dias y horas}
-		En este primer gráfico se puede ver la evolución de la cantidad de clicks que se hicieron entre los dias 5 y 13 de Marzo
+	\subsubsection{Clicks en los días y horas}
+		En este primer gráfico se puede ver la evolución de la cantidad de clicks que se hicieron entre los días 5 y 13 de Marzo
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -740,9 +755,27 @@
 
 		Se aprecia una notable diferencia entre la marca \texttt{3.083058605577787e+17} y sus competidoras.
 
-		Analizando los datos, vemos que tenemos un 53% de datos donde la marca del celular figura en NaN, pero vemos que hay
-		otras filas donde el mismo modelo de celular figura y tenemos su marca. Intentaremos reparar el set de datos con esta información
-		para posteriormente volver a graficar y ver qué cambió.
+		Analizando los datos, vemos que tenemos un 53\% de filas donde la marca del celular figura en NaN, pero vemos que hay
+		otras filas donde el mismo modelo de celular figura y tenemos su marca. Así que usaremos eso para reparar
+		el set de datos con esta información para posteriormente volver a graficar y ver qué cambió.
+
+		Lo primero que vemos es que recuperamos bastantes filas, ahora solo un 8,8\% no tiene datos sobre la marca del celular.
+		Descartamos esos valores y volvemos a graficar.
+
+		\FloatBarrier
+        		\begin{figure}[h]
+        			\centering
+        			\includegraphics[width=\textwidth]{images/events/event_per_brand_fixed.png}
+        			\caption{Marcas que más eventos generan con set de datos reparado}
+        		\end{figure}
+        \FloatBarrier
+
+        Vemos que la tendencia se inclina aún por la marca \texttt{3.083058605577787e+17} pero el segundo lugar ahora lo ocupa
+        \texttt{5.951324980112395e+18} y \texttt{2.208834667126999e+18}, el 3ro antes de la reparación ahora cayó a un 6to puesto.
+
+        Trabajar un poco con la información que teníamos cambió bastante la visualización y nos previno de sacar conclusiones
+        que podían ser erróneas.
+
 
 	\subsubsection{Modelos y eventos}
 	En la sección anterior analizamos las diferentes marcas y su asociación con los eventos que se producen en los ads. Veamos como se distribuye
@@ -756,8 +789,10 @@
     		\end{figure}
     		\FloatBarrier
 
-    Es interesante analiar a qué marcas pertenecen los modelos que más eventos crean. Quizás al momento de decidir ofertar
-    en una subasta, conviene enfocarse en alguna marca de celular determinada en lugar de diversificarse.
+    Es interesante analizar los modelos que más eventos provocan. Quizás al momento de decidir ofertar
+    en una subasta, conviene enfocarse en algún modelo de celular determinado en lugar de diversificarse. Lamentablemente,
+    no conocemos las características de los eventos, necesitaríamos saber qué tipos de eventos son positivos para la empresa a fin
+    de tomar una decisión que maximice la ocurrencia de ese tipo de eventos.
 
 	\subsubsection{Ciudades y eventos}
 		El lugar de origen de los usuarios de cada evento también será provechoso de analizar para poder distinguir los intereses de los diversos lugares. Si bien en este caso contamos con datos parciales. Lo primero que salta a la vista es que la ciudad \texttt{3.8000799488967747e+18} tiene mucha preponderancia, concentrando el 91,41\% de los eventos. Utilicemos esto para contrastar los eventos más populares y las aplicaciones que más eventos generaron en los distintos lugares, haciendo la distinción entre la ciudad líder y el resto.
@@ -770,15 +805,20 @@
 		\end{figure}
 		\FloatBarrier
 
-		Notamos que aplicaciones como la 64 y la 103 son mucho más preponderantes en la ciudad \texttt{3.8000799488967747e+18}, mientras que en el resto de lugares, si bien la 64 sigue siendo la más usada, el segundo lugar es mucho más parejo. Esto resulta útil ya que si se quisiera lograr que los usuarios del resto del país generen un evento, será provechoso mostrarles los ads mediante las aplicaciones 64, 8, 7, 248 o 103, cuando si se tratase de la ciudad anterior mencionada la mejor elección sería o la 64 o la 103.
-	\subsubsection{Eventos atribuidos a Jampp}
-		
+		Notamos que aplicaciones como la 64 y la 103 son mucho más preponderantes en la ciudad \texttt{3.8000799488967747e+18},
+		mientras que en el resto de lugares, si bien la 64 sigue siendo la más usada, el segundo lugar es mucho más parejo. Esto resulta útil ya que si se quisiera lograr que los usuarios del resto del país generen un evento, será provechoso mostrarles los ads mediante las aplicaciones 64, 8, 7, 248 o 103, cuando si se tratase de la ciudad anterior mencionada la mejor elección sería o la 64 o la 103.
+
 \clearpage
 \subsection{Instalaciones}
 	\subsubsection{Introducción}
-		Los datos sobre instalaciones fueron provistos por Jampp en el archivo \texttt{installs.csv.gzip}, el cual contenía información acerca de todas las instalaciones registradas entre los días 5 y 13  Marzo del corriente año, indicando el tipo de aplicaciones descargadas, su fecha de descarga, país de origen, modelo, marca e idioma del dispositivo, entre otras cosas.
+		Los datos sobre instalaciones fueron provistos por Jampp en el archivo \texttt{installs.csv.gzip}, el cual contenía
+		información acerca de todas las instalaciones registradas entre los días 5 y 13  Marzo del corriente año,
+		indicando el tipo de aplicaciones descargadas, su fecha de descarga, país de origen, modelo, marca e idioma del dispositivo, entre otras cosas.
 
-		Cabe destacar que se descartaron datos como las direcciones ip y los varios id únicos generados para cada instalación, puesto que no aportaban información relevante al análisis que se pretende hacer en este trabajo, como también los datos del \textit{session user agent}, ya que la misma empresa informó que no los consideran de importancia y pudieron haberse visto modificados por los propios agentes que les proveyeron los datos.
+		Cabe destacar que se descartaron datos como las direcciones ip y los varios id únicos generados para cada instalación,
+		puesto que no aportaban información relevante al análisis que se pretende hacer en este trabajo, como también los datos
+		del \textit{session user agent}, ya que la misma empresa informó que no los consideran de importancia y pudieron haberse
+		visto modificados por los propios agentes que les proveyeron los datos.
 
 	\subsubsection{Instalaciones por día y hora}
 		Para comenzar, lo primero que haremos será ver cómo se distribuyen las instalaciones en el periodo dado.
@@ -975,7 +1015,7 @@
 
 		Por otra parte, el hecho de que un install se haya realizado por wifi nos permite conocer otro dato importante, el \textit{user agent} relacionado a la acción.
 
-		Análogamente a lo hecho al comienzo de la sección \ref{aplicaciones}, se analizaron los user agents.
+		Análogamente a lo hecho al comienzo de la sección~\ref{aplicaciones}, se analizaron los user agents.
 
 		\FloatBarrier
 		\begin{figure}[h]
@@ -1019,7 +1059,7 @@
 		\end{figure}
 		\FloatBarrier
 
-		Como podemos ver, los resultados van acorde a lo mostrado en la figura anterior, con casos como el de la aplicación 10, donde casi el 40\% de las instalaciones son externas. Sin embargo, cabe destacar que en la aplicación líder en descargas, la cual supera a su perseguidora por más de 200 instalaciones (véase sección \ref{aplicaciones}), es donde estos métodos tienen menos presencia.
+		Como podemos ver, los resultados van acorde a lo mostrado en la figura anterior, con casos como el de la aplicación 10, donde casi el 40\% de las instalaciones son externas. Sin embargo, cabe destacar que en la aplicación líder en descargas, la cual supera a su perseguidora por más de 200 instalaciones (véase sección~\ref{aplicaciones}), es donde estos métodos tienen menos presencia.
 
 \clearpage
 \section{Análisis de archivos en conjunto}
@@ -1057,9 +1097,9 @@
 
 	 Podemos obtener conclusiones importantes en base a estos gráficos, teniendo en cuenta que cuando se habla de relación clicks/subastas o de subastas que terminan en clicks no se hace referencia a subastas, o clicks, individuales sino a una relación en conjunto, ya que no podemos identificar que subasta termino en cada click. Por lo tanto cuando digamos relación clicks/subastas estaremos hablando de $\frac{n_{clicks}}{n_{subastas}}$, siendo $n_{clicks}$ la cantidad de clicks y $n_{subastas}$ la cantidad de subastas.
 	\begin{itemize}
-		\item La cantidad de clicks es ínfima en relación a la cantidad de subastas. Se pueden perder cantidades en dos partes del proceso (pocas subastas se ganan  y/o poca gente hace clicks una vez que se gana la subasta y se muestra un anuncio). Gráfico \ref{subastasterminadasenclicks}.
-		\item No tiene mucho sentido el gráfico \ref{clicksysubastaspordia} ya que la cantidad de subastas es tan grande en comparación con la cantidad de clicks que la figura de clicks se achata cercana a cero.
-		\item El gráfico \ref{relclickssubastas} nos permite ver mejor lo confirmado en el ítem anterior. Día a día la relación $\frac{n_{clicks}}{n_{subastas}}$ es menor al 0,005%.
+		\item La cantidad de clicks es ínfima en relación a la cantidad de subastas. Se pueden perder cantidades en dos partes del proceso (pocas subastas se ganan  y/o poca gente hace clicks una vez que se gana la subasta y se muestra un anuncio). Gráfico~\ref{subastasterminadasenclicks}.
+		\item No tiene mucho sentido el gráfico~\ref{clicksysubastaspordia} ya que la cantidad de subastas es tan grande en comparación con la cantidad de clicks que la figura de clicks se achata cercana a cero.
+		\item El gráfico~\ref{relclickssubastas} nos permite ver mejor lo confirmado en el ítem anterior. Día a día la relación $\frac{n_{clicks}}{n_{subastas}}$ es menor al 0,005%.
 	\end{itemize}
 
 	 Por otra parte, vimos en la sección "Subastas" que cada device\_id tenía asociado una plataforma. Los datos obtenidos nos permiten saber quién es el advertiser predominante en cada plataforma. Para ello vemos dos gráficos (uno para la plataforma '1' y otro para la plataforma '2').
@@ -1153,7 +1193,7 @@
 	\tab Se puede observar que la mayoria de los clicks fueron en la parte inferior derecha de la pantalla. Esto era de esperarse por lo ya previamente analizado en el inciso de clicks.
 	
 	
-	\subsubsection{Tiempo en relizar el click}
+	\subsubsection{Tiempo en realizar el click}
 	\tab Queríamos saber cual era el promedio de tiempo que tardaba una persona en hacer click que luego terminaá instalando la aplicación. Para esto primeros filtramos el dataframe y nos quedamos con los que tenían un tiempo menor a 10 minutos y, obviamente, con los que no eran nulls. Después procedimos a calcular el promedio que nos dio como resultado 19.230125 segundos.
 	
 	\tab En esta oportunidad no nos pareció importante analizar la distribución en el tiempo de los clicks que termianron en instalaciónes de los disitintos application\_id o de los distintos source\_id como se hizo previamente en el archivo de clicks ya que hicimos los gráficos y estos, con tan poca cantidad de clicks que quedaron, no nos mostraban nada relevante.
@@ -1209,7 +1249,7 @@
 		\end{figure}
 	\FloatBarrier
 
-	\tab Solamente quedaron 3 os\_major y el mas repetitivo es el que comienza con 7.452 que era el que menos aparecía en el archivo de clicks.
+	\tab Solamente quedaron 3 os\_major y el más repetitivo es el que comienza con 7.452 que era el que menos aparecía en el archivo de clicks.
 	
 	\subsubsection{Clicks e instalaciones en specs\_brand}
 	\tab Este gráfico nos muestran los specs\_brand que quedaron y en que cantidad teniendo en cuenta solo los clicks que instalaron la aplicación.
@@ -1310,7 +1350,7 @@
 	\tab El ip\_address que predomina es el comanzado en 7140 con un total de 4 apariciones. Esto igual es de esperarse porque hay una ip\_address por cada celular y como en total tenemos 7 ya que uno se repite 4 veces y otro 2 veces. Por lo tanto se obtienen 7 dsitintas ip\_address.
 	
 	\subsubsection{Clicks e instalaciones en los días y horas}
-	\tab Cabe destacar que cada uno de los csv tenia su fecha y hora. En estos dos siguientes gráficos vamos a mostrar los días en que hubo mas clicks y los días que mas se isntaló.
+	\tab Cabe destacar que cada uno de los csv tenia su fecha y hora. En estos dos siguientes gráficos vamos a mostrar los días en que hubo más clicks y los días que más se instaló.
 	
 	\FloatBarrier
 		\begin{figure}[h]
@@ -1353,7 +1393,56 @@
 	
 
 \clearpage
-\section{Conclusión}
+\section{Conclusiones}
+
+Luego de realizar un análisis de todos los datos nos enfocamos en las conclusiones que generen valor para la empresa. Intentando
+encontrar patrones que nos acerquen a predecir instalaciones que sean asignadas en el futuro y detectar posibles clientes.
+
+\begin{itemize}
+    \item La mayoría de las subastas se ofrecen desde las 3 PM hasta la 1 AM. Esta tendencia se mantiene para ambos SO.
+    \item Hay un SO que ofrece hasta 5 veces más subastas.
+    \item La mayoría de las subastas provienen de una misma fuente, es necesario buscar más fuentes de subastas. Al parecer
+    esta fuente solo está funcionando para un solo ad, que de seguro solo lleva a una aplicación.
+    \item El carrier parece no ser una variable muy importante al momento de determinar el éxito de un ad. Puesto que la mayoría de
+    los clicks está distribuida entre 7 carriers que lideran. Aunque si podemos determinar que hay algunos carriers que implicarían
+    una certeza en que no vamos a recibir un click. Esto también es útil, evitará en el futuro que ofertemos en subastas donde éstos
+    se vean implicados.
+    \item Al no saber a qué versiones corresponden las variables os\_minor y os\_major es difícil sacar conclusiones, pero ciertamente
+    esta es una variable a la que hay que prestarle atención, no tiene sentido participar de subastas donde el sistema operativo
+    del celular en el que se mostrará la publicidad no se corresponde con los querimientos de la app que queremos publicar.
+    \item En cuanto a las marcas, hay 3 marcas que lideran los clicks. Enfocarse en ellas mejorará el rendimiento de las ofertas
+    al participar de las subastas. Aunque, otra vez, queda por encontrar formas de mejorar el rendimiento de los otros ads, porque
+    lo anterior dicho es cierto solo para 1 ad.
+    \item Hay un sistema operativo que destaca en la cantidad de clicks logrados. Quedará pendiente para la empresa
+    analizar si la publicidad que se está queriendo exponer debe mejorarse para el otro SO que queda resagado. O tal vez
+    es un problema de compatibilidad de las apps que se ofrecen y su disponibilidad en el otro SO.
+    \item La cantidad de clicks aumenta entre las 8 PM y las 2 AM. Pero hay que tener cuidado porque las subastas también se
+    ofrecen más en esos horarios. De todas formas es un dato muy útil, las subastas entre las 3 PM y las 8 PM, mencionadas
+    unos puntos atrás, no están rindiendo bien, conviene no ofertar en esos horarios.
+    \item La ubicación del dispositivo parece influenciar, hay posiciones donde claramente es más probable que recibamos un click,
+    entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Sería necesario cruzar esta información
+    con algún análisis de densidad de población de esa zona para estar seguros de si no se trata, simplemente, de que en esa zona
+    habita más gente y por ende hay más dispositivos.
+    \item La posición del click en la pantalla nos ofrece una muestra de gente haciendo click principalmente abajo, lo que
+    sugiere una llamada a la acción en ese sector de la publicidad. Debe haber un dibujo de un botón en la imagen o una flecha.
+    Esto puede ser especialmente útil para detectar diferencias de diseño entre la publicidad que está funcionando y las que no.
+    \item El problema con los eventos es que no sabemos si todos indican algo positivo para la empresa. Asumiremos en primera
+    medida que si. Con esto en mente, podemos analizar que se cumple nuevamente el patrón de interacción entre las 3 PM y las
+    2 AM.
+    \item No hay un día donde rindan mejor las publicidades según los eventos.
+    \item Los idiomas son bastante variados, esto puede indicarnos que necesitamos hacer los anuncios más específicos para
+    cada cliente, también nos habla un poco del público que tiene cada aplicación. Es imprescindible determinar si los ads
+    están en el idioma \texttt{3.3013777759776993e+18} que predomina en los eventos.
+    \item Si bien los eventos están bastante parejos entre el uso de Wifi o datos del celular, hay una ligera ventaja para
+    el uso de Wifi, para ver esto fue más fácil determinarlo por el tipo de conexión que por el campo wifi. A veces los campos
+    de detalle nos permiten analizar y completar información que por alguna razón llega de manera errónea.
+    \item Hay un carrier que destaca entre los demás. Investigar la estrategia de marketing de ese carrier nos puede ayudar
+    a conocer a nuestro público objetivo.
+    \item El wifi predomina en todos los tipos de evento. Es crucial determinar qué tipos de eventos son positivos para
+    favorecer la aparición de eventos beneficiosos.
+    \item Luego de reconstruir la data de marcas, vemos que tenemos nuevos líderes en el gráfico, \texttt{3.083058605577787e+17}
+    y, seguido de lejos, \texttt{5.951324980112395e+18}
+\end{itemize}
 
 \clearpage
 \appendix
