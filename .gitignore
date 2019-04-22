@@ -7,3 +7,5 @@ informe.dvi
 informe.toc
 informe.log
 informe.synctex.gz
+informe.out
+texput.log
