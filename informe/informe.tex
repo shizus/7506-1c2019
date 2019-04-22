@@ -1083,7 +1083,276 @@
 	 Se puede ver, claramente, que el advertiser '3' es predominante para ambas plataformas. Pero además, un dato interesante es la diferencia en la cantidad de clicks entre las plataformas. Cerca de 25000 para la plataforma '1' y cerca de 700 para la plataforma '2' (en el anexo 'tablas de datos' se podrán comprobar los numeros exactos). Esta diferencia entre los sistemas operativos ya la habíamos visto en la seccion "Subastas".
 
 
+\subsection{Clicks e instalaciones}
+	\subsubsection{Análisis general}
+	\tab Decidimos hacer un join entre installs y clicks para poder saber de cuantas personas hacen click cauntas installan. Para poder hacer el join primero se nos ocurrió hacerlo por la fecha y hora. Pero nos dimos cuenta que si los uniamos por esta columna no necesariamente el click iba a ser correspondiente al install. Esto se debe a que cuando una persona hace click, no instala en ese mismo instante, sino, que pasan unos segundos o hasta minutos. Luego tuvimos la idea de unir los archivos por medio del transaction id ya que este era único para cada uno de los click e installs. Sin embargo, esta idea no funcionó debido a que en installs solo habian 4 trans\_id y el resto nulls y ninguno de esos 4 coincidia con algún transaction\_id de clicks. Finalmente, decidimos unirlos por el ref\_hash ya que este es un id unico de cada celular.
+	
+	\tab Al juntarlos por ref\_hash, solamente obtuvimos, de los más de 26000 clicks que había, un csv con 11 filas. Cabe destacar que de estos 11 que quedaron el ref\_hash 582930240149217282 se repite un total de 4 veces y el ref\_hash 7759178785240189555 se repite 2 veces. Ambos tienen esa misma candidad de repeticiones en el archivo clicks mientras que solo estan una vez en el archivo installs. Es decir, que de los 4 clicks que hizo el teléfono 582930240149217282 solo uno fue una instalación y de los 2 clicks que hizo 7759178785240189555 solo uno fue una instalación. Por lo tanto, se podrai decir que de los ams de 26000 clicks solo se realizaron 7 installs. Este número es muy bajo.
+	
+	 \tab Antes de realizar los gráficos se optó por sacar columnas que no tenian nin{un tipo de información útil ya que o tenian muchos nulls o no daban información rlevante. Algunas de esas columans fueron action\_id, agent\_device, brand, kind, entre varias otras. Los siguientes gráficos se van realizar a las 11 filas que quedaron del join entre clicks e installs.	 
 
+	\subsubsection{Clicks e instalaciones en advertiser\_id}
+	\tab Este gráfico no mostrará la cantidad de advertiser\_id que quedaron despues de quedarnos con los clicks que fueron installs.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/advertiser_id.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+		
+	\tab Finalmente, como se esperaba, quedó solo el advertiser\_id 3 que era el que predominaba en el archivo de clicks.
+	
+	\subsubsection{Clicks e instalaciones en source\_id}
+	\tab Los siguientes gráficos se notará la cantidad y el porcentaje de clicks que terminaron en installs de los distintos source\_id.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/source_id.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/source_id_bars.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+	
+	\tab Quedaron simplemente tres source\_id que eran los que más abundaban en el csv de clicks.
+	
+	\subsubsection{Posicion geografica de clicks e instalaciones}
+	\tab Este heatmap nos muestra la latitud y longitud de donde se realizó el click que terminó en instalación.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/lat_long_heat.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier	
+	
+	\tab Todas las instalaciones se realizaron entre las latitudes 1.21 y 1.20 que intersecan con la longitud 1.07 y alrededores. Esto era de esperarse ya que la mayoría de clicks se habían consentrado en ese mismo sitio.
+	
+	\clearpage
+	\subsubsection{Clicks en la pantalla que terminan en instalaciones}
+	\tab  El siguiente scatter plot nos indica en que lugar de la pantalla del te{efono celular se realizó el click que luego terminó en una instalación de la aplicación.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/touch_pos.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+	
+	\tab Se puede observar que la mayoria de los clicks fueron en la parte inferior derecha de la pantalla. Esto era de esperarse por lo ya previamente analizado en el inciso de clicks.
+	
+	
+	\subsubsection{Tiempo en relizar el click}
+	\tab Queríamos saber cual era el promedio de tiempo que tardaba una persona en hacer click que luego terminaá instalando la aplicación. Para esto primeros filtramos el dataframe y nos quedamos con los que tenían un tiempo menor a 10 minutos y, obviamente, con los que no eran nulls. Después procedimos a calcular el promedio que nos dio como resultado 19.230125 segundos.
+	
+	\tab En esta oportunidad no nos pareció importante analizar la distribución en el tiempo de los clicks que termianron en instalaciónes de los disitintos application\_id o de los distintos source\_id como se hizo previamente en el archivo de clicks ya que hicimos los gráficos y estos, con tan poca cantidad de clicks que quedaron, no nos mostraban nada relevante.
+	
+	\clearpage
+	\subsubsection{Clicks e instalaciones en Android e IOS}
+	\tab Vale aclarar, que tanto en clicks como en installs, se mostraba una columna con el sistema operativo del celular llamada ref\_type. Antes de realizar algún gráfico, nos fijamos que ambas columanas que quedaron después de hacer el join llamadas ref\_type\_x y ref\_type\_y tuvieran el mismo sistema operativo. Por suerte, así lo fue y no se encontró un error en ese aspecto y procedimos a ahcer el gráfico con una de estas dos columnas que nos mostraban exactamente lo mismo.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.7]{images/clicks-installs/ref_type.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	\tab Se puede apreciar que al igual que en clicks el sistema operativo que más aparece es el que comuienza con 18 y el que le sigue es el que comienza con 14.
+	
+	\subsubsection{Clicks e instalaciones en carreirs\_id}
+	\tab Vamos a mostrar en el siguiente gráfico cuales son los carriers\_id que quedaron y en que cantidad después de elegir los clicks que terminaron en instalaciones.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.4]{images/clicks-installs/carrier_id.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	\tab Sorpresivamente, el carrier\_id predomiante es el 13.0 que no era mayoría en el archivo de clicks.
+	
+	\subsubsection{Clicks e instalaciones en os\_minor}
+	\tab En el siguiente gráfico se enseña las menores versiones del sistema operativo de cada celular que hizo click e instalo la aplicación.
+	
+	 \FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/minor_os.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+	
+	\tab En este caso, solo quetaron 3 tipos de os\_minor que no eran los que más predominaban en clicks.
+	
+	\subsubsection{Clicks e instalaciones en os\_minor}
+	\tab En el siguiente gráfico se enseña las mayores versiones del sistema operativo de cada celular que hizo click e instalo la aplicación.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/major_os.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	\tab Solamente quedaron 3 os\_major y el mas repetitivo es el que comienza con 7.452 que era el que menos aparecía en el archivo de clicks.
+	
+	\subsubsection{Clicks e instalaciones en specs\_brand}
+	\tab Este gráfico nos muestran los specs\_brand que quedaron y en que cantidad teniendo en cuenta solo los clicks que instalaron la aplicación.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/specs_brand.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	\tab Como se esperaba, quedaron los dos specs\_brand que más aparecian en el archivo de clicks.
+	
+	\subsubsection{Clicks e instalaciones en país de origen}
+	\tab En el archivo de clicks solo aparecía un solo país mientras que en el archivo de installs aparecían dos distintos. Luego de hacer el join solo quedó un país como se suponía.
+	
+	\subsubsection{Clicks e instalaciones en application\_id}
+	\tab En el siguiente gráfico veremos las applicaciones\_id que quedaron luego de elegir los clicks que instalaron.
+	
+	 \FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/application_id.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+	
+	\tab Casi todas las application\_id son del tipo 7 que era lo más lógico ya que esa era la application\_id que más abundaba en el archivo de installs.
+	
+	\subsubsection{Tipo de instalciones}
+	\tab Dentro de los tipos de instalaciones tenemos las atribuidas y las implícitas. Como ya se mencionó anterior mente las atribuidas son todas false, lo que es muy raro ya que estas serían las que se le darían a Jampp. 
+	\newline
+	\newline
+	\tab El siguiente gráfico nos muestra cuantas de las instalaciones fueron implícitas.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/implisit.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	\tab So observa que una de ellas es implicita. El resto de las instalaciones no se sabe con certeza a quien le corresponden.
+	
+	\subsubsection{Clicks e instalaciones en device\_model}
+	\tab El gráfico mostrado a continuación nos enseñará que modelos de celular quedaron y en que cantidad luego de quedarnos con los installs que les hicieron click previamente.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/device_model.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	\tab Se puede notar que solamente quedaron 3 tipos de modelos de celular de los caules el más repetitivo es el comenzado con 6.88.
+	
+	\subsubsection{Clicks e instalaciones en device\_language}
+	\tab En el siguiente gráfico mostraremos los lenguajes que tenían los celulares al momento de la instalación de la aplicación.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/device_language.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	\tab Solamente quedo un lenguaje.
+	
+	\subsubsection{Clicks e instalaciones en session\_user\_agent}
+	\tab En este gráfico que se enseñará a continuación se notará los distintos session\_user\_agent.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/session_user_agent.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+	
+	\tab Se puede observar que el único session\_user\_agent que quedó es adjust.com
+	
+	
+	\subsubsection{Clicks e instalaciones en ip\_address}
+	\tab El siguiente gráfico nos mostrará los ip\_address de los clicks que terminarion en instalación.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.5]{images/clicks-installs/ip_address.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	\tab El ip\_address que predomina es el comanzado en 7140 con un total de 4 apariciones. Esto igual es de esperarse porque hay una ip\_address por cada celular y como en total tenemos 7 ya que uno se repite 4 veces y otro 2 veces. Por lo tanto se obtienen 7 dsitintas ip\_address.
+	
+	\subsubsection{Clicks e instalaciones en los días y horas}
+	\tab Cabe destacar que cada uno de los csv tenia su fecha y hora. En estos dos siguientes gráficos vamos a mostrar los días en que hubo mas clicks y los días que mas se isntaló.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/days_clicks.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/days_installs.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+	\tab Viendo estos gráficos notámos algo muy raro. La instalación que se realizó luego de tocar click debería ser uno segundos o minutos después de hacer el click, no obstante, se puede ver que los clicks se realizaron entre el 9 y el 13 de Marzo y los isntalls entre el 6 y el 11 de Marzo. Eso no tienen ningún sentido. Se puede deber a algún error en los datos, ya sea en la fecha y el horario o en los ref\_hash por los que unimos los archivos clicks e installs.
+	
+	\tab En los siguientes gáficos se enseñará los clicks y las instalaciones en las distintas horas del día.
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/hours_clicks.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+	
+	\FloatBarrier
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{images/clicks-installs/hours_installs.png}
+			\caption{}
+		\end{figure}
+	\FloatBarrier
+
+
+	\tab En este caso también pasa lo mismo. No se ve que haya coherencia entre ambos gráficos. Las horas del día en la que se hace click y las que se instala son muy diferentes. Como se mencionó previamnte esto puede ser un error en las fechas y horas o también en el ref\_hash.
+	
+
+\clearpage
 \section{Conclusión}
 
 \clearpage
