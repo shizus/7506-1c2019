@@ -3,5 +3,10 @@
 
 ## Grupo 37
 
-El análisis completo se encuentra en informe.pdf
+# TP 1
 
+El análisis completo se encuentra en tp1/informe.pdf
+
+# TP 2
+
+En la carpeta datos_tp2 se encuentran los archivos a los que hará referencia el notebook de análisis del tp
