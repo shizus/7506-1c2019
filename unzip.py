@@ -1,6 +1,6 @@
 import ggzip
 
-ggzip.ggunzip('tp2/datos_tp2/auctions.csv.gzip', 'tp2/datos_tp2/auctions.csv')
-ggzip.ggunzip('tp2/datos_tp2/clicks.csv.gzip', 'tp2/datos_tp2/clicks.csv')
-ggzip.ggunzip('tp2/datos_tp2/events.csv.gzip', 'tp2/datos_tp2/events.csv')
-ggzip.ggunzip('tp2/datos_tp2/installs.csv.gzip', 'tp2/datos_tp2/installs.csv')
+ggzip.ggunzip('tp2/datos/auctions.csv.gzip', 'tp2/datos/auctions.csv')
+ggzip.ggunzip('tp2/datos/clicks.csv.gzip', 'tp2/datos/clicks.csv')
+ggzip.ggunzip('tp2/datos/events.csv.gzip', 'tp2/datos/events.csv')
+ggzip.ggunzip('tp2/datos/installs.csv.gzip', 'tp2/datos/installs.csv')

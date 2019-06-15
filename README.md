@@ -9,4 +9,6 @@ El análisis completo se encuentra en tp1/informe.pdf
 
 # TP 2
 
-En la carpeta datos_tp2 se encuentran los archivos a los que hará referencia el notebook de análisis del tp
+Crear una carpeta de nombre "datos" dentro de la carpeta tp2 y dejar ahí los archivos de prueba.
+
+Luego, parados en la raíz de este proyecto ejecutar `python unzip.py`
