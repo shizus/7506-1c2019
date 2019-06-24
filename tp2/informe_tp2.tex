@@ -78,7 +78,7 @@ Para entrenar los algoritmos, se dividió la información en 7 ventanas (ambos e
 Los algoritmos usan como set de entrenamiento los tres días de una ventana, y validan con los siguientes tres días.
 
 La realización se dividió en 4 procesos que se describen en las siguientes secciones.
-Primero, el pre-procesamiento - análisis y filtrado - de los datos. Luego una primer prueba con algún algoritmo simple de implementar. A continuación se probaron distintos algoritmos solamente con las columnas que quedaron luego del pre-procesamiento, con búsqueda de parámetros e hipeparámetros. Por último se hizo una etapa de feature engineering buscando nuevos features para aplicar los algoritmos que se habían implementado en la etapa anterior.
+Primero, el pre-procesamiento - análisis y filtrado - de los datos. Luego una primer prueba con algún algoritmo simple de implementar. A continuación se probaron distintos algoritmos solamente con las columnas que quedaron luego del pre-procesamiento, con búsqueda de parámetros e hipeparámetros. Por último se hizo una etapa de feature engineering buscando nuevos features para volver a correr los algoritmos que se habían implementado en la etapa anterior y comparar resultados.
 
 Todos los algoritmos y procesos se pueden encontrar en el siguiente repositorio de GitHub: \href{https://github.com/shizus/7506-1c2019}{https://github.com/shizus/7506-1c2019}.
 
@@ -92,7 +92,6 @@ En las siguientes secciones se indican en una tabla las columnas conflictivas, q
 
 \subsection{clicks.csv}
 
-¡¡¡¡¡¡¡¡¡¡¡PONER PORCENTAJES EN LAS TABLAS!!!!!!!!!!!!!!!!!!!
 \FloatBarrier
 \begin{center}
         \begin{tabular}{ |c|c|c| }
@@ -109,22 +108,21 @@ En las siguientes secciones se indican en una tabla las columnas conflictivas, q
           \hline
           brand & Eliminada & Casi ningún valor no nulo \\
           \hline
-          carrier\_id & Rellenada & Tiene 1200 nulos \\
+          carrier\_id & Rellenada & Tiene muy pocos valores nulos \\
           \hline
-          os\_major & Rellenada & Tiene 35 nulos \\
+          os\_major & Rellenada & Tiene muy pocos valores nulos \\
           \hline
-          os\_minor & Rellenada & Tiene 35 nulos \\
+          os\_minor & Rellenada & Tiene muy pocos valores nulos \\
           \hline
-          timeToClick & Rellenada & Tiene 35 nulos \\
+          timeToClick & Rellenada & Tiene muy pocos valores nulos \\
           \hline
-          touchX & Rellenada & Tiene x valores nulos \\
+          touchX & Rellenada & Tiene muy pocos valores nulos \\
           \hline
-          touchY & Rellenada & Tiene x valores nulos \\
+          touchY & Rellenada & Tiene muy pocos valores nulos \\
           \hline
         \end{tabular}
 \end{center}
 \FloatBarrier
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡PONER EL MOTIVO DE ELIMINACION!!!!!!!!!!!!!!!!!!!!!!
 Los valores nulos de la columna timeToClick, touchsX y touchsY se rellenaron con el promedio de cada columna.
 
 \subsection{installs.csv}
@@ -204,6 +202,7 @@ El siguiente paso fue dividir las ventanas, entrenar un algoritmo fácil de impl
 
 Una vez divididas las siete ventanas del dataframe original, procedimos a calcular el $St$ y $Sc$ reales para cada dispositivo, para cada ventana, para poder entrenar a los algoritmos y validar. 
 En el archivo \textit{auctions.csv} en cada ventana nos quedamos con las filas en las que aparecía por primera vez cada uno de los dispositivos, y le agregamos la columna $St\_real$.
+
 En el archivo \textit{installs.csv} en cada ventana también nos quedamos con las filas en las que aparecía por primera vez cada uno de los dispositivos, y le agregamos la columna $Sc\_real$.
 
 Luego, en ambos archivos seguimos un procedimiento similar: Para cada ventana entrenamos con XGBoost, y validamos con los siguientes tres días. Los parámetros usados fueron similares en todas la ventanas: 
@@ -221,7 +220,7 @@ El siguiente paso fue usar los archivos como quedaron luego del pre-procesamient
 
 En este paso tambíen aprovechamos para probar hiperparámetros y parámetros de los algoritmos, para ver cómo afectaban a los algoritmos.
 
-Los algoritmos utilizados fueron XGBoost, AdaBoost, KNN, Random Forest y bagging.
+Los algoritmos utilizados fueron XGBoost, AdaBoost, KNN, Random Forest, bagging y blending.
 
 Tanto los algoritmos como los parámetros e hiperparámetros que se probaron pueden encontrarse en el repositorio de GitHub.
 
@@ -240,20 +239,76 @@ Es un algoritmo que aplica Bagging a árboles de decisión usando solo algunos a
 Con este algoritmo, y probando distintos parámetros logramos para $St$ un error de entre 73000 y 80000, y para $Sc$ aproximadamente de 65000. A grandes rasgos no mejora mucho la precisión de XGBoost.
 
 \subsection{KNN}
+KNN es un algoritmo que se basa en encontrar, para un determinado punto, sus k vecinos más cercanos.
+Uno de los principales parametros a setear es la métrica a utilizar. Se entrenó al algoritmo con distintas métricas para poder elegir la mejor. Entre ellas la distancia Minkowsky con p= 1 (distancia Manhattan) y p = 2 (distancia Euclideana). La que mejor resultados entregó fue la distancia Minkowsky con p = 2.
+
+El error para este algoritmo fue de entre 73000 y 110000 para $St$ y de entre 66000 y 70000 para $Sc$.
 
 \subsection{Bagging}
+Este algoritmo fue utilizado para un promedio de algoritmos que se explica más detalladamente en la subsección "Ensambles".
+
 \subsection{AdaBoost}
+Este algoritmo fue utilizado para un promedio de algoritmos que se explica más detalladamente en la subsección "Ensambles".
+
+\subsection{Redes neuronales}
+Este algoritmo fue utilizado para un promedio de algoritmos que se explica más detalladamente en la subsección "Ensambles".
+
+\subsection{Blending}
 
 \subsection{Ensambles}
+Luego de probar los algoritmos procedimos a hacer ensambles, es decir, usar las predicciones de uno o mas algoritmos para entrenar a algún otro algoritmo.
+
+Esto lo hicimos entrenando los algoritmos que quisieramos usar, buscando hiperparámetros y parámetros, y buscando la mejor ventana, y poniendo las predicciones de esos algoritmos como columnas para entrenar a un nuevo algoritmo o usando el promedio de las predicciones de cada algoritmo.
+En la mayoría de los casos, el algoritmo final usado para ensamblar fue XGboost.
+
+Algunos ensambles que se probaron fueron:
+\begin{itemize}
+    \item Usar las predicciones de KNN para entrenar XGBoost
+    \item Usar las predicciones de Random Forest y KNN para entrenar a XGBoost
+    \item Usar el promedio de las predicciones de KNN, Random Forest, Bagging y XGBoost, AdaBoost
+    \item Usar el promedio de las predicciones de KNN, Random Forest, Bagging, XGBoost, AdaBoost y Redes Neuronales
+    \item Blending.
+\end{itemize}
+
+Los ensambles funcionaron distinto para predecir a $St$ y a $Sc$.
+Los dos primeros funcionaron mejor para predecir a $St$, mientras que los dos segundos funcionaron mejor para predecir a $Sc$.
+
+Para redes neuronales se usó MLP (Multi level perceptron) pero no mejoro el resultado que tenía el ensamble sin usar la red neuronal.
+
+Lo que mejores resultados logró, y que fue lo que se uso en el mejor submit del grupo a la competencia de Kaggle fue:
+\begin{itemize}
+    \item Para $St$: Usar las predicciones de Random Forest y KNN como columnas para entrenar a XGBoost 
+    \item Para $Sc$: Usar el promedio de las predicciones de los algoritmos KNN, Random Forest, Bagging, XGBoost y AdaBoost.
+\end{itemize}
+
+Un punto importante a tener en cuenta para la prediccion de $St$.
+Al principio se buscó usar las predicciones de Random Forest y KNN como columnas para entrenar a XGBoost. Esto no generó muy buenos resultados. 
+Decidimos probar algo un poco azaroso, que fue intercambiar dos columnas: La columna con el St real (el que se usa para entrenar) y la columna con la predicción de Random Forest. Por lo que se terminó con el $St$ real como una de las columnas para entrenar, y la predicción de Random Forest como el $St$ real.
+Como era de esperarse, en las ventanas que usamos overfitteaba (se obtuvo un error cercano a 9000) pero probamos subirlo a Kaggle de todas formas y fue el que mejor resultados nos dio.
 
 \newpage
 \section{Feature engineering}
+Una herramienta muy útil para este proceso fue el gráfico de importancia de features para los algoritmos. Esto nos permitía ir verificando a qué darle mayor valor, sobre todo a la hora de ver qué algoritmos promediar, o qué algoritmos usar como columnas para entrenar otros algoritmos.
+
+Por ejemplo, la siguiente imagen se obtuvo del entrenamiento de XGBoost con KNN y Random Forest como columnas.  Podemos ver que la predicción de KNN parece mucho más importante que la predicción de Random Forest.
+
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth]{\includegraphics[width=250pt]{featureimportance.png}}
+\end{figure}
 
 
 
-
+\newpage
 \section{Conclusiones}
+Como primer conclusión podemos obtener los algoritmos que mejor anduvieron. En general los mejores resultados se obtuvieron con Averaging (usando el promedio de los algoritmos implementados) tanto para $St$ como para $Sc$. La única excepción a esto fue el intercambio de columnas mencionado anteriormente para $St$.
+
+Algo importante de notar es lo mucho que pueden variar los mismos algoritmos frente al cambio en sus parámetros y que hay algoritmos que parecen mas estables que otros. Por ejemplo, variando parámetros en XGBoost en $St$, el valor para el MSE no cambia demasiado (quizá se movia entre 70000 y 80000); mientras que Random Forest, para distintos hiperparámetros logró un error minimo cercano a 70000 y un error cercano a 110000.
+Sin embargo, todos los algoritmos lograron errores mínimos muy parecidos al aplicarse por separado. Los mayores cambios se ven al hacer ensambles.
+
+También podemos destacar que los errores podían variar considerablemente entrenando con una ventana o con otra usando el mismo algoritmo. Esto parecería indicar que los datos no son uniformes o que algunos días tienen algunos valores para $St$ o $Sc$ muy altos, lo que generaría un efecto de cisne negro.
 
 \end{document}
+
 
 
