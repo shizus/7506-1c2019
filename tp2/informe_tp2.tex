@@ -1,0 +1,259 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage[spanish]{babel}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+\usepackage{caption}
+\geometry{top = 1in}
+\setlength{\textfloatsep}{1\baselineskip plus 0.2\baselineskip minus 0.5\baselineskip}
+\setlength{\parindent}{2em}
+\renewcommand\textfraction{.1}
+\usepackage{float}
+
+\title{Competencia de Machine Learning \\ Trabajo práctico 2 - Organización de Datos}
+\author{Grupo: \textit{Back to the Data}}
+\date{24/06/19}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{placeins}
+
+\begin{document}
+\begin{figure}
+    \centering
+    \makebox[\textwidth]{\includegraphics[width=250pt]{logofiuba.jpg}}
+\end{figure}
+\maketitle
+
+\FloatBarrier
+\begin{center}
+        \begin{tabular}{ |c|c|c| }
+          \hline
+          Nombre & Padrón & Mail \\
+          \hline\hline
+          Álvarez, Federico & 99266 & fede.alvarez1997@gmail.com \\
+          \hline
+          La Torre, Gabriel & 87796 & latorregab@gmail.com \\
+          \hline
+          Medrano, Lucas Nicolás & 99247 & lucasmedrano97@gmail.com \\
+          \hline
+          Piro Martino, Ariel & 99469 & ariel.piro@hotmail.com \\
+          \hline
+        \end{tabular}
+\end{center}
+\FloatBarrier
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+El trabajo consiste en participar en una competencia de machine learning. 
+
+La empresa Jampp provee información sobre subastas, clicks, instalaciones y eventos en dispositivos móviles, y el objetivo es estimar, para un conjunto dado de dispositivos, el tiempo que tardará cada uno en aparecer nuevamente en una
+subasta o que se instale en él una nueva aplicación.
+
+Llamaremos $St(d)$ al tiempo que transcurre hasta que un dispositivo d aparezca nuevamente en una subasta, y $Sc(d)$ al tiempo que transcurre hasta que el dispositivo d convierta (instale una nueva aplicación)
+
+
+Los datasets contienen información del 18/06 al 26/06 inclusive.
+Para entrenar los algoritmos, se dividió la información en 7 ventanas (ambos extremos de todas las ventanas son incluyentes):
+
+\begin{itemize}
+    \item Ventana 1) 18/06 - 20/06 \item Ventana 2) 19/06 - 21/06
+    \item Ventana 3) 20/06 - 22/06 \item Ventana 4) 21/06 - 23/06
+    \item Ventana 5) 22/06 - 24/06 \item Ventana 6) 23/06 - 25/06
+    \item Ventana 7) 24/06 - 26/06
+\end{itemize}
+
+Los algoritmos usan como set de entrenamiento los tres días de una ventana, y validan con los siguientes tres días.
+
+La realización se dividió en 4 procesos que se describen en las siguientes secciones.
+Primero, el pre-procesamiento - análisis y filtrado - de los datos. Luego una primer prueba con algún algoritmo simple de implementar. A continuación se probaron distintos algoritmos solamente con las columnas que quedaron luego del pre-procesamiento, con búsqueda de parámetros e hipeparámetros. Por último se hizo una etapa de feature engineering buscando nuevos features para aplicar los algoritmos que se habían implementado en la etapa anterior.
+
+Todos los algoritmos y procesos se pueden encontrar en el siguiente repositorio de GitHub: \href{https://github.com/shizus/7506-1c2019}{https://github.com/shizus/7506-1c2019}.
+
+\newpage
+\section{Pre-procesamiento}
+Lo primero que se hizo en el trabajo es un análisis de los datos recibidos. El objetivo era borrar features (o columnas) que se supiera de antemano no iban a influir en el aprendizaje de los algoritmos, como por ejemplo aquellas que tuvieran únicamente valores nulos, un solo valor para todas las filas o un valor diferente para cada fila, y decidir que hacer con las demás columnas (aquellas que tuvieran solo algunos valores nulos, por ejemplo).
+
+A continuación se explicitan las decisiones tomadas para las columnas que presentaron conflictos (entendiendo como conflictos los mencionados en el párrafo anterior)
+
+En las siguientes secciones se indican en una tabla las columnas conflictivas, qué se decidió hacer con cada una y el motivo. Las columnas que no aparecen mencionadas no necesitaron ninguna acción por parte del grupo.
+
+\subsection{clicks.csv}
+
+¡¡¡¡¡¡¡¡¡¡¡PONER PORCENTAJES EN LAS TABLAS!!!!!!!!!!!!!!!!!!!
+\FloatBarrier
+\begin{center}
+        \begin{tabular}{ |c|c|c| }
+          \hline
+          Columna & Acción & Motivo \\
+          \hline\hline
+          auction\_id & Eliminada & Todos valores nulos \\
+          \hline
+          country\_code & Eliminada & Hay un solo país \\
+          \hline
+          trans\_id & Eliminada & Todos valores distintos. \\
+          \hline
+          agent\_device & Eliminada & Casi ningún valor no nulo. \\
+          \hline
+          brand & Eliminada & Casi ningún valor no nulo \\
+          \hline
+          carrier\_id & Rellenada & Tiene 1200 nulos \\
+          \hline
+          os\_major & Rellenada & Tiene 35 nulos \\
+          \hline
+          os\_minor & Rellenada & Tiene 35 nulos \\
+          \hline
+          timeToClick & Rellenada & Tiene 35 nulos \\
+          \hline
+          touchX & Rellenada & Tiene x valores nulos \\
+          \hline
+          touchY & Rellenada & Tiene x valores nulos \\
+          \hline
+        \end{tabular}
+\end{center}
+\FloatBarrier
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡PONER EL MOTIVO DE ELIMINACION!!!!!!!!!!!!!!!!!!!!!!
+Los valores nulos de la columna timeToClick, touchsX y touchsY se rellenaron con el promedio de cada columna.
+
+\subsection{installs.csv}
+\FloatBarrier
+\begin{center}
+        \begin{tabular}{ |c|c|c| }
+          \hline
+          Columna & Acción & Motivo \\
+          \hline\hline
+          trans\_id & Eliminada & 98\% de los valores nulos \\
+          \hline
+          device\_countrycode & Eliminada & Hay un solo país \\
+          \hline
+          click\_hash & Eliminada & 99\% de los valores nulos \\
+          \hline
+          event\_uuid & Eliminada & Casi 80\% de los valores nulos \\
+          \hline
+          kind & Eliminada & Casi 80\% de los valores nulos \\
+          \hline
+          wifi & Eliminada & Casi 50\% de los valores nulos \\
+          \hline
+          device\_brand & Eliminada & 42\% de los valores nulos \\
+          \hline
+          user\_agent & Eliminada & 30\% de los valores nulos \\
+          \hline
+          session\_user\_agent & Filas nulas eliminadas & 3\% de los valores nulos \\
+          \hline
+          device\_model y device\_language & Filas nulas eliminadas & Juntas son el 5\% de los valores del dataframe, y son nulos \\
+          \hline
+        \end{tabular}
+\end{center}
+\FloatBarrier
+
+\subsection{auctions.csv}
+    El dataset de auctions no tenía valores nulos ni columnas conflictivas, por lo que se usó como estaba.
+
+\subsection{events.csv}
+\FloatBarrier
+\begin{center}
+        \begin{tabular}{ |c|c|c| }
+          \hline
+          Columna & Acción & Motivo \\
+          \hline\hline
+          trans\_id & Eliminada & casi 100\% de los valores nulos (99,995\%) \\
+          \hline
+          device\_countrycode & Eliminada & Hay un solo país \\
+          \hline
+          event\_uuid & Eliminada & Todos los valores distintos \\
+          \hline
+          device\_os\_version & Eliminada & 70\% de los valores nulos \\
+          \hline
+          device\_brand & Eliminada & Casi 70\% de los valores nulos \\
+          \hline
+          device\_city & Eliminada & Casi 80\% de los valores nulos \\
+          \hline
+          user\_agent & Eliminada & 60\% de los valores nulos \\
+          \hline
+          carrier & Eliminada & 76\% de los valores nulos \\
+          \hline
+          connection\_type & Eliminada & Casi 80\% de los valores nulos \\
+          \hline
+          device\_language & Eliminada & Casi 30\% de los valores nulos \\
+          \hline
+          session_user_agent & Filas nulas eliminadas & 0,5\% de los valores nulos \\
+          \hline
+          kind & Filas nulas eliminadas & 0,5\% de los valores nulos \\
+          \hline
+          device\_model & Eliminada & casi 30\% de los valores nulos \\
+          \hline
+        \end{tabular}
+\end{center}
+\FloatBarrier
+
+\newpage
+\section{Prueba de algoritmo sencillo}
+El siguiente paso fue dividir las ventanas, entrenar un algoritmo fácil de implementar y hacer un primer submit a kaggle (la plataforma en la que estaba la competencia) para verificar que se estaba siguiendo un buen camino.
+
+Una vez divididas las siete ventanas del dataframe original, procedimos a calcular el $St$ y $Sc$ reales para cada dispositivo, para cada ventana, para poder entrenar a los algoritmos y validar. 
+En el archivo \textit{auctions.csv} en cada ventana nos quedamos con las filas en las que aparecía por primera vez cada uno de los dispositivos, y le agregamos la columna $St\_real$.
+En el archivo \textit{installs.csv} en cada ventana también nos quedamos con las filas en las que aparecía por primera vez cada uno de los dispositivos, y le agregamos la columna $Sc\_real$.
+
+Luego, en ambos archivos seguimos un procedimiento similar: Para cada ventana entrenamos con XGBoost, y validamos con los siguientes tres días. Los parámetros usados fueron similares en todas la ventanas: 
+(alpha=10, base\_score=0.5, booster='gbtree', colsample\_bylevel=1, colsample\_bynode=1, colsample\_bytree=0.3, gamma=0, importance\_type='gain', learning\_rate=0.8, max\_delta\_step=0, \\max\_depth=5, min\_child\_weight=1, missing=None, n\_estimators=10, n\_jobs=1, nthread=None, objective='reg:linear', random\_state=0, reg\_alpha=0, reg\_lambda=1, scale\_pos\_weight=1, seed=None, silent=None, subsample=1, verbosity=1), ya que la idea no era la busqueda de parámetros, sino simplemente probar el avance hasta el momento.
+
+Los resultados obtenidos dieron un error cuadrático medio de entre 72000 y 80000 para St, y 50000 y 70000 para Sc
+
+Por último se cargó el archivo target\_competencia en un dataframe, se le agregó toda la información necesaria a los dispositivos para los que se pedía predecir (mediante un join con el dataframe de auctions o installs según se quisiera el $St$ y $Sc$), y se usó el algoritmo entrenado con la ventana que mejor resultados había dado en el proceso anterior para predecir sobre esos dispostivos.
+
+Al finalizar se hizo el primer submit a Kaggle obteniendo un error de 86368.
+
+\newpage
+\section{Prueba de algoritmos}
+El siguiente paso fue usar los archivos como quedaron luego del pre-procesamiento y probar algoritmos para comparar sus resultados. La métrica usada para comparar los distintos algoritmos fue el error cuadrático medio (MSE). Cuando se hable de "presición" en los siguientes capítulos nos referiremos al MSE.
+
+En este paso tambíen aprovechamos para probar hiperparámetros y parámetros de los algoritmos, para ver cómo afectaban a los algoritmos.
+
+Los algoritmos utilizados fueron XGBoost, AdaBoost, KNN, Random Forest y bagging.
+
+Tanto los algoritmos como los parámetros e hiperparámetros que se probaron pueden encontrarse en el repositorio de GitHub.
+
+\subsection{XGBoost}
+Es un algoritmo de boosting que construye la predicción a partir de la suma de resultados de varios árboles
+
+Fue el primer algoritmo que utilizamos debido a lo sencillo de implementar usando librerías de Python, la cantidad de hiperparámetros y parámetros a setear y las buenas críticas que tiene.
+
+Se obtuvieron buenos resultados que mejoraron un poco, aunque no mucho, modificando parámetros, tanto para $St$ como para $Sc$.
+
+Los resultados obtenidos dieron un error cuadrático medio de entre 72000 y 80000 para St, y 50000 y 70000 para Sc (muy similares a los de la primera vez que lo probamos sin modificar hiperparámetros).
+
+\subsection{Random Forest}
+Es un algoritmo que aplica Bagging a árboles de decisión usando solo algunos atributos en cada árbol, lo que ayuda a evitar el overfitting, ya que ningún árbol tiene la totalidad de los datos para entrenar.
+
+Con este algoritmo, y probando distintos parámetros logramos para $St$ un error de entre 73000 y 80000, y para $Sc$ aproximadamente de 65000. A grandes rasgos no mejora mucho la precisión de XGBoost.
+
+\subsection{KNN}
+
+\subsection{Bagging}
+\subsection{AdaBoost}
+
+\subsection{Ensambles}
+
+\newpage
+\section{Feature engineering}
+
+
+
+
+\section{Conclusiones}
+
+\end{document}
+
+
